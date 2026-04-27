@@ -1,0 +1,49 @@
+biopython==1.79
+brotlipy @ file:///home/conda/feedstock_root/build_artifacts/brotlipy_1695621656497/work
+certifi==2022.9.24
+cffi @ file:///home/conda/feedstock_root/build_artifacts/cffi_1723018376978/work
+charset-normalizer @ file:///home/conda/feedstock_root/build_artifacts/charset-normalizer_1661170624537/work
+cryptography @ file:///home/conda/feedstock_root/build_artifacts/cryptography-split_1721521265753/work
+cycler==0.11.0
+Cython==0.29.37
+ete3 @ file:///home/conda/feedstock_root/build_artifacts/ete3_1688510053282/work
+fair-esm==0.4.0
+fonttools==4.38.0
+future==0.18.2
+h5py==3.7.0
+idna==3.4
+kiwisolver==1.4.4
+lxml @ file:///home/conda/feedstock_root/build_artifacts/lxml_1723458263021/work
+matplotlib==3.5.2
+mmtf-python @ file:///home/conda/feedstock_root/build_artifacts/mmtf-python_1657095270742/work
+msgpack @ file:///home/conda/feedstock_root/build_artifacts/msgpack-python_1715670624544/work
+numpy @ file:///home/conda/feedstock_root/build_artifacts/numpy_1687808301083/work
+nvidia-cublas-cu11==11.10.3.66
+nvidia-cuda-nvrtc-cu11==11.7.99
+nvidia-cuda-runtime-cu11==11.7.99
+nvidia-cudnn-cu11==8.5.0.96
+olefile @ file:///home/conda/feedstock_root/build_artifacts/olefile_1602866521163/work
+packaging @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_packaging_1777103621/work
+PeptideBuilder==1.1.0
+Pillow==9.3.0
+pkgconfig==1.5.5
+platformdirs @ file:///home/conda/feedstock_root/build_artifacts/platformdirs_1726613481435/work
+pooch @ file:///home/conda/feedstock_root/build_artifacts/pooch_1717777836653/work
+pycparser @ file:///home/conda/feedstock_root/build_artifacts/pycparser_1636257122734/work
+pyOpenSSL @ file:///home/conda/feedstock_root/build_artifacts/pyopenssl_1722587090966/work
+pyparsing==3.0.9
+PyQt5==5.15.4
+PyQt5-sip==12.9.0
+PySocks @ file:///home/conda/feedstock_root/build_artifacts/pysocks_1661604839144/work
+python-dateutil==2.8.2
+reportlab @ file:///home/conda/feedstock_root/build_artifacts/reportlab_1682601113267/work
+requests @ file:///home/conda/feedstock_root/build_artifacts/requests_1656534056640/work
+scipy @ file:///home/conda/feedstock_root/build_artifacts/scipy-split_1683900206454/work/base/dist/scipy-1.10.1-cp38-cp38-linux_x86_64.whl#sha256=13ab5c17dedeb97a65ba90de1c51475f2d3ae0fe50bc43e9b018cc2943541de4
+signalp6 @ file:///srv/projects3/julian/jingzhao/J5348/1_bin/psr_analysis/signalp6_slow_sequential/signalp-6-package
+sip @ file:///home/conda/feedstock_root/build_artifacts/sip_1646101181167/work
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
+toml @ file:///home/conda/feedstock_root/build_artifacts/toml_1604308577558/work
+torch==1.13.1
+tqdm==4.64.1
+typing_extensions==4.13.2
+urllib3==1.26.12
