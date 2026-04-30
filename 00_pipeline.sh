@@ -7,10 +7,19 @@
 #   Pyrodigal-annotated genome bins, distinguishing true PsrA from functional
 #   homologues (PhsA, TtrA, SoeA, SreA) that share the Mo-bisPGD domain.
 #
-#   TWO INPUT MODES:
-#   A) --ids supplied : classify a specific list of pre-annotated candidates
-#   B) --ids omitted  : scan ALL bins with PF00384 (Mo-bisPGD) first
-#                       USE THIS MODE if you distrust annotation completeness.
+#   THREE INPUT MODES:
+#   A) --ids supplied         : classify a specific list of pre-annotated candidates
+#   B) --ids omitted          : scan ALL bins with PF00384 (Mo-bisPGD) only
+#   C) --ids omitted + --hmss2: dual-gate scan — PF00384 UNION PsrAPhsASreA.hmm
+#                               (RECOMMENDED — catches divergent PsrA missed by PF00384)
+#
+#   In Mode C, Step 0c runs PsrAPhsASreA.hmm across all proteins before the
+#   neighbourhood extraction. The final candidate set is the UNION of PF00384
+#   and HMSS2 hits. Each candidate is tagged with its discovery_source
+#   (PF00384_only | HMSS2_only | both) which flows through to the final table.
+#   Candidates discovered only by HMSS2 (PsrAPhsASreA.hmm) enter the same
+#   scoring pipeline as PF00384 candidates — no score penalty is applied —
+#   but their source is visible in classification_table.tsv for manual review.
 #
 #   RE-RUN CONTROL (sentinel-based):
 #   Each step writes logs/stepNN.done on success. On re-run, steps with an
@@ -37,12 +46,17 @@
 #   conda install -c bioconda hmmer seqkit mafft trimal iqtree biopython requests
 #
 # USAGE:
-#   # Full run (Mode B)
+#   # Full run, dual-gate discovery (Mode C — recommended)
 #   bash 00_pipeline.sh \
 #       --bindir    /path/to/bins \
 #       --pfam      /path/to/Pfam-A.hmm \
+#       --hmss2     /path/to/HMSS2/Hidden_Markov_Models/Inorganic_Sulfur_Metabolism \
 #       --deeptmhmm /path/to/DeepTMHMM-Academic-License-v1.0 \
 #       --outdir    results/psr_analysis
+#
+#   # PF00384-only scan (Mode B)
+#   bash 00_pipeline.sh \
+#       --bindir /path/to/bins --pfam /path/to/Pfam-A.hmm --outdir results/psr_analysis
 #
 #   # Re-run from step 7 (e.g. after adding references)
 #   bash 00_pipeline.sh [same args] --redo-from 7
@@ -110,7 +124,7 @@ SENTINEL_DIR="$OUTDIR/logs"
 
 _sentinel_name() {
     # If the argument is a plain integer, zero-pad it; otherwise use as-is.
-    # e.g. 3 → step03.done   3b → step3b.done
+    # e.g. 3 → step03.done   3b → step3b.done   0c → step0c.done
     local s="$1"
     if [[ "$s" =~ ^[0-9]+$ ]]; then
         printf "step%02d.done" "$s"
@@ -131,7 +145,9 @@ step_clear() {
         local f="$SENTINEL_DIR/step$(printf '%02d' "$n").done"
         [[ -f "$f" ]] && { rm "$f"; cleared+=("$n"); }
     done
-    # Also clear 3b if redoing step 3 or later
+    # Clear alphanumeric step sentinels when redoing from their parent step or earlier
+    [[ "$from" -le 0 && -f "$SENTINEL_DIR/step0c.done" ]] && \
+        rm "$SENTINEL_DIR/step0c.done" && cleared+=("0c")
     [[ "$from" -le 3 && -f "$SENTINEL_DIR/step3b.done" ]] && \
         rm "$SENTINEL_DIR/step3b.done" && cleared+=("3b")
     # Also clear fast-tree sentinel if redoing step 8 or later
@@ -149,8 +165,17 @@ elif [[ -n "$REDO_STEP" ]]; then
     step_clear "$REDO_STEP"
 fi
 
+# Determine discovery mode label for logging
+if [[ -n "$QUERY_IDS" ]]; then
+    MODE_LABEL="A (supplied IDs)"
+elif [[ -n "$HMSS2_DIR" ]]; then
+    MODE_LABEL="C (PF00384 + HMSS2 dual-gate)"
+else
+    MODE_LABEL="B (PF00384 scan only)"
+fi
+
 log "=== PsrABC Identification Pipeline ==="
-log "Mode         : $([ -n "$QUERY_IDS" ] && echo 'A (supplied IDs)' || echo 'B (PF00384 scan)')"
+log "Mode         : $MODE_LABEL"
 log "Bin dir      : $BIN_DIR"
 log "Pfam HMM     : $PFAM_DB"
 log "Output dir   : $OUTDIR"
@@ -220,15 +245,19 @@ else
 fi
 
 # =============================================================================
-# STEP 0b (Mode B): PF00384 scan
+# STEP 0b (Mode B/C): PF00384 scan across all proteins
 # =============================================================================
 QUERY_IDS_RESOLVED="$QUERY_IDS"
 
+PF00384_IDS="$OUTDIR/00_scan/PF00384_candidates.txt"
+HMSS2_IDS="$OUTDIR/00_scan/HMSS2_prescreen_candidates.txt"
+MERGED_IDS="$OUTDIR/00_scan/merged_candidates.txt"
+DISCOVERY_SOURCE="$OUTDIR/00_scan/discovery_source.tsv"
+
 if [[ -z "$QUERY_IDS" ]]; then
-    GENERATED_IDS="$OUTDIR/00_scan/MoBisPGD_candidates.txt"
     if step_done 0; then
         skip "0b — PF00384 scan"
-        QUERY_IDS_RESOLVED="$GENERATED_IDS"
+        QUERY_IDS_RESOLVED="$MERGED_IDS"
     else
         log "--- STEP 0b: PF00384 scan across all proteins ---"
         PF00384_HMM_SCAN="$OUTDIR/00_scan/PF00384.hmm"
@@ -242,15 +271,134 @@ if [[ -z "$QUERY_IDS" ]]; then
             > "$OUTDIR/00_scan/PF00384_all_hmmsearch.out"
 
         awk '!/^#/ {print $1}' "$OUTDIR/00_scan/PF00384_all_hits.tbl" \
-            | sort -u > "$GENERATED_IDS"
-        N_HITS=$(wc -l < "$GENERATED_IDS")
-        log "  $N_HITS Mo-bisPGD candidates → $GENERATED_IDS"
-        [[ "$N_HITS" -eq 0 ]] && err "No hits found. Check --evalue or Pfam DB."
+            | sort -u > "$PF00384_IDS"
+        N_PF=$(wc -l < "$PF00384_IDS")
+        log "  $N_PF Mo-bisPGD candidates (PF00384) → $PF00384_IDS"
+        [[ "$N_PF" -eq 0 ]] && err "No PF00384 hits found. Check --evalue or Pfam DB."
+
         step_mark 0
-        QUERY_IDS_RESOLVED="$GENERATED_IDS"
+        # QUERY_IDS_RESOLVED set after Step 0c below (Mode C) or here (Mode B)
     fi
 else
     skip "0b — Mode A (--ids supplied)"
+fi
+
+# =============================================================================
+# STEP 0c (Mode C only): HMSS2 PsrAPhsASreA pre-screen across all proteins
+#
+# PURPOSE: Cast a second, independent net using a clade-specific HMM to catch
+# divergent PsrA sequences that fall below PF00384's detection threshold.
+# The final candidate set entering Step 1 is PF00384 UNION HMSS2 hits.
+#
+# Candidates are tagged by discovery_source:
+#   both        — hit both PF00384 and PsrAPhsASreA.hmm (highest confidence)
+#   PF00384_only — hit PF00384 only
+#   HMSS2_only  — hit PsrAPhsASreA.hmm only (most important to review manually)
+#
+# This source tag flows through to classification_table.tsv as a column.
+# HMSS2_only candidates are highlighted in the HTML output.
+#
+# NOTE: Step 0c runs ONLY in Mode C (--hmss2 supplied AND --ids omitted).
+#       In Mode A or B, MERGED_IDS == PF00384_IDS and all sources == PF00384_only.
+# =============================================================================
+if [[ -z "$QUERY_IDS" ]]; then
+    if [[ -n "$HMSS2_DIR" && -d "$HMSS2_DIR" ]]; then
+        if step_done 0c; then
+            skip "0c — HMSS2 PsrAPhsASreA pre-screen"
+            QUERY_IDS_RESOLVED="$MERGED_IDS"
+        else
+            log "--- STEP 0c: HMSS2 PsrAPhsASreA pre-screen (Mode C dual-gate) ---"
+            PSRA_HMM="$HMSS2_DIR/PsrAPhsASreA.hmm"
+            [[ -f "$PSRA_HMM" ]] || err "PsrAPhsASreA.hmm not found in $HMSS2_DIR"
+
+            hmmsearch --cpu "$THREADS" \
+                --tblout "$OUTDIR/00_scan/HMSS2_PsrAPhsASreA_all_hits.tbl" \
+                -E "$PF00384_EVALUE" \
+                "$PSRA_HMM" "$ALL_PROTEINS_FAA" \
+                > "$OUTDIR/00_scan/HMSS2_PsrAPhsASreA_hmmsearch.out"
+
+            awk '!/^#/ {print $1}' "$OUTDIR/00_scan/HMSS2_PsrAPhsASreA_all_hits.tbl" \
+                | sort -u > "$HMSS2_IDS"
+            N_HMSS2=$(wc -l < "$HMSS2_IDS")
+            log "  $N_HMSS2 candidates from PsrAPhsASreA.hmm → $HMSS2_IDS"
+
+            # Merge PF00384 + HMSS2 hits; build discovery_source table
+            python3 - <<'PYEOF' "$PF00384_IDS" "$HMSS2_IDS" "$MERGED_IDS" "$DISCOVERY_SOURCE"
+import sys
+pf_path, hmss2_path, merged_path, src_path = sys.argv[1:]
+
+with open(pf_path)    as fh: pf_ids    = set(l.strip() for l in fh if l.strip())
+with open(hmss2_path) as fh: hmss2_ids = set(l.strip() for l in fh if l.strip())
+
+all_ids = pf_ids | hmss2_ids
+n_both       = len(pf_ids & hmss2_ids)
+n_pf_only    = len(pf_ids - hmss2_ids)
+n_hmss2_only = len(hmss2_ids - pf_ids)
+
+with open(merged_path, "w") as fh:
+    for pid in sorted(all_ids):
+        fh.write(pid + "\n")
+
+with open(src_path, "w") as fh:
+    fh.write("protein_id\tdiscovery_source\n")
+    for pid in sorted(all_ids):
+        in_pf    = pid in pf_ids
+        in_hmss2 = pid in hmss2_ids
+        if in_pf and in_hmss2:
+            src = "both"
+        elif in_pf:
+            src = "PF00384_only"
+        else:
+            src = "HMSS2_only"
+        fh.write(f"{pid}\t{src}\n")
+
+print(f"  PF00384 hits     : {len(pf_ids)}")
+print(f"  HMSS2 hits       : {len(hmss2_ids)}")
+print(f"  Both             : {n_both}")
+print(f"  PF00384_only     : {n_pf_only}")
+print(f"  HMSS2_only       : {n_hmss2_only}  ← new candidates not in PF00384 scan")
+print(f"  Total (union)    : {len(all_ids)}")
+PYEOF
+
+            N_MERGED=$(wc -l < "$MERGED_IDS")
+            log "  $N_MERGED total candidates after union → $MERGED_IDS"
+            log "  Discovery source table → $DISCOVERY_SOURCE"
+            step_mark 0c
+            QUERY_IDS_RESOLVED="$MERGED_IDS"
+        fi
+    else
+        # Mode B: no HMSS2, PF00384 only — write trivial discovery_source and merged
+        if [[ ! -f "$MERGED_IDS" ]]; then
+            cp "$PF00384_IDS" "$MERGED_IDS"
+            python3 - <<'PYEOF' "$PF00384_IDS" "$DISCOVERY_SOURCE"
+import sys
+pf_path, src_path = sys.argv[1:]
+with open(pf_path) as fh:
+    ids = [l.strip() for l in fh if l.strip()]
+with open(src_path, "w") as fh:
+    fh.write("protein_id\tdiscovery_source\n")
+    for pid in ids:
+        fh.write(f"{pid}\tPF00384_only\n")
+PYEOF
+            log "  Mode B: discovery_source set to PF00384_only for all candidates"
+        fi
+        QUERY_IDS_RESOLVED="$MERGED_IDS"
+        [[ -n "$HMSS2_DIR" ]] && warn "HMSS2 dir not found: $HMSS2_DIR — running as Mode B"
+    fi
+else
+    # Mode A: --ids supplied; write trivial discovery_source from supplied IDs
+    if [[ ! -f "$DISCOVERY_SOURCE" ]]; then
+        python3 - <<'PYEOF' "$QUERY_IDS" "$DISCOVERY_SOURCE"
+import sys
+ids_path, src_path = sys.argv[1:]
+with open(ids_path) as fh:
+    ids = [l.strip() for l in fh if l.strip() and not l.startswith("#")]
+with open(src_path, "w") as fh:
+    fh.write("protein_id\tdiscovery_source\n")
+    for pid in ids:
+        fh.write(f"{pid}\tsupplied\n")
+PYEOF
+    fi
 fi
 
 # =============================================================================
@@ -332,11 +480,14 @@ else
 fi
 
 # =============================================================================
-# STEP 3b: HMSS2 HMM searches (optional — annotation only, not scored)
+# STEP 3b: HMSS2 HMM searches (annotation + neighbourhood subunit scoring)
 # Profiles searched:
 #   vs candidates.faa  : PsrAPhsASreA, SoeA, TtrA
 #   vs neighbours.faa  : PsrBPhsBSreB, PsrCPhsCSreC, SoeB, SoeC, TtrB, TtrC
-# Results are annotation columns in the final table only — not used in scoring.
+#
+# NOTE: SoeA.hmm hits contribute to scoring in 06_build_summary.py (−3 penalty
+# applied to candidates with a SoeA.hmm hit). All other HMSS2 hits are
+# annotation columns only — not used in scoring.
 # =============================================================================
 HMSS2_OUT="$OUTDIR/03_hmmer/hmss2"
 
@@ -344,7 +495,7 @@ if [[ -n "$HMSS2_DIR" && -d "$HMSS2_DIR" ]]; then
     if step_done 3b; then
         skip "3b — HMSS2 HMM searches"
     else
-        log "--- STEP 3b: HMSS2 HMM searches (annotation only) ---"
+        log "--- STEP 3b: HMSS2 HMM searches ---"
         mkdir -p "$HMSS2_OUT"
 
         # Profiles to run against candidate (catalytic subunit) FAA
@@ -571,16 +722,17 @@ if step_done 9; then
 else
     log "--- STEP 9: Classification summary ---"
     python3 scripts/06_build_summary.py \
-        --ids           "$QUERY_IDS_RESOLVED" \
-        --psrA_faa      "$CANDIDATES_FAA" \
-        --nrfd_hits     "$OUTDIR/03_hmmer/PF03916_hits.tbl" \
-        --topology_dir  "$OUTDIR/04_topology" \
-        --signalp_dir   "$OUTDIR/05_signalp" \
-        --treefile      "${TREE_PREFIX}.treefile" \
-        --references    "$OUTDIR/06_references/reference_metadata.tsv" \
-        --protein_index "$PROTEIN_INDEX" \
-        --hmss2_dir     "$HMSS2_OUT" \
-        --outdir        "$OUTDIR/09_summary"
+        --ids              "$QUERY_IDS_RESOLVED" \
+        --psrA_faa         "$CANDIDATES_FAA" \
+        --nrfd_hits        "$OUTDIR/03_hmmer/PF03916_hits.tbl" \
+        --topology_dir     "$OUTDIR/04_topology" \
+        --signalp_dir      "$OUTDIR/05_signalp" \
+        --treefile         "${TREE_PREFIX}.treefile" \
+        --references       "$OUTDIR/06_references/reference_metadata.tsv" \
+        --protein_index    "$PROTEIN_INDEX" \
+        --discovery_source "$DISCOVERY_SOURCE" \
+        --hmss2_dir        "$HMSS2_OUT" \
+        --outdir           "$OUTDIR/09_summary"
     step_mark 9
 fi
 
@@ -590,9 +742,10 @@ fi
 log "=== Pipeline complete ==="
 log ""
 log "Key outputs:"
-log "  Candidates : $CANDIDATES_FAA"
-log "  Tree       : ${TREE_PREFIX}.treefile"
-log "  Summary    : $OUTDIR/09_summary/classification_table.tsv"
+log "  Candidates      : $CANDIDATES_FAA"
+log "  Discovery source: $DISCOVERY_SOURCE"
+log "  Tree            : ${TREE_PREFIX}.treefile"
+log "  Summary         : $OUTDIR/09_summary/classification_table.tsv"
 log ""
 log "Sentinel status:"
 for n in 0 1 2 3 4 5 6 7 8 9; do
@@ -601,8 +754,10 @@ for n in 0 1 2 3 4 5 6 7 8 9; do
         && echo -e "  ${GREEN}✓ step $n${NC}" \
         || echo -e "  ${YELLOW}✗ step $n${NC}"
 done
-[[ -f "$SENTINEL_DIR/step3b.done" ]] && echo -e "  ${GREEN}✓ step 3b (HMSS2)${NC}" \
-    || { [[ -n "$HMSS2_DIR" ]] && echo -e "  ${YELLOW}✗ step 3b (HMSS2)${NC}"; }
+[[ -f "$SENTINEL_DIR/step0c.done" ]] && echo -e "  ${GREEN}✓ step 0c (HMSS2 pre-screen)${NC}" \
+    || { [[ -n "$HMSS2_DIR" ]] && echo -e "  ${YELLOW}✗ step 0c (HMSS2 pre-screen)${NC}"; }
+[[ -f "$SENTINEL_DIR/step3b.done" ]] && echo -e "  ${GREEN}✓ step 3b (HMSS2 annotation)${NC}" \
+    || { [[ -n "$HMSS2_DIR" ]] && echo -e "  ${YELLOW}✗ step 3b (HMSS2 annotation)${NC}"; }
 [[ -f "$SENTINEL_DIR/step8f.done" ]] && echo -e "  ${GREEN}✓ step 8 fast${NC}"
 echo ""
 [[ -f "$OUTDIR/04_topology/.manual_step_required" ]] && \
