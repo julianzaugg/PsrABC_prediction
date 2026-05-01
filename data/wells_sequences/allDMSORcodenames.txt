@@ -1,0 +1,4180 @@
+Meiocerb = Meiothermus cerbereus DSM 11376
+
+Oceaprof = Oceanithermus profundus DSM 14977
+
+Thermusbroc = Thermus brockianus GE-1
+
+Thermuscald = Thermus caliditerrae YIM 77777
+
+Thermusoshi = Thermus oshimai JL-2
+
+Thermusscot = Thermus scotoductus SA-01
+
+Thermusteng = Thermus tengchongensis YIM 77401
+
+Bacilbeve= Bacillus beveridgei MLTeJB
+
+Bacilpers = Bacillus persicus DSM 25386
+
+Bacilselena = Bacillus selenatarsenatis SF-1
+
+Bacilseleni = Bacillus selenitireducens MLS10
+
+Bacilsubt = Bacillus subterraneus MITOT1
+
+Brocklith = Brockia lithotrophica DSM 22653
+
+Carbferr = Carboxydothermus ferrireducens DSM 11255
+
+Carbhydr = Carboxydothermus hydrogenoformans Z-2901
+
+Desulfitialka = Desulfitibacter alkalitolerans DSM 16504
+
+Desulfitochlo = Desulfitobacterium chlororespirans DSM 11544
+
+Desulfitodeha = Desulfitobacterium dehalogenans JW/IU-DC1 
+
+Desulfitohafn = Desulfitobacterium hafniense PCP-1
+
+Desulfoacid = Desulfosporosinus acidiphilus SJ4
+
+Desulfolacu = Desulfosporosinus lacus DSM 15449
+
+Desulfoorie = Desulfosporosinus orientis Singapore I
+
+Desulfoyoun = Desulfosporosinus youngiae JW/YJL-B18
+
+Desulfuralka = Desulfuribacillus alkaliarsenatis
+
+Desulfurstib = Desulfuribacillus stibiiarsenatis MLFW-2
+
+Massilmass = Massilibacillus massiliensis Marseille-P2411
+
+Moormuld = Moorella mulderi DSM 14980
+
+Moortherm = Moorella thermoacetica DSM 11768
+
+Salipaaura = Salipaludibacillus auranticus S9
+
+Salisehalo = Salisediminibacterium haloalkalitolerans 10nlg
+
+Sporoltherm = Sporolituus thermophilus DSM 23256
+
+Sporomacid = Sporomusa acidovorans DSM 3132
+
+Tepiddeca = Tepidibacillus decaturensis Z9
+
+Thermantoyo = Thermanaeromonas toyohensis ToBE
+
+Thermicanaegy = Thermicanus aegyptius DSM 12793
+
+Thermosynlipo = Thermosyntropha lipolytica DSM 11003
+
+Caldinitro = Calditerrivibrio nitroreducens Yu37-1
+
+Deferridesulf = Deferribacter desulfuricans SSM1
+
+Denitroacet = Denitrovibrio acetiphilus N2460
+
+Flexisinu = Flexistipes sinusarabici MAS10
+
+Thermodesulfcomm = Thermodesulfobacterium commune DSM 2178
+
+Thermodesulftherm = Thermodesulfobacterium thermophilum DSM 1276
+
+Desulfuriindi = Desulfurispirillum indicum S5
+
+Thermoflexhuge = Thermoflexus hugenholtzii JAD2
+
+Adlerequo = Adlercreutzia equolifaciens DSM 19450
+
+Asacchcela = Asaccharobacter celatus DSM 18785
+
+Cryptocurt = Cryptobacterium curtum DSM 15641
+
+Eggerlent = Eggerthella lenta VPI 0255
+
+Eggertimon = Eggerthella timonensis Marseille-P3135
+
+Enterorhabcaec = Enterorhabdus caecimuris B7
+
+Gordonpame = Gordonibacter pamelaeae DSM 19378
+
+Gordonurol = Gordonibacter urolithinfaciens DSM 27213
+
+Senegalanae = Senegalimassilia anaerobia JC110
+
+Slackexig = Slackia exigua ATCC 700122
+
+Slackpiri = Slackia piriformis YIT 12062
+
+Opituterr = Opitutus terrae PB90-1
+
+Chlorobchlor = Chlorobium chlorochromatii CaD3
+
+Chloroblimni = Chlorobium limnicola DSM 245
+
+Chlorobphae = Chlorobium phaeobacteroides BS1
+
+Pelodictphaeo = Pelodictyon phaeoclathratiforme BU-1
+
+Ignavialbum = Ignavibacterium album JCM 16511
+
+Meliorirose = Melioribacter roseus P3M
+
+Flexidoroth = Flexithrix dorotheae DSM 6795
+
+Hyunjeju = Hyunsoonleella jejuensis DSM 21035
+
+Jejupall = Jejuia pallidilutea DSM 21165
+
+Labilifili = Labilibaculum filiforme
+
+Labilimangan = Labilibaculum manganireducens
+
+Lutiagar = Lutibacter agarilyticus DSM 29150
+
+Lutiflav = Lutibacter flavus DSM 27993
+
+Lutimariti = Lutibacter maritimus DSM 24450
+
+Lutiocean = Lutibacter oceani 325-5
+
+Mangrovimarin = Mangrovibacterium marinum DSM 28823
+
+Maripoly = Maribacter polysiphoniae DSM 23514
+
+Marinifrag = Marinifilum fragile JCM 15579
+
+Prolixibell = Prolixibacter bellariivorans
+
+Prolixidenitr = Prolixibacter denitrificans DSM 27267
+
+Salinimicrosedimin = Salinimicrobium sediminis
+
+Sunxellipt = Sunxiuqinia elliptica
+
+Geothrifermen = Geothrix fermentans DSM 14018
+
+Campyconc = Campylobacter concisus ATCC 33237
+
+Campycurv = Campylobacter curvus DSM 6644
+
+Campyhelv = Campylobacter helveticus ATCC 51209
+
+Campysubant = Campylobacter subantarcticus RM8521
+
+Helicocanad = Helicobacter canadensis ATCC 700968
+
+Helicowin = Helicobacter winghamensis
+
+Hydrogenithermo = Hydrogenimonas thermophila EP1-55-1
+
+Sulfurimauto = Sulfurimonas autotrophica OK10
+
+Sulfurosparsen = Sulfurospirillum arsenophilum NBRC 109478
+
+Sulfurospbarn = Sulfurospirillum barnesii SES-3
+
+Sulfurospdeley = Sulfurospirillum deleyianum 5175
+
+Sulfurospmulti = Sulfurospirillum multivorans DSM 12446
+
+Wolinsucc = Wolinella succinogenes DSM 1740
+
+Desulfomtied = Desulfomonile tiedjei DCB-1
+
+Desulfonatromagn = Desulfonatronovibrio magnus AHT22
+
+Desulfovafri = Desulfovibrio africanus DSM 2603
+
+Desulfovalas = Desulfovibrio alaskensis G20
+
+Desulfovalkal = Desulfovibrio alkalitolerans DSM 16529
+
+Desulfovfrig = Desulfovibrio frigidus DSM 17176
+
+Desulfurivalkal = Desulfurivibrio alkaliphilus AHT2
+
+Desulfuromacet = Desulfuromonas acetexigens DSM 1397
+
+Desulfuromsoud = Desulfuromonas soudanensis WTL
+
+Geopsychroelect = Geopsychrobacter electrodiphilus DSM 16401
+
+Hippealvi = Hippea alviniae DSM 24586
+
+Hippejason = Hippea jasoniae Mar08-272r
+
+Pseudodesulfindi = Pseudodesulfovibrio indicus J2
+
+Pseudodesulfprof = Pseudodesulfovibrio profundus 500-1
+
+Acidicrypt = Acidiphilium cryptum JF-5
+
+Acidimulti = Acidiphilium multivorum AIU301
+
+Alkaliehrli = Alkalilimnicola ehrlichii MLHE-1
+
+Citroamalon = Citrobacter amalonaticus GTA-817-RBA-P2
+
+Citrobraak = Citrobacter braakii GTA-CB01
+
+Citrofreund = Citrobacter freundii UCI 32
+
+Citropasteur = Citrobacter pasteurii CIP 55.13
+
+Cosenmyxo = Cosenzaea myxofaciens ATCC 19692
+
+Edwardpisc = Edwardsiella piscicida JF1305
+
+Edwardtard = Edwardsiella tarda EIB202
+
+Eschercoli = Escherichia coli SE11
+
+Ferrifutt = Ferrimonas futtsuensis DSM 18154
+
+Ferrikyon = Ferrimonas kyonanensis DSM 18153
+
+Ferrisedi = Ferrimonas sediminum DSM 23317
+
+Ferrisent = Ferrimonas senticii DSM 18821
+
+Halorhodhalo = Halorhodospira halophila SL1
+
+Protcolumb = Proteus columbae 08MAS2615
+
+Protmira = Proteus mirabilis PRO3
+
+Protvulg = Proteus vulgaris CSUR P1868
+
+Salmonbong = Salmonella bongori NCTC 12419
+
+Salmonenter = Salmonella enterica enterica sv. Typhimurium LT2
+
+Shewanamaz = Shewanella amazonensis SB2B
+
+Shewanbalt = Shewanella baltica OS223
+
+Shewandecol = Shewanella decolorationis S12
+
+Shewanonei = Shewanella oneidensis MR-1
+
+Thioalkpara = Thioalkalivibrio paradoxus ARh1
+
+Thiolidisc = Thiolinea disciformis DSM 14473
+
+Thiothrcald = Thiothrix caldifontis DSM 21228
+
+Thiothrnivea = Thiothrix nivea JP2
+
+Trabguam = Trabulsiella guamensis ATCC 49490
+
+Archaefulg = Archaeoglobus fulgidis VC-16 DSM 4304
+
+Halanaerosulf = Halanaeroarchaeum sulfurireducens
+
+Halobinitrat = Halobiforma nitratireducens JCM 10879
+
+Halodesulfurform = Halodesulfurarchaeum formicicum HSR6
+
+Halaprisali = Halapricum salinum CBA1105
+
+Haloruvacuo = Halorubrum vacuolatum DSM 8800
+
+Natronogreg = Natronobacterium gregoryi SP2
+
+Pyroaero = Pyrobaculum aerophilum IM2
+
+Pyroarsen = Pyrobaculum arsenaticum PZ6
+
+Pyroisla = Pyrobaculum islandicum DSM 4184
+
+Pyroneutro = Pyrobaculum neutrophilum V24Sta
+
+Thermoficarbox = Thermofilum carboxyditrophus 1505
+
+Thermofipen = Thermofilum pendens Hrk 5
+
+Thermusarci = Thermus arciformis
+
+Thermusfili = Thermus filiformis ATCC 43280
+
+Anaerobacarsen = Anaerobacillus arseniciselenatis DSM 15340
+
+Aneurinibacterr = Aneurinibacillus terranovensis DSM 18919
+
+Calderimari = Calderihabitans maritimus KKC1
+
+Carboxydocelsporo = Carboxydocella sporoproducens DSM 16521
+
+Desulfitometa = Desulfitobacterium metallireducens DSM 15288
+
+Sporomsphae = Sporomusa sphaeroides E
+
+Sulfobacacid = Sulfobacillus acidophilus NAL
+
+Thalassobaccyri = Thalassobacillus cyri CCM7597
+
+Virgibacchig = Virgibacillus chiguensis
+
+Virgibachalo = Virgibacillus halodenitrificans 1806
+
+Ardentmari = Ardenticatena maritima 110S
+
+Caldilinaero = Caldilinea aerophila DSM 14535
+
+Chloroflexaggre = Chloroflexus aggregans DSM 9485
+
+Chloroflexaura = Chloroflexus aurantiacus J-10-fl
+
+Arabmassil = Arabia massiliensis Marseille-P3078
+
+Thermogutterri = Thermogutta terrifontis R1
+
+Arconitro = Arcobacter nitrofigilis DSM 7299
+
+Campygeo = Campylobacter geochelonis RC11
+
+Campyshow = Campylobacter showae RM3277
+
+Sulfurospcavo = Sulfurospirillum cavolei NBRC 109482
+
+Anaeromyxdehal = Anaeromyxobacter dehalogenans 2CP-C
+
+Desulfainfer = Desulfacinum infernum DSM 9756
+
+Desulfolunspon = Desulfoluna spongiiphila AA1
+
+Desulfomiapsh = Desulfomicrobium apsheronum DSM 5918
+
+Desulfovdesulf = Desulfovibrio desulfuricans ND132
+
+Desulfovmagn = Desulfovibrio magneticus RS-1
+
+Desulfovmexi = Desulfovibrio mexicanus DSM 13116
+
+Desulfurelamil = Desulfurella amilsii TR1
+
+Desulfuromukysi = Desulfuromusa kysingii DSM 7343
+
+Dissulfurtherm = Dissulfuribacter thermophilus S69
+
+Geoalkalisubt = Geoalkalibacter subterraneus Red1
+
+Geobacdalt = Geobacter daltonii FRC-32
+
+Geobacuran = Geobacter uraniireducens Rf4
+
+Pelobacselen = Pelobacter seleniigenes DSM 18267
+
+Pseudodesulfpiez = Pseudodesulfovibrio piezophilus
+
+Achromarsen = Achromobacter arsenitoxydans SY8
+
+Achromdenit = Achromobacter denitrificans USDA-ARS-USMARC-56712
+
+Achrommarp = Achromobacter marplatensis CECT 7342
+
+Achromxylo = Achromobacter xylosoxidans KCJK1732
+
+Acidocaen = Acidovorax caeni DSM 19327
+
+Acidodefluv = Acidovorax defluvii DSM 12644
+
+Alcalfaec = Alcaligenes faecalis P156
+
+Aromaroma = Aromatoleum aromaticum EbN1
+
+Azoacomm = Azoarcus communis DSM 12120
+
+Azosporyz = Azospira oryzae PS
+
+Bordebronch = Bordetella bronchiseptica E010
+
+Bordepara = Bordetella parapertussis 12822
+
+Brachydenitr = Brachymonas denitrificans DSM 15123
+
+Comamoaqua = Comamonas aquatica NBRC 14918
+
+Comamogran = Comamonas granuli NBRC 101663
+
+Comamotest = Comamonas testosteroni KF-1
+
+Comamothio = Comamonas thiooxydans DSM 17888
+
+Dechloroagit = Dechloromonas agitata is5
+
+Delftacid = Delftia acidovorans 2167
+
+Delfttsur = Delftia tsuruhatensis LMG 29104
+
+Diaphopoly = Diaphorobacter polyhydroxybutyrativorans SL-205
+
+Janthinlivi = Janthinobacterium lividum H-24
+
+Janthinsval = Janthinobacterium svalbardensis PAMC 27463
+
+Laribachong = Laribacter hongkongensis HLHK9
+
+Oryziprop = Oryzisolibacter propanilivorax EPL6
+
+Paenalhomin = Paenalcaligenes hominis
+
+Thauarom = Thauera aromatica K172
+
+Thauhumi = Thauera humireducens SgZ-1
+
+Thauprop = Thauera propionica KNDSS-Mac4
+
+Thauterp = Thauera terpenica 58Eu
+
+Thiobacdenitr = Thiobacillus denitrificans ATCC 25259
+
+Azospirbras = Azospirillum brasilense DSM 1690
+
+Azospirhalo = Azospirillum halopraeferens DSM 3675
+
+Azospirlipo = Azospirillum lipoferum R1C
+
+Azospirthio = Azospirillum thiophilum DSM 21654
+
+Breogcorru = Breoghania corrubedonensis DSM 23382
+
+Caenispbisa = Caenispirillum bisanense USBA 140
+
+Caenispsali = Caenispirillum salinarum AK4
+
+Celeribacethan = Celeribacter ethanolicus NH195
+
+Cohaesibacmaris = Cohaesibacter marisflavi CGMCC 1.9157
+
+Falsochroovis = Falsochrobactrum ovis DSM 26720
+
+Nesiotoexal = Nesiotobacter exalbescens DSM 16456
+
+Pelagiabys = Pelagibaca abyssi JLT2014
+
+Pseudaminosali = Pseudaminobacter salicylatoxidans KCT001
+
+Pseudodongxiam = Pseudodonghicola xiamenensis DSM 18339
+
+Pseudoviasci = Pseudovibrio ascidiaceicola DSM 16392
+
+Pseudovidenitr = Pseudovibrio denitrificans DSM 17465
+
+Rubritfloc = Rubritepida flocculans DSM 14296
+
+Salipthio = Salipiger thiooxidans DSM 10146
+
+Thioclaindi = Thioclava indica DT23-4
+
+Thiocalpaci = Thioclava pacifica DSM 10166
+
+Aliiviloge = Aliivibrio logei 1S159
+
+Aliiviwodan = Aliivibrio wodanis 06/09/139
+
+Arhodoaqua = Arhodomonas aquaeolei DSM 8974
+
+Atlantibacherm = Atlantibacter hermannii NBRC 105704
+
+Buttiaferr = Buttiauxella ferragutiae ATCC 51602
+
+Buttiagavi = Buttiauxella gaviniae ATCC 51604
+
+Citrofreund1 = Citrobacter freundii ATCC 8090
+
+Citroport = Citrobacter portucalensis
+
+Eschercoli1 = Escherichia coli KTE111
+
+Gallibacanat = Gallibacterium anatis 12656/12
+
+Halomonalkali = Halomonas alkaliantarctica FS-N4
+
+Halomonguda = Halomonas gudaonensis
+
+Halomonilic = Halomonas ilicicola DSM 19980
+
+Halomonmeri = Halomonas meridiana R1t3
+
+Histophsomni = Histophilus somni 129P
+
+Klebsioxyto = Klebsiella oxytoca 67
+
+Klebsipneu = >Klebsiella pneumoniae CHS121
+
+Lecleradecar = Leclercia adecarboxylata USDA-ARS-USMARC-60222
+
+Mannehaemo = Mannheimia haemolytica D35
+
+Mannevari = Mannheimia varigena USDA-ARS-USMARC-1296
+
+Marinobacarom = Marinobacter aromaticivorans D15-8P
+
+Marinospinsul = Marinospirillum insulare DSM 21763
+
+Marinospminu = Marinospirillum minutulum DSM 6287
+
+Moellwisc = Moellerella wisconsensis GTA-1455
+
+Morganmorg = Morganella morganii MRSN22709
+
+Moriteldasa = Moritella dasanensis ArB 0140
+
+Oblitialkal = Oblitimonas alkaliphila D3318
+
+Oceanimonbaum = Oceanimonas baumannii DSM 15594
+
+Oceanimonsmir = Oceanimonas smirnovii ATCC BAA-899
+
+Pasteurdagma = Pasteurella dagmatis ATCC 43325
+
+Pasteurmulto = Pasteurella multocida RIIF
+
+Photobacgang = Photobacterium ganghwense DSM 22954
+
+Photobacprof = Photobacterium profundum SS9
+
+Plasticiacid = Plasticicumulans acidivorans DSM 23606
+
+Prothaus = Proteus hauseri ZMd44
+
+Providburho = Providencia burhodogranariea DSM 19968
+
+Providrett = Providencia rettgeri Dmel1
+
+Providsnee = Providencia sneebia DSM 19967
+
+Providstua = Providencia stuartii MRSN 2154
+
+Pseudomonflex = Pseudomonas flexibilis ATCC 29606
+
+Pseudomonstutz = Pseudomonas stutzeri A1501
+
+Raoulornith = Raoultella ornithinolytica S12
+
+Sedimentthio = Sedimenticola thiotaurini SIP-G1
+
+Serratmarc = Serratia marcescens AS1
+
+Shewanalga = Shewanella algae ACDC
+
+Shewanbalt1 = Shewanella baltica OS185
+
+Shewanputre = Shewanella putrefaciens 200
+
+Thiohalomondenitr = Thiohalomonas denitrificans HLD2
+
+Vibrialgi = Vibrio alginolyticus 12G01
+
+Vibriharve = Vibrio harveyi BSW7
+
+Vibripara = >Vibrio parahaemolyticus HS-22-14
+
+Wolfahchit = Wohlfahrtiimonas chitiniclastica SH04
+
+Wolfahlarva = Wohlfahrtiimonas larvae kbl006
+
+Yokeneregen = Yokenella regensburgei ATCC 49455
+
+Archaefulg1 = Archaeoglobus fulgidus DSM 8774
+
+Halobellimi = Halobellus limi CGMCC 1.10331
+
+Halobihalo = Halobiforma haloterrestris DSM 13078
+
+Halobilaci = Halobiforma lacisalsi AJ5
+
+Halogeorufu = Halogeometricum rufum CGMCC 1.7736
+
+Halogranamylo = Halogranum amylolyticum
+
+Halolampela = >Halolamina pelagica
+
+Halolamrubra = Halolamina rubra CBA1107
+
+Halopiaswa = Halopiger aswanensis DSM 13151
+
+Haloripers = Halorientalis persicus IBRC-M 10043
+
+Halorukocu = Halorubrum kocurii JCM 14978
+
+Halorupers = Halorubrum persicum C49
+
+Halorutrap = Halorubrum trapanicum CBA1232
+
+Halorutrop = Halorubrum tropicale 5
+
+Haloterrsacch = Haloterrigena saccharevitans AB14
+
+Natronocojeot = Natronococcus jeotgali DSM 18795
+
+Aeropycami = Aeropyrum camini SY1
+
+Metallosphyello = Metallosphaera yellowstonensis MK1
+
+Pyroferri = Pyrobaculum ferrireducens 1860
+
+Pyroogun = Pyrobaculum oguniense TE7
+
+Caldiarchsubt = Caldiarchaeum subterraneum
+
+Alkaliphilmetal = Alkaliphilus metalliredigens QYMF
+
+Alkaliphilorem = Alkaliphilus oremlandii OhILAs
+
+Anaerobacalkali = Anaerobacillus alkalilacustris DSM 18345
+
+Anaerobrancalif = Anaerobranca californiensis DSM 14826
+
+Anaerovirgmulti = Anaerovirgula multivorans SCA
+
+Baciloryzi = Bacillus oryziterrae ZYK
+
+Desulfitodichlor = Desulfitobacterium dichloroeliminans LMG P-21439
+
+Desulfitohafn1 = Desulfitobacterium hafniense DCB-2
+
+Halarsensilver = Halarsenatibacter silvermanii SLAS-1
+
+Natranaerobtherm = Natranaerobius thermophilus
+
+Selenihalshrift = Selenihalanaerobacter shriftii ATCC BAA-73
+
+Tindalcalif = Tindallia californiensis APO
+
+Chyrsioarsen = Chrysiogenes arsenatis DSM 11915
+
+Actinophytxinjian = Actinophytocola xinjiangensis
+
+Alkalispiroodonto = Alkalispirochaeta odontotermitis JC202
+
+Desulfofusglyco = Desulfofustis glycolicus DSM 9705
+
+Desulfonatronospthio = Desulfonatronospira thiodismutans ASO3-1
+
+Desulfonatronlacus = Desulfonatronum lacustre Z-7951
+
+Desulfonatronthiodis = Desulfonatronum thiodismutans MLF-1
+
+Desulfonatronthiosulf = Desulfonatronum thiosulfatophilum ASO4-2
+
+Desulfopilaest = Desulfopila aestuarii DSM 18488
+
+Desulforhosigna = Desulforhopalus singaporensis DSM 12130
+
+Desulfoverhalo = Desulfovermiculus halophilus DSM 18834
+
+Geobaclovle = Geobacter lovleyi SZ
+
+Geobacthioge = Geobacter thiogenes ATCC BAA-34
+
+Azoatolu = Azoarcus tolulyticus ATCC 51758
+
+Parasuttexcre = Parasutterella excrementihominis YIT 11859
+
+Propionivibdicarb = Propionivibrio dicarboxylicus DSM 5885
+
+Turicimonmuris = Turicimonas muris YL45
+
+Magnetospirmagnet = Magnetospirillum magnetotacticum MS-1
+
+Aeromonhydro = Aeromonas hydrophila AD9
+
+Alkalispirmobile = Alkalispirillum mobile DSM 12769
+
+Ferribalea = Ferrimonas balearica PAT
+
+Halomonbolivie = Halomonas boliviensis LC1
+
+Halomonchromat = Halomonas chromatireducens AGD 8-3
+
+Marinospalkali = Marinospirillum alkaliphilum DSM 21637
+
+Marinospcelere = Marinospirillum celere DSM 18438
+
+Nitrincolacis = Nitrincola lacisaponensis 4CA
+
+Psychromonaqui = Psychromonas aquimarina ATCC BAA-1526
+
+Shewanjapon = Shewanella japonica KCTC 22435
+
+Shewanpiezo = Shewanella piezotolerans WP3
+
+Shewanwaks = Shewanella waksmanii ATCC BAA-643
+
+Thioalknitrat = Thioalkalivibrio nitratireducens DSM 14787
+
+Thioalksulfid = Thioalkalivibrio sulfidiphilus ALJ17
+
+Thioalkthiocyan = Thioalkalivibrio thiocyanodenitrificans ARhD 1
+
+Thiocaprosea = Thiocapsa rosea DSM 235
+
+Methanoperednitro = Methanoperedens nitroreducens ANME-2d
+
+Eschercoli2 = Escherichia coli K-12, MG1655
+
+Thermustherm = Thermus thermophilus HB8
+
+Desulfovdesulf1 = Desulfovibrio desulfuricans desulfuricans ATCC 27774
+
+Rhodovulsulfido = Rhodovulum sulfidophilum SH1
+
+Thauselenat = Thauera selenatis AX
+
+Ideodechlor = Ideonella dechloratans Anox B
+
+Desulfovgiga = Desulfovibrio gigas DSM 1382
+
+Shewanmassi = Shewanella massilia
+
+Rhodobacsphae = Rhodobacter sphaeroides 2.4.1
+
+Alcalfaec1 = Alcaligenes faecalis faecalis NCIB 8687
+
+Pyrococfurio = Pyrococcus furiosus DSM 3638
+
+Meiotimidus = Meiothermus timidus DSM 17022
+
+Hydrogenicaldi = Hydrogenivirga caldilitoris DSM 16510
+
+Thermocrinruber = Thermocrinis ruber DSM 23557
+
+Agrobacalberti = Agrobacterium albertimagni AOL15
+
+Agrobactume = Agrobacterium tumefaciens 5A
+
+Albidoinexpec = Albidovulum inexpectatum DSM 12048
+
+Aminoaminovor = Aminobacter aminovorans KCTC 2477
+
+Amorphcoral = Amorphus coralli DSM 19760
+
+Antarctohelio = Antarctobacter heliothermus SMS3
+
+Azospirhalo = Azospirillum halopraeferens DSM 3675
+
+Caulobacsegnis = Caulobacter segnis ATCC 21756
+
+Chelatodaeg = Chelatococcus daeguensis M3
+
+Ciceribaclivi = Ciceribacter lividus DSM 25528
+
+Consosalsi = Consotaella salsifontis USBA 369
+
+Defluvialba = Defluviimonas alba cai42
+
+Dichototherm = Dichotomicrobium thermohalophilum DSM 5002
+
+Fodinifeng = Fodinicurvata fenggangensis DSM 21160
+
+Halocynthiarcti = Halocynthiibacter arcticus PAMC 20958
+
+Humirosea = Humitalea rosea DSM 24525
+
+Mesorhizoalhagi = Mesorhizobium alhagi CCNWXJ12-2
+
+Mesorhizometali = Mesorhizobium metallidurans STM 2683
+
+Mesorhizosoli = Mesorhizobium soli JCM 19897
+
+Microvirguang = Microvirga guangxiensis CGMCC 1.7666
+
+Microvirosset = Microvirga ossetica V5/3m
+
+Mongoliterre = Mongoliimonas terrestris MIMtkB18
+
+Nitrobachamburg = Nitrobacter hamburgensis X14
+
+Oceanibacindicum = Oceanibaculum indicum P24
+
+Oceanicelacti = Oceanicella actignis DSM 24423
+
+Oceanicolalitor = Oceanicola litoreus DSM 29440
+
+Paracocsali = Paracoccus saliphilus DSM 18447
+
+Paracocserini = Paracoccus seriniphilus DSM 14827
+
+Pelagicolalitori = Pelagicola litorisediminis CECT 8287
+
+Polymorphgilvum = Polymorphum gilvum
+
+Pseudoruegluti = Pseudoruegeria lutimaris DSM 25294
+
+Rhizobium = Rhizobium sp. NT-26
+
+Rhodobaccapsul = Rhodobacter capsulatus YW2
+
+Rhodobacviri = Rhodobacter viridis JA737
+
+Roseiferment = Roseiarcus fermentans DSM 24875
+
+Roseibcalidi = Roseibaca calidilacus HL-91
+
+Roseiviisop = Roseivivax isoporae LMG 25204
+
+Roseocervi = Roseomonas cervicalis ATCC 49957
+
+Roseovagaet = Roseovarius gaetbuli CECT 8370
+
+Rubrimonclift = Rubrimonas cliftonensis DSM 15345
+
+Sinorhizameri = Sinorhizobium americanum CFNEI 156
+
+Starknovel = Starkeya novella DSM 506
+
+Tardirobini = Tardiphaga robiniae Vaf07
+
+Thalassobigelatini = Thalassobius gelatinovorus CECT 4357
+
+Tistliconsot = Tistlia consotensis USBA 355
+
+Xanthobacauto = Xanthobacter autotrophicus Py2
+
+Burkmulti = Burkholderia multivorans ATCC 17616
+
+Burkokla = Burkholderia oklahomensis C6786
+
+Burkpseudo = Burkholderia pseudomallei PB08298010
+
+Burkviet = Burkholderia vietnamiensis LMG 10929
+
+Cabaljiang = Caballeronia jiangsuensis MP-1
+
+Cabalpered = Caballeronia peredens LMG 29314
+
+Cupriabasil = Cupriavidus basilensis 4G11
+
+Eoetcaeni = Eoetvoesia caeni DSM 25520
+
+Herbaspchloro = Herbaspirillum chlorophenolicum NBRC 102525
+
+Herminarseni = Herminiimonas arsenicoxydans ULPAs1
+
+Pandorpnom = Pandoraea pnomenusa RB38
+
+Paraburkarmona = Paraburkholderia aromaticivorans BN5
+
+Paraburkphena = Paraburkholderia phenazinium LMG 2247
+
+Ralstonsolana = Ralstonia solanacearum bv. 2 T82
+
+Rhodoferferri = Rhodoferax ferrireducens T118
+
+Thiomonarseni = Thiomonas arsenitoxydans 3As
+
+Thiomoninter = Thiomonas intermedia ATCC 15466
+
+Tibetisedi = Tibeticola sediminis DSM 101684
+
+Vermineapor = Verminephrobacter aporrectodeae subsp. tuberculatae At4
+
+Amphriatlan = Amphritea atlantica DSM 18887
+
+Halomonaest = Halomonas aestuarii Hb3
+
+Marinobacsantori = Marinobacter santoriniensis NKSG1
+
+Pseudomonarseni = Pseudomonas arsenicoxydans CECT 7543
+
+Pseudomonbenzeni = Pseudomonas benzenivorans DSM 8628
+
+Pseudomonputdia = Pseudomonas putida CBB5
+
+Pseudomonstutz1 = Pseudomonas stutzeri TS44
+
+Thiocapmarina = Thiocapsa marina 5811
+
+Pyrocalidi = Pyrobaculum calidifontis JCM 11548
+
+Haloruteben = Halorubrum tebenquichense ALT-6
+
+Peptoclosacida = Peptoclostridium acidaminophilum al-2
+
+Methanococmaripa = Methanococcus maripaludis DSM 2607
+
+Methanococvannie = Methanococcus vannielii SB
+
+Thermococclitor = Thermococcus litoralis DSM 5473
+
+Thermuscaldifon = Thermus caldifontis YIM 73026
+
+Bacilmediter = Bacillus mediterraneensis Marseille-P2366
+
+Bacilniacin = Bacillus niacini NBRC 15566
+
+Bacilnoval = Bacillus novalis NBRC 102450
+
+Clostridformica = Clostridium formicaceticum A1
+
+Desulfalgibson = Desulfallas gibsoniae Groll
+
+Desulforudaudax = Desulforudis audaxviator MP104C
+
+Desulfoacididur = Desulfosporosinus acididurans M1
+
+Desulfotomaccarb = Desulfotomaculum carboxydivorans CO-1-SRB
+
+Desulfotomacrumin = Desulfotomaculum ruminis DL
+
+Propionispirarbor = Propionispira arboris DSM 2179
+
+Symbiobacthermo = Symbiobacterium thermophilum IAM 14863
+
+Syntrophomonwolfei = Syntrophomonas wolfei DSM 2245B
+
+Syntrophomonzehn = Syntrophomonas zehnderi OL-4
+
+Tepidferment = Tepidibacillus fermentans DSM 23802
+
+Thermoacetophaeum = Thermacetogenium phaeum PB
+
+Thermincopotens = Thermincola potens JR
+
+Thermodesulitiauto = Thermodesulfitimonas autotrophica DSM 102936
+
+Thermodesulfobnaru = Thermodesulfobium narugense Na82
+
+Dehalococcmccart = Dehalococcoides mccartyi MB
+
+Dehalogenialkeni = Dehalogenimonas alkenigignens IP3-3
+
+Dehalogenilykanth = Dehalogenimonas lykanthroporepellens BL-DC-9
+
+Sphaerobacthermo = Sphaerobacter thermophilus 4ac11
+
+Thermomicrobroseum = Thermomicrobium roseum DSM 5159
+
+Actinomadformo = Actinomadura formosensis NBRC 14204
+
+Actinoplanbrasil = Actinoplanes brasiliensis DSM 43805
+
+Asanoaferru = Asanoa ferruginea DSM 44099
+
+Blastococcaggre = Blastococcus aggregatus DSM 4725
+
+Dactylospor = Dactylosporangium aurantiacum NRRL B-8018
+
+Kutznerburira = Kutzneria buriramensis DSM 45791
+
+Micromonocremea = Micromonospora cremea DSM 45599
+
+Micromonoinosi = Micromonospora inositola DSM 43819
+
+Microtetraniveo = Microtetraspora niveoalba NBRC 15239
+
+Mycolicibacgood = Mycolicibacterium goodii X7B
+
+Nonomurpolychrom = Nonomuraea polychroma DSM 43925
+
+Ornithinipekin = Ornithinimicrobium pekingense DSM 21552
+
+Pseudonocardalni = Pseudonocardia alni DSM 44104
+
+Pseudonoammoni = Pseudonocardia ammonioxydans
+
+Sinomonatrocyan = Sinomonas atrocyanea KCTC 3377
+
+Streptomymegaspor = Streptomyces megasporus
+
+Thermostaphychrom = Thermostaphylospora chromogena DSM 43794
+
+Aquifexaeoli = Aquifex aeolicus VF5
+
+Hydrogenobachydrogen = Hydrogenobacter hydrogenophilus DSM 2913
+
+Hydrogenobacthermo = Hydrogenobacter thermophilus TK-6
+
+Thermovibguayma = Thermovibrio guaymasensis DSM 15521
+
+Desulfahydrotherm = Desulfacinum hydrothermale DSM 13146
+
+Desulfobacautotroph = Desulfobacterium autotrophicum HRM2
+
+Desulfobuljapon = Desulfobulbus japonicus DSM 18378
+
+Desulfocurvvexi = Desulfocurvus vexinensis DSM 17965
+
+Desulfohaloretbaen = Desulfohalobium retbaense HR100
+
+Desulfomibacula = Desulfomicrobium baculatum X
+
+Desulfonatrohydrogen = Desulfonatronovibrio hydrogenovorans DSM 9292
+
+Desulfonatronthioauto = Desulfonatronum thioautotrophicum ASO4-1
+
+Desulfonautisubmari = Desulfonauticus submarinus DSM 15269
+
+Desulfoplanformici = Desulfoplanes formicivorans Pf12B 
+
+Desulfosomacaldar = Desulfosoma caldarium DSM 22027
+
+Desulfovsalexi = Desulfovibrio salexigens DSM 2638
+
+Desulfovvulgar = Desulfovibrio vulgaris vulgaris Hildenborough
+
+Geoalkaliferri = Geoalkalibacter ferrihydriticus DSM 17813
+
+Geobacbemidjien = Geobacter bemidjiensis Bem
+
+Geobacmetalli = Geobacter metallireducens GS-15
+
+Geobacsulfur = Geobacter sulfurreducens PCA
+
+Pseudodesulfindi1 = Pseudodesulfovibrio indicus DSM 101483
+
+Syntrophobacfumaroxi = Syntrophobacter fumaroxidans MPOB
+
+Syntrophorhabaromati = Syntrophorhabdus aromaticivorans UI
+
+Afipiabroome = Afipia broomeae GAS525
+
+Azorhizocauli = Azorhizobium caulinodans ORS 571
+
+Azorhizodoebere = Azorhizobium doebereinerae
+
+Boseathiooxi = Bosea thiooxidans DSM 9653
+
+Bradyrhizocanari = Bradyrhizobium canariense GAS369
+
+Ensiferalkali = Ensifer alkalisoli YIC4027
+
+Ensiferaridi = Ensifer aridi TW10
+
+Haematobacmassili = Haematobacter massiliensis CCUG 47968
+
+Haematobacmissour = Haematobacter missouriensis CCUG 52307
+
+Inquililimosus = Inquilinus limosus DSM 16000
+
+Methyloferstella = Methyloferula stellata AR4
+
+Microvirlotono = Microvirga lotononidis WSM3557
+
+Microvirsubterr = Microvirga subterranea DSM 14364
+
+Ochrobacintermedi = Ochrobactrum intermedium J2
+
+Oligotrophcarboxi = Oligotropha carboxidovorans OM4
+
+Paracocalkeni = Paracoccus alkenifer DSM 11593
+
+Paracocpanto = Paracoccus pantotrophus DSM 2944
+
+Paracocsanuini = Paracoccus sanguinis DSM 29303
+
+Paracocthiocyan = Paracoccus thiocyanatus ATCC 700171
+
+Phyllobacbourgo = Phyllobacterium bourgognense 31-25a
+
+Phyllobacbrassi = Phyllobacterium brassicacearum STM 196
+
+Reyranelmassili = Reyranella massiliensis 521
+
+Rhizobiumfavelu = Rhizobium favelukesii OR191
+
+Rhizobiumsullae = Rhizobium sullae Hc14
+
+Sinorhizarbori = Sinorhizobium arboris LMG 14919
+
+Xanthobacauto1 = Xanthobacter autotrophicus DSM 432
+
+Alysielcrassa = Alysiella crassa DSM 2578
+
+Aquitalmagnuso = Aquitalea magnusonii DSM 25134
+
+Azonexfungi = Azonexus fungiphilus DSM 23841
+
+Burkplantari = Burkholderia plantarii ATCC 43733
+
+Cabalfortuit = Caballeronia fortuita LMG 29320
+
+Cabalgrimmi = Caballeronia grimmiae R27
+
+Chromobachaemo = Chromobacterium haemolyticum DSM 19808
+
+Chromobacpisci = Chromobacterium piscinae ND17
+
+Chromobacviola = Chromobacterium violaceum ATCC 12472
+
+Derxiagummo = Derxia gummosa DSM 723
+
+Gulbenindica = Gulbenkiania indica DSM 17901
+
+Gulbenmobili = Gulbenkiania mobilis DSM 18507
+
+Kingelnegeve = Kingella negevensis Sch538
+
+Kingelorali = Kingella oralis ATCC 51147
+
+Microvirguaerodenitri = Microvirgula aerodenitrificans DSM 15089 
+
+Noviherbadenitrifi = Noviherbaspirillum denitrificans TSA40
+
+Paraburknodosa = Paraburkholderia nodosa DSM 21604
+
+Paraburksedimini = Paraburkholderia sediminicola ES_PA-F4
+
+Paraburktuber = Paraburkholderia tuberum DUS833
+
+Paraburkxenovora = Paraburkholderia xenovorans LB400
+
+Pseudogulbenferrooxi = Pseudogulbenkiania ferrooxidans EGD-HP2
+
+Rivicolpingtun = Rivicola pingtungensis DSM 29661
+
+Sphaerotilhippei = Sphaerotilus hippei DSM 566
+
+Stenoxybacaceti = Stenoxybacter acetivorans DSM 19021
+
+Sulfurisomsedimini = Sulfurisoma sediminicola DSM 26916
+
+Thaulinaloo = Thauera linaloolentis DSM 12138
+
+Vogeselindigo = Vogesella indigofera DSM 3303
+
+Actinobacsuccino = Actinobacillus succinogenes 130Z
+
+Budvicaqua = Budvicia aquatica FDAARGOS_387
+
+Competibacdenitrifi = Competibacter denitrificans
+
+Dyellajiang = Dyella jiangningensis SBZ 3-12
+
+Edwardicta = >Edwardsiella ictaluri MS-17-156
+
+Edwardtard1 = Edwardsiella tarda NBRC 105688
+
+Escherfergu = Escherichia fergusonii UMN026
+
+Frederikcani = Frederiksenia canicola DSM 25797
+
+Gilliaapicol = Gilliamella apicola wkB11
+
+Hafniapara = Hafnia paralvei FDAARGOS_230
+
+Klebsipneu1 = Klebsiella pneumoniae NTUH-K2044
+
+Klebsivarii = Klebsiella variicola 342
+
+Lonepinekoala = Lonepinella koalarum DSM 10053
+
+Methylococccapsul = Methylococcus capsulatus Bath
+
+Methylohalocrime = Methylohalobius crimeensis 10Ki
+
+Methyloterrioryza = Methyloterricola oryzae 73a
+
+Otariodioris = Otariodibacter oris DSM 23800
+
+Photorhabtempera = Photorhabdus temperata DSM 22387
+
+Providstua1 = Providencia stuartii FDAARGOS_145
+
+Pseudomonaerugi = Pseudomonas aeruginosa PAO1
+
+Pseudomonnitrored = Pseudomonas nitroreducens LMG 21614
+
+Serratficari = Serratia ficaria WS3237
+
+Shigeldysenter = Shigella dysenteriae sv. 1 Sd197
+
+Shigelflex = Shigella flexneri sv. 2a 2457T
+
+Yersinpestis = Yersinia pestis Angola
+
+Yersinrucker = Yersinia ruckeri CSF007-82
+
+Archaevenefi = Archaeoglobus veneficus SNP6
+
+Ferroglobplacid = Ferroglobus placidus AEDII12DO 
+
+Meiochliaro = Meiothermus chliarophilus ALT-8
+
+Petrohalophil = Petrotoga halophila DSM 16923
+
+Petromobilis = Petrotoga mobilis SJ95
+
+Thermotogacaldifon = Thermotoga caldifontis AZM44c09
+
+Thermotogaprofund = Thermotoga profunda AZM34c06
+
+Aminiphilcircum = Aminiphilus circumscriptus DSM 16581
+
+Aminivibpyruvat = Aminivibrio pyruvatiphilus DSM 25964
+
+Aminomonpauci = Aminomonas paucivorans DSM 12260
+
+Cloacibacilevry = Cloacibacillus evryensis 158
+
+Cetobacsomer = Cetobacterium somerae ATCC BAA-474
+
+Ilyobacpoly = Ilyobacter polytropus CuHBu1
+
+Psychrilyoatlanti = Psychrilyobacter atlanticus DSM 19335
+
+Sebaldeltermiti = Sebaldella termitidis ATCC 33386
+
+Anaerobrangotts = Anaerobranca gottschalkii DSM 13577
+
+Anaerosporhongkong = Anaerospora hongkongensis DSM 15969
+
+Blautiaschin = Blautia schinkii DSM 10518
+
+Caldanaeroviraceti = Caldanaerovirga acetigignens DSM 18802
+
+Caloranaerobacferri = Caloranaerobacter ferrireducens DY22619
+
+Caloramproteo = Caloramator proteoclasticus DSM 10124
+
+Clostridautoethano = Clostridium autoethanogenum DSM 10061
+
+Clostridcarboxi = Clostridium carboxidivorans P7
+
+Clostridhydrogeni = Clostridium hydrogeniformans DSM 21757
+
+Clostridljung = Clostridium ljungdahlii PETC
+
+Desulfalgeothermi = Desulfallas geothermicus DSM 3669
+
+Desulfofarintrica = Desulfofarcimen intricatum NBRC 109411
+
+Desulfofunthermocis = >Desulfofundulus thermocisternus DSM 10259
+
+Desulfofunthermosubt = Desulfofundulus thermosubterraneus DSM 16057
+
+Desulfovirthermocuni = Desulfovirgula thermocuniculi DSM 16036
+
+Desulfurisporthermo = Desulfurispora thermophila DSM 16022
+
+Geosporobacsubt = Geosporobacter subterraneus DSM 17957
+
+Gottschalaciduri = Gottschalkia acidurici 9a
+
+Gottschalpurini = Gottschalkia purinilytica DSM 1384
+
+Moortherm1 = Moorella thermoacetica ATCC 39073
+
+Paenibacilforsyth = Paenibacillus forsythiae T98
+
+Paenibacilsonchi = Paenibacillus sonchi X19-5
+
+Paraclostridbenzo = Paraclostridium benzoelyticum JC272
+
+Pelosinferment = Pelosinus fermentans JBW45
+
+Pelosinpropioni = Pelosinus propionicus DSM 13327
+
+Romboutlituse = Romboutsia lituseburensis DSM 797
+
+Syntrophothermlipocali = Syntrophothermus lipocalidus DSM 12680
+
+Terrisporobacglycol = Terrisporobacter glycolicus KPPR-9
+
+Terrisporobacothini = Terrisporobacter othiniensis
+
+Thermincoferriaceti = Thermincola ferriacetica DSM 14005
+
+Thermanaerobackivui = Thermoanaerobacter kivui DSM 2030
+
+Thermosediminiocean = Thermosediminibacter oceani
+
+Anaerolinthermo = Anaerolinea thermophila UNI-1
+
+Dehalogeniformi = Dehalogenimonas formicexedens NSZ-14
+
+Levilinsaccharo = Levilinea saccharolytica DSM 16555
+
+Promineobreve = Promineofilum breve Cfx-K
+
+Thermanaerothrixdaxe = Thermanaerothrix daxensis GNS-1
+
+Actinophytoryza = Actinophytocola oryzae DSM 45499
+
+Actinoplanitali = Actinoplanes italicus DSM 43146
+
+Allosalinalopnore = Allosalinactinospora lopnorensis CA15-2
+
+Amycolanigre = Amycolatopsis nigrescens DSM 44992
+
+Amycolataiwan = Amycolatopsis taiwanensis DSM 45107
+
+Collinselaerofaci = Collinsella aerofaciens indica
+
+Cryptocurt1 = Cryptobacterium curtum 12-3
+
+Cryptosporauran = Cryptosporangium aurantiacum DSM 46144
+
+Denitrobacdetoxi = Denitrobacterium detoxificans DSM 21843
+
+Enterorhabmucosi = Enterorhabdus mucosicola DSM 19490
+
+Kribelsoli = Kribbella soli
+
+Micromonopisi = Micromonospora pisi DSM 45175
+
+Mobilicoccpelagi = Mobilicoccus pelagius NBRC 104925
+
+Mycolicibacsmegma = Mycolicibacterium smegmatis NCTC8159
+
+Nonomurjiangxi = Nonomuraea jiangxiensis
+
+Nonomursolani = Nonomuraea solani
+
+Praurselmarina = Prauserella marina DSM 45268
+
+Propionibacacidi = Propionibacterium acidifaciens DSM 21887
+
+Pseudonocarddioxani = Pseudonocardia dioxanivorans BERK-1
+
+Pseudonocardthermo = Pseudonocardia thermophila DSM 43832
+
+Saccharopolyflava = Saccharopolyspora flava DSM 44771
+
+Slackheliotrini = Slackia heliotrinireducens RHS 1
+
+Solirubrobacsoli = Solirubrobacter soli DSM 22325
+
+Streptomyazur = Streptomyces azureus ATCC 14921
+
+Streptomyfulvo = Streptomyces fulvoviolaceus NRRL B-2870
+
+Streptospor = Streptosporangium subroseum CGMCC 4.2132
+
+Brocadsappor = Brocadia sapporoensis 40
+
+Brocadsinica = Brocadia sinica JPN1
+
+Isosphaepalli = Isosphaera pallida IS1B
+
+Kuenenstuttgar = Kuenenia stuttgartiensis 
+
+Aquimarmacro = Aquimarina macrocephali JAMB N27
+
+Aquimarmega = Aquimarina megaterium XH134
+
+Flavobacgilvum = Flavobacterium gilvum EM1308
+
+Haliscomehydro = Haliscomenobacter hydrossis O
+
+Lewinelcohae = Lewinella cohaerens DSM 23179
+
+Lutiprofundi = Lutibacter profundi LP1
+
+Mucilaginigoss = Mucilaginibacter gossypii Gh-67
+
+Niastelkore = Niastella koreensis GR20-10 
+
+Roseivirechini = Roseivirga echinicomitans KMM 6058
+
+Caminibacmediatlan = Caminibacter mediatlanticus TB-2
+
+Sulfurosparcacho = Sulfurospirillum arcachonense DSM 9755
+
+Desulfatibacilaliphati = Desulfatibacillum aliphaticivorans DSM 15576
+
+Desulfatibacilalkeni = Desulfatibacillum alkenivorans DSM 16219
+
+Desulfatiglaanili = Desulfatiglans anilini DSM 4660
+
+Desulfatirhabbutyrati = Desulfatirhabdium butyrativorans DSM 18734
+
+Desulfatitaltepidi = >Desulfatitalea tepidiphila S28bF
+
+Desulfobaccaacetoxi = Desulfobacca acetoxidans ASRB2
+
+Desulfobacavacuo = Desulfobacterium vacuolatum DSM 3385
+
+Desulfobacutoluo = Desulfobacula toluolica Tol2
+
+Desulfococcmulti = Desulfococcus multivorans DSM 2059
+
+Desulfococcoleo = Desulfococcus oleovorans Hxd3
+
+Desulfofabhansen = Desulfofaba hansenii DSM 12642
+
+Desulfotigbalti = Desulfotignum balticum DSM 7044
+
+Desulfotigphosphito = Desulfotignum phosphitoxidans FiPS-3
+
+Hippealvi1 = Hippea alviniae EP5-r
+
+Pelobacacetylen = Pelobacter acetylenicus DSM 3246
+
+Pelobaccarbinol = Pelobacter carbinolicus Bd1
+
+Syntrophgentia = Syntrophus gentianae DSM 8423
+
+Thermodesulforhabnorveg = Thermodesulforhabdus norvegica DSM 9990 
+
+Alliiroseosedimini = Aliiroseovarius sediminilitoris DSM 29439
+
+Altererythroepoxi = Altererythrobacter epoxidivorans CGMCC 1.7731
+
+Ancylobacaqua = Ancylobacter aquaticus DSM 101
+
+Ancylobacrudon = Ancylobacter rudongensis
+
+Azospirlipo1 = Azospirillum lipoferum 4B
+
+Azospirthio1 = Azospirillum thiophilum BV-S
+
+Bauldlitoral = Bauldia litoralis ATCC 35022
+
+Bradyrhizoelkani = Bradyrhizobium elkanii UASWS1015
+
+Bradyrhizoerythro = Bradyrhizobium erythrophlei MT12
+
+Leisingaqua = Leisingera aquaemixtae CECT 8399 
+
+Mamelielalba = Mameliella alba DSM 26384
+
+Methylarcmarina = Methylarcula marina VKM B-2159
+
+Methylocapacidi = Methylocapsa acidiphila B2
+
+Methyloceani = Methyloceanibacter caenitepidi Gela4
+
+Methylolihalo = Methyloligella halotolerans VKM B-2706
+
+Methylovirligni = Methylovirgula ligni DSM 19998
+
+Oceanibacpacific = Oceanibaculum pacificum MCCC 1A02656
+
+Phaeobaclitali = Phaeobacter italicus CECT 7321
+
+Rhizobiumtropic = Rhizobium tropici NFR14
+
+Rhodopseudopalus = Rhodopseudomonas palustris BisB18
+
+Rhodospirilrubrum = Rhodospirillum rubrum S1
+
+Roseovaazoren = Roseovarius azorensis DSM 100674
+
+Roseovaindicus = Roseovarius indicus DSM 26383
+
+Ruegermaris = Ruegeria marisrubri ZGT118
+
+Silicimonalgi = Silicimonas algicola DSM 103371
+
+Thalassospirmarina = Thalassospira marina CSC3H3
+
+Thalassospirprofundi = Thalassospira profundimaris S25-3-2
+
+Tropicibacnaphtaleni = Tropicibacter naphthalenivorans DSM 19561
+
+Tropicibacphthali = >Tropicibacter phthalicicus DSM 26923
+
+Achromdenit1 = Achromobacter denitrificans PR1
+
+Achrominsoli = Achromobacter insolitus KCJK1731
+
+Azohydrolata = Azohydromonas lata NBRC 102462
+
+Bordebronchiali = Bordetella bronchialis AU3182
+
+Bordehinzii = Bordetella hinzii LMG 13501
+
+Cabaltelluri = Caballeronia telluris LMG 22936
+
+Cupriaalkaliphil = Cupriavidus alkaliphilus ASC-732
+
+Cuprianecator = Cupriavidus necator ATCC 43291
+
+Herbasprubri = Herbaspirillum rubrisubalbicans M1
+
+Herbaspseropedi = Herbaspirillum seropedicae SmR1
+
+Hylemongracili = Hylemonella gracilis Niagara R
+
+Leeiaoryza = Leeia oryzae DSM 17879
+
+Massilianamucuo = Massilia namucuonensis
+
+Massiliatimonae = Massilia timonae CCUG 45783
+
+Oxalobacformi = Oxalobacter formigenes HOxBLS
+
+Paludibacyongneu = Paludibacterium yongneupense DSM 18731
+
+Pandorapis = Pandoraea apista TF81F4
+
+Pandorpnom1 = Pandoraea pnomenusa 3kgm
+
+Paraburkdiazotroph = Paraburkholderia diazotrophica LMG 26031
+
+Paraburkphena1 = Paraburkholderia phenazinium GAS86
+
+Paraburksedimini1 = Paraburkholderia sediminicola ES_FE-E3
+
+Paraburksprenti = Paraburkholderia sprentiae WSM5005
+
+Pseudogulbenferrooxi1 = Pseudogulbenkiania ferrooxidans 2002
+
+Pseudogulbensubflav = Pseudogulbenkiania subflava DSM 22618
+
+Ralstonpicket = Ralstonia pickettii DTP0602
+
+Uliginosigangwon = Uliginosibacterium gangwonense DSM 18521
+
+Aeromondhaken = Aeromonas dhakensis KN-Mc-6U21
+
+Aeromonhydro1 = Aeromonas hydrophila hydrophila ATCC 7966
+
+Aggregatiaphrophil = Aggregatibacter aphrophilus FDAARGOS_248
+
+Basfiasuccini = Basfia succiniciproducens KPR-2 
+
+Beggiaalba = Beggiatoa alba B18LD
+
+Cavvibacpharyngo = Caviibacterium pharyngocola
+
+Celereinatadiazotroph = Celerinatantimonas diazotrophica DSM 18577
+
+Cocleimonflava = Cocleimonas flava DSM 24830
+
+Cricetibacosteo = Cricetibacter osteomyelitidis DSM 28404
+
+Dyellajapon = Dyella japonica DSM 16301
+
+Dyellathiooxy = Dyella thiooxydans ATSB10 
+
+Enterobaccloa = Enterobacter cloacae cloacae ATCC 13047
+
+Haemophilmassili = Haemophilus massiliensis FF7
+
+Haemophilquenti = Haemophilus quentini MP1
+
+Halomonxianhen = Halomonas xianhensis 6_TX
+
+Leucomucor = Leucothrix mucor DSM 2157
+
+Mannemassilio = Mannheimia massilioguelmaensis MG13
+
+Marinobacjannasch = Marinobacterium jannaschii DSM 6295
+
+Mesocricetiintesti = Mesocricetibacter intestinalis DSM 28403
+
+Methylobacwhitten = Methylobacter whittenburyi ACM 3310
+
+Methylocaldszegedi = Methylocaldum szegediense O-12
+
+Methylomonkoya = Methylomonas koyamae LM6
+
+Methylophaglonar = Methylophaga lonarensis MPL
+
+Necropsomassili = Necropsobacter massiliensis FF6
+
+Necropsorosor = Necropsobacter rosorum P709
+
+Nevskisoli = Nevskia soli DSM 19509
+
+Pasteurbetty = Pasteurella bettyae CCUG 2042
+
+Pasteurlanga = Pasteurella langaaensis DSM 22999
+
+Photobacdamse = Photobacterium damselae BT-6
+
+Pseudomonindica = Pseudomonas indica JCM 21544
+
+Pseudomonmendo = Pseudomonas mendocina NK-01
+
+Ruminobacamylo = Ruminobacter amylophilus DSM 1361
+
+Shewanmarina = Shewanella marina JCM 15074
+
+Shigelsonnei = Shigella sonnei FDAARGOS_90
+
+Succinimonamylo = Succinimonas amylolytica DSM 2873
+
+Thiorhodococdrewsii = Thiorhodococcus drewsii AZ1
+
+Vibrimytili = Vibrio mytili CAIM 52
+
+Vibrirhizo = Vibrio rhizosphaerae DSM 18581
+
+Wolfahpopuli = Wohlfahrtiimonas populi 34C10-3-10 
+
+Aciduliboonei = Aciduliprofundum boonei T469
+
+Methanobaccongol = Methanobacterium congolense Buetzberg
+
+Methanobacformici = Methanobacterium formicicum DSM 1535
+
+Methanobacformici1 = Methanobacterium formicicum DSM 3637
+
+Methanobaclacus = Methanobacterium lacus AL-21
+
+Methanocaldococfervens = Methanocaldococcus fervens AG86
+
+Methanocaldococjannasch = Methanocaldococcus jannaschii DSM 2661
+
+Methanocelaryoryza = Methanocella arvoryzae MRE50
+
+Methanocelconradi = Methanocella conradii HZ254
+
+Methanococvoltae = Methanococcus voltae A3
+
+Methanocorplabrea = Methanocorpusculum labreanum Z
+
+Methanocorpparvum = Methanocorpusculum parvum XII
+
+Methanocullmaris = Methanoculleus marisnigri JR1
+
+Methanocullthermo = Methanoculleus thermophilus DSM 2373
+
+Methanolintarda = Methanolinea tarda NOBI-1
+
+Methanoplanlimi = Methanoplanus limicola M3
+
+Methanoregformici = Methanoregula formicica SMSP
+
+Methanosarbarkeri = Methanosarcina barkeri MS
+
+Methanosarmazei = Methanosarcina mazei LYC
+
+Methanosphaepalus = Methanosphaerula palustris DSM 19958
+
+Methanospirhunga = Methanospirillum hungatei JF-1
+
+Methanothermodefluv = Methanothermobacter defluvii DSM 7466 
+
+Methanothermomarburg = Methanothermobacter marburgensis Marburg DSM 2133
+
+Methanothermothermauto = Methanothermobacter thermautotrophicus Delta H
+
+Methanothermowolfeii = Methanothermobacter wolfeii SIV6
+
+Methanothermococokinawe = Methanothermococcus okinawensis IH1
+
+Methanothermococthermolitho = Methanothermococcus thermolithotrophicus DSM 2095
+
+Methanothermusfervid = Methanothermus fervidus V24S
+
+Methanothrixsoehn = Methanothrix soehngenii GP-6
+
+Methanothrixthermoaceto = Methanothrix thermoacetophila PT
+
+Methanotorformici = Methanotorris formicicus Mc-S-70
+
+Methanotorigneus = Methanotorris igneus Kol5
+
+Pyrocockukul = Pyrococcus kukulkanii NCB100
+
+Pyrococyayan = Pyrococcus yayanosii CH1
+
+Thermococcgamma = Thermococcus gammatolerans EJ3
+
+Thermococconnuri = Thermococcus onnurineus NA1
+
+Geoglobaceti = Geoglobus acetivorans SBH6
+
+Methanobacsubterr = Methanobacterium subterraneum MO-MB1
+
+Methanocaldococinfern = Methanocaldococcus infernus ME
+
+Methanocaldococvulcan = Methanocaldococcus vulcanius M7
+
+Methanolacpetro = Methanolacinia petrolearia DSM 11571
+
+Methanopykand = Methanopyrus kandleri AV19
+
+Methanosalzhili = Methanosalsum zhilinae WeN5
+
+Methanosaracti = Methanosarcina acetivorans C2A
+
+Methanosarhoron = Methanosarcina horonobensis HB-1
+
+Deinococficus = Deinococcus ficus CC-FR2-10
+
+Deinococmisas = Deinococcus misasensis DSM 22328
+
+Deinococphoeni = Deinococcus phoenicis 1P10ME
+
+Deinococreticul = Deinococcus reticulitermitis CGMCC 1.10218
+
+Agitococlubri = Agitococcus lubricus DSM 5822
+
+Aneurinibacaneuri = Aneurinibacillus aneurinilyticus ATCC 12856
+
+Aneurinibactyrosini = Aneurinibacillus tyrosinisolvens LL-002
+
+Anoxybacflavi = Anoxybacillus flavithermus NBRC 109594
+
+Bacilcereus = Bacillus cereus JRS1
+
+Bacilgibson = Bacillus gibsonii FJAT-10019
+
+Bacilglycini = Bacillus glycinifermentans KJ-17
+
+Bacilintesti = Bacillus intestinalis 1731
+
+Bacilmethanol = Bacillus methanolicus PB1
+
+Bacilsubtil = Bacillus subtilis subtilis 168
+
+Cohnelpanaca = Cohnella panacarvi Gsoil 349
+
+Demosporactiva = Desmospora activa DSM 45169
+
+Domibacaminvor = Domibacillus aminovorans DSM 1314
+
+Domibacjocasae = Domibacillus iocasae DSM 29979
+
+Effusibaclacus = Effusibacillus lacus skLN1
+
+Effusibacpohlia = Effusibacillus pohliae DSM 22757
+
+Fontibacpanaci = Fontibacillus panacisegetis DSM 28129
+
+Geobaciljurassi = Geobacillus jurassicus NBRC 107829
+
+Geobacilkausto = Geobacillus kaustophilus HTA426
+
+Geobacilstearo = Geobacillus stearothermophilus 10
+
+Gracilibacilhalophil = Gracilibacillus halophilus YIM-C55.5
+
+Gracilibacilorienta = Gracilibacillus orientalis CGMCC 1.4250
+
+Marinocochalophil = Marinococcus halophilus KCTC 2843
+
+Paenibacilbeijing = Paenibacillus beijingensis DSM 24997
+
+Paenibacilchondroit = Paenibacillus chondroitinus OK414
+
+Paenibacilginsengi = Paenibacillus ginsengihumi DSM 21568
+
+Paludifilhalophil = Paludifilum halophilum DSM 102817
+
+Parageobacilcaldoxy = Parageobacillus caldoxylosilyticus B4119
+
+Quasibacilthermotol = Quasibacillus thermotolerans MTCC 8252
+
+Salipaneizhou = Salipaludibacillus neizhouensis KCTC 13187
+
+Thalassobacdevor = Thalassobacillus devorans CECT 7046
+
+Virgibachalo1 = Virgibacillus halodenitrificans S2
+
+Anabaencylindri = Anabaena cylindrica PCC 7122 NIES-19
+
+Anabaenopcircula = Anabaenopsis circularis NIES-21
+
+Aphanizoflos = Aphanizomenon flos-aquae 2012/KM1/D3
+
+Arthroplaten = Arthrospira platensis YZ
+
+Calothrixbrevissi = Calothrix brevissima NIES-22
+
+Calothrixrhizosol = Calothrix rhizosoleniae SC01
+
+Chrysosporovalispor = Chrysosporum ovalisporum UAM-MAO
+
+Crinaliepipsa = Crinalium epipsammum PCC 9333
+
+Cylindrosperstag = Cylindrospermum stagnale PCC 7417
+
+Fischerthermal = Fischerella thermalis CCMEE 5330
+
+Gleoeokilau = Gloeobacter kilaueensis JS1
+
+Halomicrohong = Halomicronema hongdechloris C2206
+
+Leptoboryana = Leptolyngbya boryana NIES-2135
+
+Lyngbyaaestuar = Lyngbya aestuarii BL J
+
+Mastigorepens = Mastigocladopsis repens PCC 10914
+
+Merismoglauca = Merismopedia glauca CCAP 1448/3 
+
+Microcolvagi = Microcoleus vaginatus FGP-2
+
+Mooreaprodu = Moorea producens PAL-8-15-08-1
+
+Nodularspumi = Nodularia spumigena CCY9414
+
+Nostoccycad = Nostoc cycadae WK-1
+
+Nostocpisci = Nostoc piscinale CENA21
+
+Oscillaacumi = Oscillatoria acuminata PCC 6304
+
+Oscillanigro = Oscillatoria nigro-viridis PCC 7112
+
+Phormipriest = Phormidesmis priestleyi ULC007
+
+Planktopauci = Planktothrix paucivesiculata PCC 9631
+
+Plantkotepida = Planktothrix tepida PCC 9214
+
+Ripporienta = Rippkaea orientalis PCC 8801
+
+Scytonemillei = Scytonema millei VB511283
+
+Scytonetolypoth = Scytonema tolypothrichoides VB-61278
+
+Sphaerospermkissel = Sphaerospermopsis kisseleviana NIES-73
+
+Staniercyano = Stanieria cyanosphaera PCC 7437
+
+Synechoelong = Synechococcus elongatus PCC 7942
+
+Thermosynechelong = Thermosynechococcus elongatus BP-1
+
+Thermosynechvulcan = Thermosynechococcus vulcanus NIES-2134
+
+Trichoerythrae = Trichodesmium erythraeum IMS101
+
+Trichorvariabi = Trichormus variabilis NIES-23
+
+Actinomadechino = Actinomadura echinospora DSM 43163
+
+Actinomadmacra = Actinomadura macra NBRC 14102
+
+Actinoplanatraur = Actinoplanes atraurantiacus CGMCC 4.6857
+
+Actinopolyalba = Actinopolymorpha alba DSM 45243
+
+Amycolamediterr = Amycolatopsis mediterranei U32
+
+Kitasatatroaur = Kitasatospora atroaurantiaca DSM 41649
+
+Kitasatmedioci = Kitasatospora mediocidica KCTC 9733
+
+Micromonopalo = Micromonospora palomenae DSM 102131
+
+Micromonopurpure = Micromonospora purpureochromogenes DSM 43821
+
+Pseudosporferrugi = Pseudosporangium ferrugineum DSM 45348
+
+Spirilloalbida = Spirillospora albida NRRL B-3350
+
+Streptomythermoauto = Streptomyces thermoautotrophicus H1
+
+Thermomonocurva = Thermomonospora curvata DSM 43183
+
+Thermopolyflex = Thermopolyspora flexuosa DSM 43186
+
+Verrucosedimi = Verrucosispora sediminis CGMCC 4.3550
+
+Xiangphaseo = Xiangella phaseoli DSM 45730
+
+Algorialkali = Algoriphagus alkaliphilus DSM 22703
+
+Algorimannitol = Algoriphagus mannitolivorans DSM 15301
+
+Apibacadven = Apibacter adventoris wkB301
+
+Flavobacdenitrifi = Flavobacterium denitrificans DSM 15936
+
+Flavobacgilli = Flavobacterium gillisiae DSM 22376
+
+Flavobacsuccini = Flavobacterium succinicans DSM 4002
+
+Pedobacglucosi = Pedobacter glucosidilyticus DD6b
+
+Pyrinomethyla = Pyrinomonas methylaliphatogenes K22
+
+Actibacpelagi = Actibacterium pelagium JN33
+
+Antarctohelio1 = Antarctobacter heliothermus DSM 11445
+
+Celeribacpersi = Celeribacter persicus DSM 100434
+
+Celeribacethan1 = Celeribacter ethanolicus TSPH2
+
+Confluentilipo = Confluentimicrobium lipolyticum CECT 8621
+
+Epibacmulti = Epibacterium multivorans CECT 7557
+
+Erythrobaccitreus = Erythrobacter citreus LAMA 915
+
+Litoritaeane = Litorimicrobium taeanense DSM 22007
+
+Lutimaribaclitora = Lutimaribacter litoralis DSM 29506
+
+Mamelielalba1 = Mameliella alba CGMCC 1.7290
+
+Marinovumalgi = Marinovum algicola DSM 10251
+
+Maritimialkali = Maritimibacter alkaliphilus DSM 100037
+
+Marivitageoje = Marivita geojedonensis DSM 29432
+
+Methylocelsilves = Methylocella silvestris BL2
+
+Paracocdenitrifi = Paracoccus denitrificans PD1222
+
+Phaeobacgallae = Phaeobacter gallaeciensis JL2886
+
+Primorinsulae = Primorskyibacter insulae CECT 8871
+
+Pseudooceanatlanti = Pseudooceanicola atlanticus 22II-S11g
+
+Pseudooceannitrati = Pseudooceanicola nitratireducens CGMCC 1.7292
+
+Pseudorueghalio = Pseudoruegeria haliotis DSM 29328
+
+Pseudoruegmarini = Pseudoruegeria marinistellae SF-16
+
+Puniceisedimi = Puniceibacterium sediminis DSM 29052
+
+Rhodobaccapsul1 = Rhodobacter capsulatus E1F1
+
+Ruegerlacus = Ruegeria lacuscaerulensis ITI-1157
+
+Ruegermarina = Ruegeria marina CGMCC 1.9108
+
+Salipbermu = Salipiger bermudensis HTCC2601 
+
+Salipprofun = Salipiger profundus DSM 27508
+
+Thalassobigelatini1 = Thalassobius gelatinovorus DSM 5887
+
+Thioclaareno = Thioclava arenosa CAU 1312
+
+Tropicimonsedimi = Tropicimonas sediminicola DSM 29339
+
+Yangpaci = Yangia pacifica CGMCC 1.3455
+
+Youngivesi = Youngimonas vesicularis CC-AMW-E 
+
+Amantiursila = Amantichitinum ursilacus IGB-41
+
+Andrechitini = Andreprevotia chitinilytica DSM 18519 
+
+Aquitalmagnuso1 = Aquitalea magnusonii SM6
+
+Azonexhydrophil = Azonexus hydrophilus ZS02
+
+Burkinsect = Burkholderia insecticola RPE64
+
+Burknovacal = Burkholderia novacaledonica LMG 28615
+
+Cabalhumi = Caballeronia humi LMG 22934
+
+Cabalturban = Caballeronia turbans LMG 29316
+
+Chitinigtaiwan = Chitinimonas taiwanensis DSM 18899
+
+Collimonarenae = Collimonas arenae Ter282
+
+Collimonpraten = Collimonas pratensis Ter91
+
+Cupriaoxalati = Cupriavidus oxalaticus X32
+
+Cupriataiwan = Cupriavidus taiwanensis LMG 19424
+
+Duganphyllo = Duganella phyllosphaerae T54
+
+Dugansacchari = Duganella sacchari Sac-22
+
+Ferriphasamni = Ferriphaselus amnicola OYT1
+
+Herbaspaquati = Herbaspirillum aquaticum IEH 4430
+
+Herbasphutti = Herbaspirillum huttiense NFYY 53159
+
+Herbasprhizo = Herbaspirillum rhizosphaerae UMS-37
+
+Janthinlivi1 = Janthinobacterium lividum NFR18
+
+Massilialutea = Massilia lutea DSM 17473
+
+Massiliaumbon = Massilia umbonata DSMZ 26121
+
+Methyloverthermo = Methyloversatilis thermotolerans NVD
+
+Novimethylokurashi = Novimethylophilus kurashikiensis La2-4
+
+Prolinofasci = Prolinoborus fasciculus CIP 103579
+
+Ralstoninsio = Ralstonia insidiosa ATCC 49129
+
+Ralstonmannitol = Ralstonia mannitolilytica SN83A39
+
+Ralstonpicket1 = Ralstonia pickettii 12J
+
+Sideroxlitho = Sideroxydans lithotrophicus ES-1
+
+Sulfurirhabauto = Sulfurirhabdus autotrophica DSM 100309
+
+Thauphenoli = Thauera phenolivorans ZV-1-C
+
+Thauphenyl = Thauera phenylacetica B4P
+
+Zooglorami = Zoogloea ramigera ATCC 19544
+
+Acinetoschin = Acinetobacter schindleri SGAir0122
+
+Azotobacvine = Azotobacter vinelandii DJ
+
+Beggialepto = Beggiatoa leptomitoformis D-402
+
+Catenovulagari = Catenovulum agarivorans DS-2
+
+Dickeyadadan = Dickeya dadantii 3937
+
+Dickeyazeae = Dickeya zeae EC1
+
+Erwintole = Erwinia toletana DAPP-PG 735
+
+Gayadojoobi = Gayadomonas joobiniege G7
+
+Marinobacaest = Marinobacterium aestuarii ST58-10
+
+Marinobacrhizo = Marinobacterium rhizophilum DSM 18822
+
+Methylobacluteus = Methylobacter luteus IMV-B-3098
+
+Methylophagthio = Methylophaga thiooxydans DMS010
+
+Neptuniicaesar = Neptuniibacter caesariensis MED92
+
+Pantoeaallii = Pantoea allii PNA 200-10
+
+Pantoeastew = Pantoea stewartii NS381
+
+Pectobacbeta = Pectobacterium betavasculorum NCPPB 2795
+
+Pectobacperu = Pectobacterium peruviense UGC32
+
+Samsoneryth = Samsonia erythrinae DSM 16730
+
+Solimonflumi = Solimonas fluminis HR-BB
+
+Sulfurifusvaria = Sulfurifustis variabilis skN76
+
+Thiocaproseo = Thiocapsa roseopersicina DSM 217
+
+Thiogranlongum = Thiogranum longum DSM 19610
+
+Thioplocingri = Thioploca ingrica Lake Okotanpe
+
+Halofergibbon = Haloferax gibbonsii ARA6
+
+Halofermediterr = Haloferax mediterranei R-4
+
+Halofersulfuri = Haloferax sulfurifontis M6
+
+Marinithermhydro = Marinithermus hydrothermalis T1
+
+Oceaprof1 = Oceanithermus profundus 506
+
+Acetonemlong = Acetonema longum APO-1
+
+Carboxydocelthermaut = Carboxydocella thermautotrophica 041
+
+Selenorumin = Selenomonas ruminantium GACV-9
+
+Sporomsilva = Sporomusa silvacetica DSM 10669
+
+Caldimicrothio = Caldimicrobium thiodismutans TF1
+
+Thermodesulfaatlan = Thermodesulfatator atlanticus DSM 21156
+
+Thermodesulfaauto = Thermodesulfatator autotrophicus S606
+
+Thermosulfdismu = Thermosulfurimonas dismutans S95
+
+Geovibthio = Geovibrio thiophilus DSM 11263
+
+Mucischaed = Mucispirillum schaedleri ASF457
+
+Seleniwood = Seleniivibrio woodruffii S4
+
+Litoriaero = Litorilinea aerophila PRI-413
+
+Enteroscirubner = Enteroscipio rubneri ResAG-96
+
+Mumiflav = Mumia flava MUSC 201
+
+Parvicaeci = Parvibacter caecicola DSM 22242
+
+Slackisoflav = Slackia isoflavoniconvertens DSM 22006
+
+Fuerstmaris = Fuerstia marisgermanicae NH11
+
+Rhodopirislan = Rhodopirellula islandica K833
+
+Rhodopirsalle = Rhodopirellula sallentina SM41
+
+Roseimicrogellan = Roseimicrobium gellanilyticum DSM 25532
+
+Rubritalmari = Rubritalea marina DSM 17716
+
+Aquimaratlan = Aquimarina atlantica 22II-S11-z7
+
+Aquimarlater = Aquimarina latercula DSM 2041
+
+Arenialgico = Arenibacter algicola SMS7
+
+Arenilateri = Arenibacter latericius DSM 15913
+
+Arenitallutea = Arenitalea lutea CGMCC 1.12213
+
+Celluloalgico = Cellulophaga algicola IC166
+
+Cellulobalti = Cellulophaga baltica NN016038
+
+Draconisedimi = Draconibacterium sediminis JN14CK-3
+
+Flaviecklo = Flavivirga eckloniae ECD14
+
+Flagellipacifi = Flagellimonas pacifica DSM 25885
+
+Formosahali = Formosa haliotis MA1
+
+Gaetbulisaema = Gaetbulibacter saemankumensis DSM 17032
+
+Marinibreve = Marinifilum breve JC075
+
+Mariniflexu = Marinifilum flexuosum DSM 21950
+
+Rhodothermmari = Rhodothermus marinus R-10
+
+Rhodothermprofundi = Rhodothermus profundi DSM 22212
+
+Saccharicarcha = Saccharicrinis carchari DSM 27040
+
+Sediminilute = Sediminicola luteus HQA918
+
+Seonamaphae = Seonamhaeicola aphaedonensis CECT 8487
+
+Tamlanagari = Tamlana agarivorans JW-26
+
+Tenacicaeni = Tenacibaculum caenipelagi CECT 8283
+
+Tenacidicen = Tenacibaculum dicentrarchi TDCHD05
+
+Tenacisolea = Tenacibaculum soleae UCD-KL19
+
+Wenyifucani = Wenyingzhuangia fucanilytica CZ1127
+
+Winogradjeju = Winogradskyella jejuensis DSM 25330
+
+Zhouamylo = Zhouia amylolytica AD3
+
+Zobelgalac = Zobellia galactanivorans DsijT
+
+Zobeluligi = Zobellia uliginosa DSM 2061
+
+Balnelitho = Balnearium lithotrophicum DSM 16304
+
+Persehydro = Persephonella hydrogeniphila DSM 15103
+
+Persemari = Persephonella marina EX-H1
+
+Phorcysthermohydro = Phorcysia thermohydrogeniphila DSM 24425
+
+Sulfurihydrosubter = Sulfurihydrogenibium subterraneum DSM 15120
+
+Thermovibammoni = Thermovibrio ammonificans HB-1
+
+Thermoanaeroaquati = Thermoanaerobaculum aquaticum MP-01
+
+Aliiarcofaeci = Aliiarcobacter faecis AF1078
+
+Arcoanaero = Arcobacter anaerophilus IR-1
+
+Arcocryaero = Arcobacter cryaerophilus ATCC 43158 
+
+Arcoebron = Arcobacter ebronensis CECT 8441
+
+Arcotrophi = Arcobacter trophiarum LMG 25534
+
+Cetiapacifi = Cetia pacifica DSM 27783
+
+Helicoapode = Helicobacter apodemus MIT-03-7007
+
+Helicomuste = Helicobacter mustelae NCTC 12031
+
+Helicopame = Helicobacter pametensis ATCC 51478
+
+Lebetinatsu = Lebetimonas natsushimae HS1857
+
+Nautiprofundi = Nautilia profundicola Am-H
+
+Nitratisalsu = Nitratifractor salsuginis E9I37-1
+
+Nitratiruterga = Nitratiruptor tergarcus DSM 16512
+
+Sulfuricurkuji = Sulfuricurvum kujiense YK-1
+
+Sulfurimdenitri = Sulfurimonas denitrificans DSM 1251
+
+Sulfurimgotlan = Sulfurimonas gotlandica GD 1
+
+Sulfurovulitho = Sulfurovum lithotrophicum ATCC BAA-797
+
+Archangephy = Archangium gephyra DSM 2261
+
+Bilowadswo = Bilophila wadsworthia 3_1_6
+
+Bradymonsedimi = Bradymonas sediminis FA350
+
+Cystoferrugi = Cystobacter ferrugineus Cbfe23
+
+Cystofuscus = Cystobacter fuscus DSM 52655 
+
+Desulfobulmediter = Desulfobulbus mediterraneus DSM 13871
+
+Desulfocasulfexi = Desulfocapsa sulfexigens DSM 10523
+
+Desulfovfair = Desulfovibrio fairfieldensis CCUG 45958
+
+Geobacpick = Geobacter pickeringii G13
+
+Azospirhumici = Azospirillum humicireducens SgZ-5
+
+Bosealathy = Bosea lathyri DSM 26656
+
+Ensiferadhae = Ensifer adhaerens WJB133 25_10
+
+Hyphonitrati = Hyphomicrobium nitrativorans NL23
+
+Kaistgranu = Kaistia granuli DSM 23481
+
+Kilolamina = Kiloniella laminariae DSM 19542
+
+Kilolitope = Kiloniella litopenaei P1-1
+
+Leisincaeru = Leisingera caerulea DSM 24564
+
+Magnetospircauca = Magnetospirillum caucaseum SO-1
+
+Magnetospirmagnet1 = Magnetospirillum magneticum AMB-1
+
+Magnetospirmaris = Magnetospirillum marisnigri SP-1
+
+Mesorhizsopho = Mesorhizobium sophorae ICMP 19535
+
+Neorhizohuaut = Neorhizobium huautlense DSM 21817
+
+Pseudorhizopelagi = Pseudorhizobium pelagicum R2-400B4
+
+Rhizobiumetli = Rhizobium etli 8C-3
+
+Rhizobiumfavelu1 = Rhizobium favelukesii LPU83
+
+Rhizobiummarin = Rhizobium marinum MGL06
+
+Rhodobacmegalo = Rhodobacter megalophilus DSM 18937
+
+Ruegerlitor = Ruegeria litorea CECT 7639
+
+Sinorhizfredi = Sinorhizobium fredii USDA 257
+
+Sinorhizmedi = Sinorhizobium medicae WSM419
+
+Sinorhizmeli = Sinorhizobium meliloti SM11
+
+Skermaaero = Skermanella aerolata KACC 11604
+
+Thalassospirxiame = Thalassospira xiamenensis MCCC 1A03005
+
+Azoacomm1 = Azoarcus communis TSNA42
+
+Azoatoluclas = Azoarcus toluclasticus ATCC 700605
+
+Azovibrestri = Azovibrio restrictus DSM 23866
+
+Burkbonni = Burkholderia bonniea BbQS859
+
+Burkinsecti = Burkholderia insecticola RPE64
+
+Cabalhypoge = Caballeronia hypogeia LMG 29322
+
+Comamoterri = Comamonas terrigena NBRC 13299
+
+Cuprianecator1 = Cupriavidus necator N-1
+
+Cupriapinatu = Cupriavidus pinatubonensis JMP134
+
+Dechloroaroma = Dechloromonas aromatica RCB
+
+Dechlorodenitri = Dechloromonas denitrificans ATCC BAA-841
+
+Inhelinkyon = Inhella inkyongensis IMCC1713
+
+Iodofluvia = Iodobacter fluviatilis DSM 3764
+
+Leptothricholo = Leptothrix cholodnii SP-6
+
+Mitsuachito = Mitsuaria chitosanitabida NBRC 102408 
+
+Ramlitataou = Ramlibacter tataouinensis 5-10
+
+Rhizobacgummi = Rhizobacter gummiphilus NBRC 109400
+
+Rivibacsubsax = Rivibacter subsaxonicus DSM 19570
+
+Rubrivigelati = Rubrivivax gelatinosus DSM 1709
+
+Sulfuriceldenitri = Sulfuricella denitrificans skB26
+
+Thaubutani = Thauera butanivorans NBRC 103042
+
+Thauhydrotherm = Thauera hydrothermalis GD-2
+
+Variosoli = Variovorax soli NBRC 106424
+
+Vitriofili = Vitreoscilla filiformis ATCC 15551
+
+Aeromonsalmoni = Aeromonas salmonicida A527
+
+Aeromonveron = Aeromonas veronii B565
+
+Agarialbus = Agarivorans albus MKT 106
+
+Aggregatiaphrophil1 = Aggregatibacter aphrophilus NJ8700
+
+Bibertreha = Bibersteinia trehalosi Y31
+
+Dyellajapon1 = Dyella japonica A8
+
+Enterovicora = Enterovibrio coralii CAIM 912
+
+Enterovinorve = Enterovibrio norvegicus FF-33
+
+Glaespara = Glaesserella parasuis HPS10
+
+Grimonholli = Grimontia hollisae CIP 101886
+
+Haemophilhaemo = Haemophilus haemolyticus M19107
+
+Haemophilinflue = Haemophilus influenzae RdAW
+
+Litorilisedimi = Litorilituus sediminis JCM 17549
+
+Oceanicocsagmi = Oceanicoccus sagamiensis NBRC 107125
+
+Oleimessin = Oleiphilus messinensis ME102
+
+Paraferrsedimen = Paraferrimonas sedimenticola NBRC 101628
+
+Rodentipneumo = Rodentibacter pneumotropicus P441
+
+Thalassotaagari = Thalassotalea agarivorans DSM 19706
+
+Vibribreo = Vibrio breoganii 1C10
+
+Vibrivulcan = Vibrio vulnificus M06-24/O
+
+Volucripsitta = Volucribacter psittacicida DSM 15534
+
+Haladaptpauci = Haladaptatus paucihalophilus DX253
+
+Haloarcmari = Haloarcula marismortui ATCC 43049
+
+Haloarcquad = Haloarcula quadrata DSM 11927
+
+Haloarcvallis = Haloarcula vallismortis DSM 3756
+
+Haloferalexa = Haloferax alexandrinus Arc-Hr
+
+Halofervolcan = Haloferax volcanii DS2
+
+Halogeolimi = Halogeometricum limi CGMCC 1.8711
+
+Halopelainordi = Halopelagius inordinatus CGMCC 1.7739
+
+Halopisalifo = Halopiger salifodinae CGMCC 1.12284
+
+Halostaglarsen = Halostagnicola larsenii XH-48
+
+Natrialaegypt = Natrialba aegyptia DSM 13077
+
+Natrialasiati = Natrialba asiatica DSM 12278
+
+Natronocooccult = Natronococcus occultus SP4
+
+Natronorubthiooxi = Natronorubrum thiooxidans HArc-T
+
+Meiogranati = Meiothermus granaticius NBRC 107808
+
+Meiosilvan = Meiothermus silvanus VI-R2
+
+Anoxybackamchat = Anoxybacillus kamchatkensis G10
+
+Anoxybacpushchi = Anoxybacillus pushchinoensis K1
+
+Bacilamyloli = Bacillus amyloliquefaciens DSM 7
+
+Bacillicheni = Bacillus licheniformis DSM 13 Novozymes
+
+Bacilwiedman = Bacillus wiedmannii FSL W8-0169
+
+Centipedperio = Centipeda periodontii DSM 2778
+
+Clostridparaput = Clostridium paraputrificum NCTC 11861
+
+Cohnelphaseo = Cohnella phaseoli CECT 7287
+
+Desulfitohafn2 = Desulfitobacterium hafniense Y51
+
+Geobacilkausto1 = Geobacillus kaustophilus NBRC 102445
+
+Geobacilstearo1 = Geobacillus stearothermophilus DSM 458
+
+Geobacilthermo = Geobacillus thermodenitrificans T12
+
+Melghirialgeri = Melghirimyces algeriensis DSM 45474
+
+Melghirithermo = Melghirimyces thermohalophilus DSM 45514
+
+Mitsuojalalud = Mitsuokella jalaludinii DSM 13811
+
+Mitsuomultaci = Mitsuokella multacida DSM 20544
+
+Paenibacilcrasso = Paenibacillus crassostreae LPB0068
+
+Paenibacilthiamino = Paenibacillus thiaminolyticus NCTC 11027
+
+Parageobacilcaldoxy1 = Parageobacillus caldoxylosilyticus NBRC 107762
+
+Parageobaciltherman = Parageobacillus thermantarcticus M1
+
+Pelosinferment1 = Pelosinus fermentans A11
+
+Selenofelix = Selenomonas felix Marseille-P3560
+
+Selenonoxia = Selenomonas noxia F0398
+
+Staphyloaureus = Staphylococcus aureus aureus DSM 20231
+
+Staphylohomini = Staphylococcus hominis SK119
+
+Thermolongaltin = Thermolongibacillus altinsuensis DSM 24979
+
+Veilloatypi = Veillonella atypica KON
+
+Veilloparvu = Veillonella parvula Te3
+
+Veillotobet = Veillonella tobetsuensis ATCC BAA-2400
+
+Actinomadpellet = Actinomadura pelletieri DSM 43383
+
+Actinoplanxinji = Actinoplanes xinjiangensis DSM 45184
+
+Arthrobacsubte = Arthrobacter subterraneus NP_1H
+
+Gaiellaoccult = Gaiella occulta F2-233
+
+Hoyoselaltam = Hoyosella altamirensis DSM 45258
+
+Hoyoselsubfla = Hoyosella subflava DQS3-9A1
+
+Humibacilxantho = Humibacillus xanthopallidus DSM 21776
+
+Kibdelophyto = Kibdelosporangium phytohabitans KLBMP1111
+
+Microbacketosi = Microbacterium ketosireducens DSM 12510 
+
+Micrococlylae = Micrococcus lylae NCTC 963
+
+Micromonoauranti = Micromonospora aurantiaca 110B
+
+Micromonocitrea = Micromonospora citrea DSM 43903
+
+Micromonoechino = Micromonospora echinofusca DSM 43913
+
+Mycobackyori = Mycobacterium kyorinense E861
+
+Mycolicibacfortu = Mycolicibacterium fortuitum fortuitum DSM 46621
+
+Mycolicibacneworlea = Mycolicibacterium neworleansense ATCC 49404
+
+Mycolicibacnovocas = Mycolicibacterium novocastrense GA-2613
+
+Mycolicibacrhodes = Mycolicibacterium rhodesiae NBB3
+
+Nocardaoben = Nocardia aobensis NBRC 100429
+
+Nocardkrucza = Nocardia kruczakiae NBRC 101016
+
+Nocardnova = Nocardia nova SH22a
+
+Nocardviola = Nocardia violaceofusca NBRC 14427
+
+Nonomurpusil = Nonomuraea pusilla DSM 43357
+
+Patulimedica = Patulibacter medicamentivorans I11
+
+Phycicocreme = Phycicoccus cremeus CGMCC 1.6963
+
+Pseudonocardacaci = Pseudonocardia acaciae DSM 45401
+
+Pseudonocardcypri = Pseudonocardia cypriaca DSM 45511
+
+Pseudonocarddioxani1 = Pseudonocardia dioxanivorans CB1190
+
+Rhodococdeflu = Rhodococcus defluvii Ca11
+
+Rhodococmaan = Rhodococcus maanshanensis DSM 44675
+
+Rhodococpheno = Rhodococcus phenolicus DSM 44812
+
+Saccharopolyshando = Saccharopolyspora shandongensis CGMCC 4.3530
+
+Saccharothsahar = Saccharothrix saharensis DSM 45456
+
+Streptacioryza = Streptacidiphilus oryzae TH49
+
+Streptoallohindu = Streptoalloteichus hindustanus DSM 44523
+
+Streptomyformi = Streptomyces formicae KY5
+
+Streptomyindi = Streptomyces indicus CGMCC 4.5727
+
+Streptomyluteo = Streptomyces luteocolor NBRC 13826
+
+Arenialgico1 = Arenibacter algicola TG409
+
+Parabactchar = Parabacteroides chartae DSM 24967
+
+Pedobachimala = Pedobacter himalayensis HHS 22
+
+Williatara = Williamwhitmania taraxaci A7P-90m
+
+Anaeromyxdehal1 = Anaeromyxobacter dehalogenans 2CP-1
+
+Desulfurelmulti = Desulfurella multipotens DSM 8415
+
+Geothermoehrlich = Geothermobacter ehrlichii DSM 15274
+
+Malonorubra = Malonomonas rubra DSM 5091
+
+Acidimanindica = Acidimangrovimonas indica DSM 24802
+
+Actibacureil = Actibacterium ureilyticum LS-811
+
+Afipiafelis = Afipia felis felis ATCC 53690
+
+Agrobactume1 = Agrobacterium tumefaciens S2
+
+Altererythroishiga = Altererythrobacter ishigakiensis ATCC BAA-2084
+
+Bartonapis = Bartonella apis BBC0122
+
+Brucelsuis = Brucella suis bv. 3 686
+
+Cohaesibachaloalkali = Cohaesibacter haloalkalitolerans JC131
+
+Donghityrosi = Donghicola tyrosinivorans DSM 100212
+
+Erythrobaclongus = Erythrobacter longus DSM 6997
+
+Filomicroinsig = Filomicrobium insigne CGMCC 1.6497
+
+Geminirose = Geminicoccus roseus DSM 18922
+
+Jannaseohae = Jannaschia seohaensis DSM 25227
+
+Lutibacubara = Lutibaculum baratangense AMV1
+
+Martelendo = Martelella endophytica YC6887
+
+Martelmediter = Martelella mediterranea DSM 17316 
+
+Ochrobacanthro = Ochrobactrum anthropi ATCC 49188
+
+Ochrobacintermedi1 = Ochrobactrum intermedium LMG 3301
+
+Ochrobacpitui = Ochrobactrum pituitosum AA2
+
+Ochrobacthio = Ochrobactrum thiophenivorans DSM 7216
+
+Parashinlamel = Parasphingopyxis lamellibrachiae DSM 26725
+
+Pseudolataiwa = Pseudolabrys taiwanensis CC-BB4
+
+Pseudooceanflage = Pseudooceanicola flagellatus CGMCC 1.12644
+
+Pseudoviaxine = Pseudovibrio axinellae DSM 24994
+
+Rhodovuleuryha = Rhodovulum euryhalinum DSM 4868
+
+Roseovaaestu = Roseovarius aestuarii CECT 7745
+
+Roseovalitor = Roseovarius litoreus DSM 28249
+
+Sediminimonqiao = Sediminimonas qiaohouensis DSM 21189
+
+Sulfitomediter = Sulfitobacter mediterraneus KCTC 32188
+
+Thalassospirmeso = Thalassospira mesophila JCM 18969
+
+Thioclaelectro = Thioclava electrotropha Elox9
+
+Thioclamari = Thioclava marina 11.10-0-13
+
+Thioclanitrati = Thioclava nitratireducens 25B10_4
+
+Thioclasedimi = Thioclava sediminum TAW-CT134
+
+Tistliconsot1 = Tistlia consotensis DSM 21585
+
+Zhengmangro = Zhengella mangrovi X9-2-2
+
+Bordepetri = Bordetella petrii DSM 12804
+
+Brachychiro = Brachymonas chironomi DSM 19884
+
+Burkpseudo1 = Burkholderia pseudomallei ATCC 23343
+
+Cabalcali = Caballeronia calidae LMG 29321
+
+Caldimonmangano = Caldimonas manganoxidans ATCC BAA-369
+
+Caldimontaiwa = Caldimonas taiwanensis NBRC 104434
+
+Chromobachaemo1 = Chromobacterium haemolyticum H5244
+
+Chromobacvacci = Chromobacterium vaccinii 21-1
+
+Chromobacviola1 = Chromobacterium violaceum NCTC 8684
+
+Curvibacdelica = Curvibacter delicatus NBRC 14919
+
+Extensivulgar = Extensimonas vulgaris DSM 100911
+
+Kinneasacch = Kinneretia asaccharophila DSM 25082
+
+Massiliaphosphat = Massilia phosphatilytica 12-OD1
+
+Methyloveruniver = Methyloversatilis universalis FAM5
+
+Polynucaenigma = Polynucleobacter aenigmaticus MWH-K35W1
+
+Polynucsinen = Polynucleobacter sinensis MWH-HuW1
+
+Ralstonsolana1 = Ralstonia solanacearum CMR15
+
+Sulfurifemulti = Sulfuriferula multivorans TTN
+
+Thiobacdenitr1 = Thiobacillus denitrificans RG
+
+Thiomonbhuban = Thiomonas bhubaneswarensis DSM 18181
+
+Zhizhongcaldi = Zhizhongheella caldifontis BCRC 80649
+
+Aestuarisalexi = Aestuariibacter salexigens DSM 15300
+
+Alteromediter = Alteromonas mediterranea DE
+
+Amphrijapon = Amphritea japonica ATCC BAA-1530
+
+Balneatalpica = Balneatrix alpica DSM 16621
+
+Granuloantarcti = Granulosicoccus antarcticus IMCC3135
+
+Hahelcheju = Hahella chejuensis KCTC 2396
+
+Hehelganghwe = Hahella ganghwensis DSM 17046
+
+Halomonalkali1 = Halomonas alkaliantarctica CRSS
+
+Halomondeside = Halomonas desiderata SP1
+
+Lacimicroalkali = Lacimicrobium alkaliphilum YelD216
+
+Marinobachalo = Marinobacter halophilus JCM 30472
+
+Marinobachydrocarb = Marinobacter hydrocarbonoclasticus ATCC 49840
+
+Marinobacmangano = Marinobacter manganoxydans MnI7-9
+
+Marinobacnitrati = Marinobacter nitratireducens AK21
+
+Methylosarfibra = Methylosarcina fibrata AML-C10
+
+Microbulmari = Microbulbifer marinus CGMCC 1.10657
+
+Microbulyuegi = Microbulbifer yueqingensis CGMCC 1.10658
+
+Neptunoantarc = Neptunomonas antarctica DSM 22306
+
+Neptunoqingda = Neptunomonas qingdaonensis CGMCC 1.10971
+
+Neptunojapon = Neptunomonas japonica DSM 18939
+
+Nitrinconitrati = Nitrincola nitratireducens AK23
+
+Pseudoalteroarabi = Pseudoalteromonas arabiensis JCM 17292
+
+Pseudoalteroulvae = Pseudoalteromonas ulvae TC14
+
+Pseudomonstutz2 = Pseudomonas stutzeri ZoBell 632
+
+Shewanalga1 = Shewanella algae KC-Na-R1
+
+Shewanfrigidi = Shewanella frigidimarina Ag06-30
+
+Simiduagari = Simiduia agarivorans DSM 21679
+
+Thiothreike = Thiothrix eikelboomii ATCC 49788
+
+Haloarchispa = Haloarcula hispanica CGMCC 1.2049
+
+Haloarcjapon = Haloarcula japonica DSM 6131
+
+Halococsaccha = Halococcus saccharolyticus DSM 5350
+
+Halococsalifo = Halococcus salifodinae BIp
+
+Haloferdenitri = Haloferax denitrificans S1
+
+Halogeoborin = Halogeometricum borinquense PR3
+
+Halograngelati = Halogranum gelatinilyticum CGMCC 1.10119
+
+Halomicrokate = Halomicrobium katesii DSM 19301
+
+Halomicromuko = Halomicrobium mukohataei arg-2
+
+Haloplanaero = Haloplanus aerogenes CGMCC 1.10124
+
+Haloplanvescus = Haloplanus vescus CGMCC 1.8712
+
+Halorhabutah = Halorhabdus utahensis AX-2
+
+Haloriregu = Halorientalis regularis IBRC-M 10760
+
+Haloruaethio = Halorubrum aethiopicum SAH-A6
+
+Haloruhalo = Halorubrum halodurans Cb34
+
+Halorulacus = Halorubrum lacusprofundi ATCC 49239
+
+Halosimcarl = Halosimplex carlsbadense 2-9-1
+
+Sulfoloislan = Sulfolobus islandicus M.14.25
+
+Sulfurisphaohwaku = Sulfurisphaera ohwakuensis DSM 12421
+
+Vulcanidistri = Vulcanisaeta distributa DSM 14429
+
+Vulcanithermo = Vulcanisaeta thermophila CBA1501
+
+Ilumaflumi = Ilumatobacter fluminis DSM 18936
+
+Kuenenstuttgar1 = Candidatus Kuenenia stuttgartiensis MBR1
+
+Desulfovoxycli = Desulfovibrio oxyclinae DSM 11498
+
+Albimonpaci = Albimonas pacifica CGMCC 1.11030
+
+Phaeomariecto = Canditatus Phaeomarinobacter ectocarpi Ec32
+
+Yoonsedimi = Yoonia sediminilitoris DSM 29955
+
+Hydrogenophapalle = Hydrogenophaga palleronii NBRC 102513
+
+Thauchloro = Thauera chlorobenzoica 3CB1
+
+Thiomarnelson = Candidatus Thiomargarita nelsonii THI036
+
+Congrelitor = Congregibacter litoralis KT71
+
+Methyliolei = Methylicorpusculum oleiharenae XLMV4
+
+Methylomonlenta = Methylomonas lenta R-45370 
+
+Methylomonmethan = Methylomonas methanica R-45371
+
+Nevskiramo = Nevskia ramosa DSM 11499
+
+Polycycloalgi = Polycyclovorans algicola TG408
+
+Solimonaqua = Solimonas aquatica DSM 25927
+
+Ammonidege = Ammonifex degensii KC4
+
+Carbpert = Carboxydothermus pertinax Ug1
+
+Desulfohippei = Desulfosporosinus hippei DSM 8344
+
+Moorglyceri = Moorella glycerini NMP
+
+Hydrogenothermmari = Hydrogenothermus marinus DSM 12046
+
+Sulfurihydroyellow = Sulfurihydrogenibium yellowstonense SS-5
+
+Rhodospiratrue = Rhodospira trueperi ATCC 700224
+
+Rhodovulimhof = Rhodovulum imhoffii DSM 18064
+
+Sagitstella = Sagittula stellata E-37
+
+Tropicimonisoalk = Tropicimonas isoalkanivorans DSM 19548
+
+Alicyclidenitrif = Alicycliphilus denitrificans BC
+
+Aromaroma1 = Aromatoleum aromaticum pCyN1
+
+Dechloroagit1 = Dechloromonas agitata CKB
+
+Sterolidenitrif = Sterolibacterium denitrificans Chol
+
+Halomonhalodeni = Halomonas halodenitrificans DSM 735
+
+Halomonjeot = Halomonas jeotgali Hwa
+
+Halomonsaccha = Halomonas saccharevitans CGMCC 1.6493
+
+Immundicerni = Immundisolibacter cernigliae TR3.2
+
+Marinobacsalexi = Marinobacter salexigens HJR7
+
+Marinobachalophi = Marinobacterium halophilum DSM 17586
+
+Pseudomonlitoral = Pseudomonas litoralis CECT 7670
+
+Sedimentselenati = Sedimenticola selenatireducens DSM 17993
+
+Steroidodenitrif = Steroidobacter denitrificans DSM 18526
+
+Geoglobahan = Geoglobus ahangari 234
+
+Oceadesulf = Oceanithermus desulfurans DSM 15757
+
+Alteriperse = Alteribacillus persepolensis DSM 21632
+
+Bacilazoto = Bacillus azotoformans LMG 9581
+
+Bacilbatavi = Bacillus bataviensis LMG 21833
+
+Bacilgotthe = Bacillus gottheilii FJAT-2394
+
+Bacilvireti = Bacillus vireti LMG 21834
+
+Eubacoxido = Eubacterium oxidoreducens DSM 3217
+
+Lentiamyloli = Lentibacillus amyloliquefaciens LAM0015
+
+Parasporopauci = Parasporobacterium paucivorans DSM 15970
+
+Sporommaloni = Sporomusa malonica DSM 5090
+
+Tissiprae = Tissierella praeacuta DSM 18095
+
+Actinocriwych = Actinocrispum wychmicini DSM 45934
+
+Actinomybovis = Actinomyces bovis NCTC 11535
+
+Amycolabarto = Amycolatopsis bartoniae DSM 45807
+
+Amycolaeury = Amycolatopsis eurytherma DSM 44348
+
+Amycolamethan = Amycolatopsis methanolica 239
+
+Ancrocorpopuli = Ancrocorticia populi sk1b4
+
+Actinocorherbi = Actinocorallia herbida DSM 44254
+
+Arcanohaemo = Arcanobacterium haemolyticum CCM
+
+Austwickchelo = Austwickia chelonae DSM 44178
+
+Cellulomontimon = Cellulomonas timonensis SN7
+
+Corynecaspi = Corynebacterium caspium DSM 44850
+
+Corynecysti = Corynebacterium cystitidis DSM 20524
+
+Corynepyruvi = Corynebacterium pyruviciproducens ATCC BAA-1742
+
+Dermatocongol = Dermatophilus congolensis NCTC 13039
+
+Devriagama = Devriesea agamarum IMP2
+
+Eggersinen = Eggerthella sinensis DSM 16107
+
+Flaviflexmassili = Flaviflexus massiliensis SIT4
+
+Flaviflexsalsi = Flaviflexus salsibiostraticola KCTC 33148
+
+Georgenmurali = Georgenia muralis DSM 14418
+
+Georgensoli = Georgenia soli DSM 21838
+
+Kitasatphosa = Kitasatospora phosalacinea NRRL B-16228
+
+Lechefradi = Lechevalieria fradiae CGMCC 4.3506
+
+Luteojapon = Luteococcus japonicus DSM 10546
+
+Marmoripoche = Marmoricola pocheonensis Gsoil 818
+
+Microbachalo = Microbacterium halotolerans YIM 70130
+
+Mobiluncurti = Mobiluncus curtisii NCTC 11820
+
+Mycobacdecipi = Mycobacterium decipiens TBL 1200985
+
+Mycobaclacus = Mycobacterium lacus DSM 44577
+
+Mycobacmonte = Mycobacterium montefiorense BS
+
+Mycolicibachassi = Mycolicibacterium hassiacum DSM 44199
+
+Mycolicibacmorio = Mycolicibacterium moriokaense CIP105393
+
+Mycolicibacwolin = Mycolicibacterium wolinskyi CDC_01
+
+Nocardanaemi = Nocardia anaemiae NBRC 100462
+
+Nocardasia = Nocardia asiatica NBRC 100129
+
+Nocardconca = Nocardia concava NBRC 100430
+
+Propionibacfreude = Propionibacterium freudenreichii freudenreichii DSM 20271
+
+Propioniferinnocu = Propioniferax innocua DSM 8251
+
+Pseudonocardspino = Pseudonocardia spinosispora DSM 44797
+
+Raoultitimone = Raoultibacter timonensis Marseille-P3277
+
+Rhodococjostii = Rhodococcus jostii DSM 44719
+
+Rhodococpyridi = Rhodococcus pyridinivorans AK37
+
+Rhodococrhodnii = Rhodococcus rhodnii LMG 5362
+
+Rhodococtukisa = Rhodococcus tukisamuensis JCM 11308
+
+Sanguiantarcti = Sanguibacter antarcticus DSM 18966
+
+Sanguigelidi = Sanguibacter gelidistatuariae ISLP-3
+
+Sanguisuare = Sanguibacter suarezii NBRC 16159
+
+Segnilirugosus = Segniliparus rugosus ATCC BAA-974
+
+Serinimarinus = Serinicoccus marinus DSM 15273
+
+Stackenassau = Stackebrandtia nassauensis LLR-40K-21
+
+Streptomyerythro = Streptomyces erythrochromogenes NRRL B-2112
+
+Streptomyniger = Streptomyces niger NRRL B-3857
+
+Streptomypseudo = Streptomyces pseudovenezuelae DSM 40212
+
+Streptomysvice = Streptomyces sviceus ATCC 29083
+
+Tessaraantarcti = Tessaracoccus antarcticus JDX10
+
+Tessaraoleia = Tessaracoccus oleiagri CGMCC 1.9159
+
+Thermobifusca = Thermobifida fusca TM51
+
+Timonsenega = Timonella senegalensis JC301
+
+Trueperberna = Trueperella bernardiae LCDC 89-0504
+
+Trueperpyoge = Trueperella pyogenes NCTC 5224
+
+Varibaccambri = Varibaculum cambriense DSM 15806
+
+Holophafoeti = Holophaga foetida TMBS4
+
+Arcobutz = Arcobacter butzleri RM4018
+
+Arcohalo = Arcobacter halophilus CCUG 53805
+
+Arcomollu = Arcobacter molluscorum CECT 7696
+
+Campygeo1 = Campylobacter geochelonis RC20
+
+Campyorni = Campylobacter ornithocola WBE38
+
+Helicohimala = Helicobacter himalayensis YS1
+
+Helicomagde = Helicobacter magdeburgensis MIT 96-1001
+
+Helicopylor = Helicobacter pylori 26695
+
+Pseudoarcocaeni = Pseudoarcobacter caeni RW17-10
+
+Sulfurimhongkong = Sulfurimonas hongkongensis AST-10
+
+Desulfammagneto = Desulfamplus magnetovallimortis ERS1571938
+
+Desulfobaculxiame = Desulfobaculum xiamenense DSM 24233
+
+Desulfovamino = Desulfovibrio aminophilus DSM 12254
+
+Desulfovdesulf2 = Desulfovibrio desulfuricans desulfuricans DSM 642
+
+Desulfovvulgar1 = Desulfovibrio vulgaris Miyazaki F
+
+Halodesulfo = Halodesulfovibrio marinisediminis DSM 17456
+
+Pelobacsacidi = Pelobacter acidigallici Ma Gal 2
+
+Afifelmari = Afifella marina DSM 2698
+
+Afifelphenni = Afifella pfennigii DSM 17143
+
+Bartonapis1 = Bartonella apis BBC0244
+
+Belnaprosea = Belnapia rosea CGMCC 1.10758
+
+Bosealupi = Bosea lupini DSM 26673
+
+Bradyrhizojica = Bradyrhizobium jicamae PAC68
+
+Bradyrhizomacu = Bradyrhizobium macuxiense BR 10355
+
+Bradyrhizopachy = Bradyrhizobium pachyrhizi BR3262
+
+Bradyrhizotropi = Bradyrhizobium tropiciagri SEMIA 6148
+
+Cereichang = Cereibacter changlensis DSM 18774
+
+Cohaesibacgelati = Cohaesibacter gelatinilyticus DSM 18289
+
+Commensaintesti = Commensalibacter intestini A911
+
+Enhydroaero = Enhydrobacter aerosaccus ATCC 27094
+
+Elioratepidi = Elioraea tepidiphila DSM 17972
+
+Fodinisedi = Fodinicurvata sediminis DSM 21159
+
+Gemmocaeni = Gemmobacter caeni CGMCC 1.7745 
+
+Maliponaqui = Maliponia aquimaris CECT 8898
+
+Mesorhizoamor = Mesorhizobium amorphae CCNWGS0123
+
+Nisaeadenitri = Nisaea denitrificans DSM 18348
+
+Notoacmemari = Notoacmeibacter marinus HMA008
+
+Oceanibacindicum1 = Oceanibaculum indicum USBA 36
+
+Oceanibacnanhai = Oceanibaculum nanhaiense L54-1-50
+
+Paracocthiocyan1 = Paracoccus thiocyanatus SST
+
+Pelagimonvaria = Pelagimonas varians DSM 23678
+
+Phaeobacgallae1 = Phaeobacter gallaeciensis C3M10 
+
+Phreatostygi = Phreatobacter stygius KCTC 52518
+
+Pseudorhodosinus = Pseudorhodoplanes sinuspersici CECT 8374
+
+Rhodobaccapsul2 = Rhodobacter capsulatus 37b4
+
+Rhodobacjohri = Rhodobacter johrii JA192
+
+Rhodobacsphae1 = Rhodobacter sphaeroides f. sp. denitrificans IL106
+
+Rhodobiorien = Rhodobium orientis DSM 11290
+
+Roseoaeri = Roseomonas aerilata DSM 19363
+
+Roseovasti = Roseomonas vastitatis CPCC 101021
+
+Roseovapaci = Roseovarius pacificus DSM 29589
+
+Ruegeratlanti = Ruegeria atlantica CECT 4293
+
+Ruegerconchae = Ruegeria conchae DSM 29317
+
+Ruegerpome = Ruegeria pomeroyi DSS-3
+
+Salipaestu = Salipiger aestuarii DSM 22011
+
+Sedimentitananhai = Sedimentitalea nanhaiensis CGMCC 1.10959
+
+Shimiahalio = Shimia haliotis DSM 28453
+
+Shimiaisopor = Shimia isoporae DSM 26433
+
+Thalassobaculitor = Thalassobaculum litoreum DSM 18839
+
+Thalassobacusalexi = Thalassobaculum salexigens DSM 19539
+
+Tistrelmobilis = Tistrella mobilis KA081020-065
+
+Achrominsoli1 = Achromobacter insolitus AB2
+
+Achromruhla = Achromobacter ruhlandii Ar319
+
+Achromrspan = Achromobacter spanius MYb73 
+
+Achromxylo1 = Achromobacter xylosoxidans NBRC 15126
+
+Aromanaero = Aromatoleum anaerobium LuFRes1
+
+Azoaindi = Azoarcus indigens DSM 12121
+
+Bordeflabi = Bordetella flabilis AU10664
+
+Bordetrema = Bordetella trematum CCUG 13902
+
+Brackioedi = Brackiella oedipodis DSM 13743
+
+Burkambifa = Burkholderia ambifaria AMMD 
+
+Burkcenoce = Burkholderia cenocepacia 842
+
+Burkcenoce1 = Burkholderia cenocepacia DDS 22E-1
+
+Burkglum = Burkholderia glumae ATCC 33617
+
+Burkpyrro = Burkholderia pyrrocinia CH-67
+
+Burkpyrro1 = Burkholderia pyrrocinia Lyc2
+
+Burkubone = Burkholderia ubonensis Bu
+
+Cabalcatu = Caballeronia catudaia LMG 29318
+
+Cabalptereo = Caballeronia ptereochthonis LMG 29326
+
+Candidibauza = Candidimonas bauzanensis CGMCC 1.10190
+
+Castellacaeni = Castellaniella caeni NBRC 101664
+
+Comamothio1 = Comamonas thiooxydans QT12 
+
+Crenobacluteus = Crenobacter luteus DSM 27258
+
+Cupriabasil1 = Cupriavidus basilensis KF708
+
+Cupriagilar = Cupriavidus gilardii J11
+
+Cupriametalli = Cupriavidus metallidurans CH34
+
+Curvibacgraci = Curvibacter gracilis ATCC BAA-807
+
+Curvibaclance = Curvibacter lanceolatus ATCC 14669
+
+Duodenimassili = Duodenibacillus massiliensis Marseille-P2968 
+
+Lautromirabi = Lautropia mirabilis ATCC 51599
+
+Oligelureo = Oligella ureolytica NCTC 11997
+
+Ottowiathio = Ottowia thiooxydans DSM 14619
+
+Paraburkribei = Paraburkholderia ribeironis STM 7296
+
+Paraburksacchar = Paraburkholderia sacchari LMG 19450
+
+Paraburksilvat = Paraburkholderia silvatlantica SRCL-318
+
+Paracandidisoli = Paracandidimonas soli DSM 100048
+
+Pigmentikullae = Pigmentiphaga kullae DSM 13608
+
+Polarojejuen = Polaromonas jejuensis NBRC 106434
+
+Pseudorhodofersoli = Pseudorhodoferax soli DSM 21634
+
+Pusillinoerte = Pusillimonas noertemannii DSM 10065
+
+Rhodofersaiden = Rhodoferax saidenbachensis DSM 22694
+
+Robbsiaandro = Robbsia andropogonis Ba3549
+
+Rubrivigelati1 = Rubrivivax gelatinosus IL144
+
+Sutterelparvi = Sutterella parvirubra YIT 11816
+
+Sutterelwadsworth = Sutterella wadsworthensis 2_1_59BFAA
+
+Varioboroni = Variovorax boronicumulans NBRC 103145
+
+Variopara = Variovorax paradoxus TBEA6 
+
+Xenophilazovor = Xenophilus azovorans DSM 13620
+
+Actinobacligni = Actinobacillus lignieresii NCTC 4189
+
+Actinobacminor = Actinobacillus minor NM305
+
+Actinobacpleuro = Actinobacillus pleuropneumoniae sv. 5b L20
+
+Aggregatiactino = Aggregatibacter actinomycetemcomitans sv. C D11S-1
+
+Aggregatiaphrophil2 = Aggregatibacter aphrophilus W10433
+
+Aliagarimarinus = Aliagarivorans marinus DSM 23064
+
+Aliagaritaiwan = Aliagarivorans taiwanensis DSM 22990
+
+Aliivifisch = Aliivibrio fischeri ES114
+
+Aliiviloge1 = Aliivibrio logei ATCC 35077
+
+Azomonagilis = Azomonas agilis DSM 375
+
+Azotobacbeije = Azotobacter beijerinckii DSM 373
+
+Bisgahudson = Bisgaardia hudsonensis DSM 28231
+
+Brennergood = Brenneria goodwinii FRB141
+
+Citrowerk = Citrobacter werkmanii NBRC 105721
+
+Colwelmytili = Colwellia mytili KCTC 52417
+
+Colwelpsychre = Colwellia psychrerythraea ND2E
+
+Endozoicoatri = Endozoicomonas atrinae WP70
+
+Endozoicoelysi = Endozoicomonas elysicola MKT110
+
+Endozoicomonti = Endozoicomonas montiporae LMG 24815
+
+Enterovinorve1 = Enterovibrio norvegicus DSM 15893
+
+Enterovipacifi = Enterovibrio pacificus CAIM 1920
+
+Escheralbertii = Escherichia albertii KF1
+
+Gallibacanat1 = Gallibacterium anatis UMN179
+
+Gallibacsalpi = Gallibacterium salpingitidis F150
+
+Gilliaapicol1 = Gilliamella apicola DSM 104097
+
+Gilliabombi = Gilliamella bombicola R-53248
+
+Grimonholli1 = Grimontia hollisae NCTC 11645
+
+Hafniaalvi = Hafnia alvei ATCC 51873
+
+Haemophilpitt = Haemophilus pittmaniae NCTC 13335
+
+Kosakosacchari = Kosakonia sacchari SP1
+
+Oleispiraantarcti = Oleispira antarctica RB-8
+
+Orbushercynius = Orbus hercynius DSM 22228
+
+Pasteurmulto1 = Pasteurella multocida multocida sv. 3 Pm70
+
+Pasteurtestu = Pasteurella testudinis DSM 23072
+
+Photobaclipo = Photobacterium lipolyticum DSM 16190
+
+Photobacluti = Photobacterium lutimaris CECT 7642
+
+Photobacmari = Photobacterium marinum AK15
+
+Plesioshigel = Plesiomonas shigelloides MS-17-188
+
+Pokkaliplanti = Pokkaliibacter plantistimulans L1E11
+
+Providrett1 = Providencia rettgeri DSM 1131
+
+Pseudomonazoto = Pseudomonas azotoformans F77
+
+Pseudomoncaspi = Pseudomonas caspiana FBF102
+
+Pseudomonsyri = Pseudomonas syringae pv. tomato DC3000
+
+Pseudomonviri = Pseudomonas viridiflava LMCA8
+
+Psychromonarcti = Psychromonas arctica DSM 14288
+
+Psychromonhada = Psychromonas hadalis ATCC BAA-638
+
+Reinemarini = Reinekea marinisedimentorum DSM 15388
+
+Rodentimyodis = Rodentibacter myodis Ac151
+
+Shewanmaris = Shewanella marisflavi EP1
+
+Shewansedi = Shewanella sediminis HAW-EB3
+
+Sinobaccali = Sinobacterium caligoides DSM 100316
+
+Thaumasioccult = Thaumasiovibrio occultus C4II189
+
+Vibricholer = Vibrio cholerae sv. O1 bv. El Tor N16961
+
+Vibricinci = Vibrio cincinnatiensis DSM 19608
+
+Vibriezur = Vibrio ezurae NBRC 102218
+
+Vibrihalio = Vibrio halioticoli NBRC 102217
+
+Vibrimetsch = Vibrio metschnikovii NCTC 8563
+
+Vibripara1 = Vibrio parahaemolyticus sv. O3:K6 
+
+Vibrivulcan1 = Vibrio vulnificus YJ016
+
+Zobelletaiwan = Zobellella taiwanensis JCM 13381
+
+Halobacsali = Halobacterium salinarum NRC-1
+
+Halococthai = Halococcus thailandensis JCM 13552
+
+Haloruhalophil = Halorubrum halophilum B8
+
+Natrinaltun = Natrinema altunense JCM 12890
+
+Natringari = Natrinema gari JCM 14663
+
+Natrinpalli = Natrinema pallidum DSM 3751
+
+Sulfobacthermo = Sulfobacillus thermosulfidooxidans AT-1
+
+Thermocrinalbus = Thermocrinis albus HI 11/12
+
+Thermocrinminer = Thermocrinis minervae DSM 19557
+
+Belnapmoab = Belnapia moabensis DSM 16746
+
+Crenalkaliroseus = Crenalkalicoccus roseus YIM 78023
+
+Dankookrubra = Dankookia rubra JCM30602
+
+Filomicromari = Filomicrobium marinum Y
+
+Kilospongi = Kiloniella spongiae MEBiC09566
+
+Magnetococmari = Magnetococcus marinus MC-1
+
+Magnetofaaustral = Magnetofaba australis IT-1
+
+Magnetospirgryphi = Magnetospirillum gryphiswaldense MSR-1
+
+Magnetospirmosco = Magnetospirillum moscoviense BB-1
+
+Mesorhizoaustral = Mesorhizobium australicum WSM2073
+
+Mesorhizohelman = Mesorhizobium helmanticense CSLC115N
+
+Mesorhizokowhaii = Mesorhizobium kowhaii Ach-343
+
+Mesorhizosanjua = Mesorhizobium sanjuanii BSA136
+
+Oceanibacterhippo = Oceanibacterium hippocampi CECT 7691
+
+Phyllobacbrassi1 = Phyllobacterium brassicacearum 29-15
+
+Phyllobacmyrsi = Phyllobacterium myrsinacearum DSM 5892
+
+Phyllobacsopho = Phyllobacterium sophorae CCBAU 03422
+
+Puniceispirmari = Puniceispirillum marinum IMCC1322
+
+Roseostagni = Roseomonas stagni DSM 19981
+
+Stellahumo = Stella humosa DSM 5900
+
+Varunaisulfuro = Varunaivibrio sulfuroxidans DSM 101688
+
+Burkokla1 = Burkholderia oklahomensis NCTC 13388
+
+Cabalchoica = Caballeronia choica LMG 22940
+
+Cabalglathei = Caballeronia glathei LMG 14190
+
+Cabalterre = Caballeronia terrestris LMG 22937
+
+Glaciiimmobi = Glaciimonas immobilis DSM 23240
+
+Methylibipetro = Methylibium petroleiphilum PM1
+
+Pandorthiooxy = Pandoraea thiooxydans DSM 25325
+
+Paraburkferra = Paraburkholderia ferrariae NBRC 106233
+
+Paraburkphospha = Paraburkholderia phosphatilytica 7QSK02
+
+Paraburkphyma = Paraburkholderia phymatum STM815
+
+Paralurei = Paralcaligenes ureilyticus DSM 24591
+
+Polynucdiffi = Polynucleobacter difficilis AM-8B5
+
+Sulfurifethio = Sulfuriferula thiophila mst6
+
+Sulfuritorcalidi = Sulfuritortus calidifontis DSM 103923
+
+Thiobacthio = Thiobacillus thioparus DSM 505
+
+Thiomondeli = Thiomonas delicata DSM 16361
+
+Varioguang = Variovorax guangxiensis DSM 27352
+
+Variopara1 = Variovorax paradoxus S110
+
+Vermineeise = Verminephrobacter eiseniae EF01-2
+
+Acidihaloferroxi = Acidihalobacter ferrooxidans V8
+
+Acidihaloprospe = Acidihalobacter prosperus V6
+
+Allochromvino = Allochromatium vinosum DSM 180
+
+Ectothiomongol = Ectothiorhodosinus mongolicus M9
+
+Ectothiorhodohaloalk = Ectothiorhodospira haloalkaliphila Imhoff 51/7
+
+Ectothiorhodomari = Ectothiorhodospira marina DSM 241
+
+Halomonendophy = Halomonas endophytica MC28
+
+Halomonsali = Halomonas saliphila LCB169
+
+Inmirathermo = Inmirania thermothiophila DSM 100275
+
+Sulfuricaulimi = Sulfuricaulis limicola HA5
+
+Sulfuriflexmobil = Sulfuriflexus mobilis aks1
+
+Sulfuriverfontis = Sulfurivermis fontis JG42
+
+Thioalbusdenitri = Thioalbus denitrificans DSM 26407
+
+Thioflavimobil = Thioflavicoccus mobilis 8321
+
+Thioflexopseku = Thioflexothrix psekupsii D-3
+
+Thiohalobacthio = Thiohalobacter thiocyanaticus FOKN1
+
+Thiohalorhabdenitri = Thiohalorhabdus denitrificans HL19
+
+Thiohalospirahalo = Thiohalospira halophila HL3
+
+Thiothrlacus = Thiothrix lacustris DSM 21227
+
+Hippemari = Hippea maritima MH2
+
+Acidiaambiva = Acidianus ambivalens Lei 10
+
+Acidiamanzae = Acidianus manzaensis YN-25
+
+Aremensulfur = Aramenus sulfurataquae AZ1
+
+Defluviaquae = Defluviimonas aquaemixtae CECT 8626
+
+Labrenalba = Labrenzia alba CECT 7551
+
+Litoreiascidi = Litoreibacter ascidiaceicola DSM 100566
+
+Notoacmemari1 = Notoacmeibacter marinus XMTR2A4 
+
+Oricolacellu = Oricola cellulosilytica KCTC 52183
+
+Rhodophyporphy = Rhodophyticola porphyridii MA-7-27
+
+Roseobaclitor = Roseobacter litoralis Och 149
+
+Ruegerhalo = Ruegeria halocynthiae DSM 27839
+
+Ruegerinter = Ruegeria intermedia DSM 29341
+
+Marinobacpsychro = Marinobacter psychrophilus 20041
+
+Moritelvisco = Moritella viscosa LFI 5006
+
+Moritelyayan = Moritella yayanosii DB21MT 5
+
+PseudomonSCT = Pseudomonas sp. SCT
+
+Vibriatlan = Vibrio atlanticus CECT 7223
+
+Vibrisonor = Vibrio sonorensis CAIM 1076
+
+Vibrisplen = Vibrio splendidus LGP32
+
+Vibritapet = Vibrio tapetis tapetis CECT 4600
+
+Chloroflexislan = Chloroflexus islandicus isl-2
+
+Herpetauran = Herpetosiphon aurantiacus DSM 785
+
+Herpetgeyseri = Herpetosiphon geysericola DSM 7119
+
+Herpetllanste = Herpetosiphon llansteffanense CA052B
+
+Roseiflexcaste = Roseiflexus castenholzii HLO8
+
+Actinoallobryo = Actinoallomurus bryophytorum DSM 102200
+
+Actinomadmadur = Actinomadura madurae DSM 43067
+
+Actinomadoligo = Actinomadura oligospora ATCC 43269
+
+Actinopolycepha = Actinopolymorpha cephalotaxi CPCC 202808
+
+Actinopolyrutila = Actinopolymorpha rutila DSM 18448
+
+Actinopolysinga = Actinopolymorpha singaporensis DSM 22024
+
+Allocatelscor = Allocatelliglobosispora scoriae DSM 45362
+
+Kitasatgrise = Kitasatospora griseola MF730-N6
+
+Marinactinthermo = Marinactinospora thermotolerans DSM 45154
+
+Microtetramalay = Microtetraspora malaysiensis NBRC 100735
+
+Motilibacauran = Motilibacter aurantiacus K478
+
+Motilibacrhizo = Motilibacter rhizosphaerae DSM 45622
+
+Mycobacfragae = Mycobacterium fragae DSM 45731
+
+Mycobacmalmoe = Mycobacterium malmoense CTRI-256
+
+Mycobacnovio = Mycobacterium noviomagense DSM 45145
+
+Mycobacparaffi = Mycobacterium paraffinicum M11
+
+Nocardinoha = Nocardia inohanensis NBRC 100128
+
+Sphaerirubeum = Sphaerisporangium rubeum DSM 44936
+
+Spinactinalkali = Spinactinospora alkalitolerans DSM 45414
+
+Streptomycyano = Streptomyces cyaneochromogenes MK-45
+
+Streptomygram = Streptomyces graminilatus NRRL B-59124
+
+Streptomyolivo = Streptomyces olivochromogenes DSM 40451
+
+Streptomypurpur = Streptomyces purpurogeneiscleroticus NRRL B-2952
+
+Thermasporocompost = Thermasporomyces composti DSM 22891
+
+Thermobifusca1 = Thermobifida fusca YX
+
+Williammaria = Williamsia marianensis DSM 44944
+
+Williammural = Williamsia muralis DSM 44343
+
+Brocadfulgi = Candidatus Brocadia fulgida
+
+Scalinjapon = Scalindua japonica husup-a2
+
+Protochlamamoebo = Candidatus Protochlamydia amoebophila UWE25
+
+Protochlamnaegler = Candidatus Protochlamydia naegleriophila KNic
+
+Estrellausan = Estrella lausannensis CRIB-30
+
+Parachlamacanth = Parachlamydia acanthamoebae UV7
+
+Adhaeribacarobor = Adhaeribacter arboris HMF7605
+
+Chitinofili = Chitinophaga filiformis DSM 527
+
+Chitinoginseng = Chitinophaga ginsengisegetis DSM 18108
+
+Chitinoginsengi = Chitinophaga ginsengisoli DSM 18107
+
+Chitinoniaste = Chitinophaga niastensis DSM 24859
+
+Chryseoserpens = Chryseolinea serpens DSM 24574
+
+Chryseosoli = Chryseolinea soli KIS68-18
+
+Empedohalo = Empedobacter haloabium ATCC 31962
+
+Flavihumisolis = Flavihumibacter solisilvae 3-3
+
+Flavisolitropi = Flavisolibacter tropicus LCS9
+
+Niastelyeong = Niastella yeongjuensis DSM 17621
+
+Pontibacactin = Pontibacter actiniarum DSM 19842
+
+Pontibacdiazo = Pontibacter diazotrophicus H4X
+
+Pontibackorle = Pontibacter korlensis X14-1T
+
+Pontibacrose = Pontibacter roseus DSM 17521
+
+Rufibaclateri = Rufibacter latericius byd1
+
+Solitacanad = Solitalea canadensis USAM 9D
+
+Solitakoreen = Solitalea koreensis DSM 21342
+
+Sunxdokdo = Sunxiuqinia dokdonensis SK
+
+Thermoflavaggre = Thermoflavifilum aggregans DSM 27268
+
+Edaphoaggre = Edaphobacter aggregans DSM 19364
+
+Edaphomodest = Edaphobacter modestus DSM 18101
+
+Terriglobalbi = Terriglobus albidus ORNL
+
+Arcoanaero1 = Arcobacter anaerophilus DSM 24636
+
+Arcodefluv = Arcobacter defluvii CECT 7697
+
+Arcoperu = Arcobacter peruensis PSE-93
+
+Campycoli = Campylobacter coli CVM N29710
+
+Campyjeju = Campylobacter jejuni jejuni NCTC 11168
+
+Campynovae = Campylobacter novaezeelandiae B423b
+
+Campyvolu = Campylobacter volucris LMG 24379
+
+Helicoacino = Helicobacter acinonychis Sheeba
+
+Helicohepat = Helicobacter hepaticus 3B1
+
+Helicojapon = Helicobacter japonicus MIT 01-6451
+
+Malaciomollus = Malaciobacter molluscorum F91
+
+Poseidoantarc = Poseidonibacter antarcticus SM1702
+
+Pseudoarcoacti = Pseudoarcobacter acticola KCTC 52212
+
+Sulfurimcrater = Sulfurimonas crateris SN118
+
+Geobacanod = Geobacter anodireducens SD-1
+
+Geomonferri = Geomonas ferrireducens S62
+
+Azospirthermo = Azospirillum thermophilum CFH 70021
+
+Dongiamobil = Dongia mobilis CGMCC 1.7660
+
+Ferrovibterrae = Ferrovibrio terrae K5
+
+Ferrugisedimi = Ferruginivarius sediminum WD2A32
+
+Hyperiadhaer = Hypericibacter adhaerens R595
+
+Hyperiterrae = Hypericibacter terrae R5913
+
+Limibachalo = Limibacillus halophilus CECT 8803
+
+Limimonhalo = Limimonas halophila DSM 25584
+
+Nitrospiramaz = Nitrospirillum amazonense BR 11865
+
+Nitrospiririd = Nitrospirillum iridis DSM 22198
+
+Novispiriter = Novispirillum itersonii DSM 11590
+
+Rhodovibsali = Rhodovibrio salinarum DSM 9154
+
+Skermstibii = Skermanella stibiiresistens SB22
+
+Sneathchung = Sneathiella chungangensis KCTC 32476
+
+Herbasplusi = Herbaspirillum lusitanum P6-12
+
+Herminfonti = Herminiimonas fonticola DSM 18555
+
+Nitrosomonmobil = Nitrosomonas mobilis ERS1404681
+
+Nitrosospirbrie = Nitrosospira briensis C-128
+
+Noviherbahumi = Noviherbaspirillum humi U15
+
+Sapienaqua = Sapientia aquatica SA-152
+
+Solimicrosilves = Solimicrobium silvestre S20-91
+
+Undibacparvum = Undibacterium parvum DSM 23061
+
+Legionlondi = Legionella londiniensis NCTC 12931
+
+Legionmacea = Legionella maceachernii ATCC 35300
+
+Legionpneum = Legionella pneumophila Paris
+
+Legionquin = Legionella quinlivanii DSM 21216
+
+Methylophagamini = Methylophaga aminisulfidivorans MP
+
+Methylophagmural = Methylophaga muralis Bur 1
+
+Methylophagnitrati = Methylophaga nitratireducenticrescens JAM1
+
+Methylophagsulfido = Methylophaga sulfidovorans DSM 11578
+
+Nitrosochalo = Nitrosococcus halophilus Nc4
+
+Nitrosococeani = Nitrosococcus oceani C-107
+
+Nitrosocwardi = Nitrosococcus wardiae D1FHS
+
+Permianaggre = Permianibacter aggregans DSM 103792
+
+Photobacalgin = Photobacterium alginatilyticum P03D4
+
+Photobacangus = Photobacterium angustum S14
+
+Thioalkversu = Thioalkalivibrio versutus D301
+
+Calidithermrose = Calidithermus roseus NBRC 110900
+
+Marinithermhydro = Marinithermus hydrothermalis T1
+
+Meiorufus = Meiothermus rufus DSM 22234
+
+Trueradio = Truepera radiovictrix RQ-24
+
+Oscillotrich = Oscillochloris trichoides DG6
+
+Leptospborg = Leptospira borgpetersenii DSM 21538
+
+Leptospinter = Leptospira interrogans ATCC 43642
+
+Leptosplicer = Leptospira licerasiae ATCC BAA-1110
+
+Leptospmeyer = Leptospira meyeri DSM 21537
+
+Alienicalif = Alienimonas californiensis CA12
+
+Blastopicrem = Blastopirellula cremea HEX PRIS-MGV
+
+Blastopimari = Blastopirellula marina DSM 3645
+
+Blastopireti = Blastopirellula retiformator Enr8
+
+Bremervolca = Bremerella volcania Pan97
+
+Cratericonspi = Crateriforma conspicua Mal65
+
+Fimbriruber = Fimbriiglobus ruber SP5
+
+Gemmaobscur = Gemmata obscuriglobus DSM 5831
+
+Gimesbenth = Gimesia benthica E7
+
+Gimeschil = Gimesia chilikensis JC646
+
+Paludisphborea = Paludisphaera borealis PX4
+
+Planctopiri = Planctomicrobium piriforme DSM 26348
+
+Planctopiephyda = Planctopirus ephydatiae spb1
+
+Planctopihydri = Planctopirus hydrillae JC280
+
+Planctopilimno = Planctopirus limnophila DSM 3776
+
+Rhodopirbahu = Rhodopirellula bahusiensis SWK21
+
+Rhodopirbalt = Rhodopirellula baltica SH 1
+
+Roseimariulvae = Roseimaritima ulvae DSM 25454
+
+Rubinitali = Rubinisphaera italica Pan54
+
+Rubripiramar = Rubripirellula amarantea Pla22
+
+Rubripirobsti = Rubripirellula obstinata LF1
+
+Rubripirtenax = Rubripirellula tenax Poly51
+
+Schlespaludi = Schlesneria paludicola DSM 18645
+
+Singuliacid = Singulisphaera acidiphila MOB10
+
+Tautonsocia = Tautonia sociabilis GM2012
+
+Zavarformo = Zavarzinella formosa DSM 19928
+
+Brevifogella = Brevifollis gellanilyticus NBRC 108608
+
+Chthonflavus = Chthoniobacter flavus DSM 22515
+
+Coralioakaii = Coraliomargarita akajimensis DSM 45221
+
+Coraliosine = Coraliomargarita sinensis WN38
+
+Haloferullute = Haloferula luteola DSM 21608
+
+Lentispharane = Lentisphaera araneosa HTCC2155
+
+Limisphngata = Limisphaera ngatamarikiensis NGM72.4
+
+Methylacidifumar = Methylacidiphilum fumariolicum SolV
+
+Methylacidiinfer = Methylacidiphilum infernorum V4
+
+Methylacidikamcha = Methylacidiphilum kamchatkense Kam1
+
+Nibriaqua = Nibricoccus aquaticus HZ-65
+
+Oleihalent = Oleiharenicola lentus TWA-58
+
+Pedosphparvu = Pedosphaera parvula Ellin514
+
+Phragflavus = Phragmitibacter flavus MG-N-17
+
+Prosthecodejo = Prosthecobacter dejongeii DSM 12251
+
+Prosthecofusi = Prosthecobacter fusiformis ATCC 25309
+
+Prosthecovann = Prosthecobacter vanneervenii DSM 12252
+
+Rubritalsqual = Rubritalea squalenifaciens DSM 18772
+
+Ruficoamylo = Ruficoccus amylovorans JCM31066
+
+Aquimarbrev = Aquimarina brevivitae DSM 17196
+
+Aquimarmuel = Aquimarina muelleri DSM 19832
+
+Aquimarspon = Aquimarina spongiae DSM 22623
+
+Cellulotyro = Cellulophaga tyrosinoxydans DSM 21164
+
+Croceidokdo = Croceitalea dokdonensis DOKDO 023
+
+Flavobacdeflu = Flavobacterium defluvii DSM 17963
+
+Flavobacjohn = Flavobacterium johnsoniae UW101
+
+Flavobacpecti = Flavobacterium pectinovorum DSM 6368
+
+Flavobacsacchar = Flavobacterium saccharophilum DSM 1811
+
+Kordiaperi = Kordia periserrulae DSM 25731
+
+Mariluteus = Maribacter luteus RZ05
+
+Marivacel = Maribacter vaceletii DSM 25230
+
+Mesonalga = Mesonia algae DSM 15361
+
+Muricauantarc = Muricauda antarctica DSM 26351
+
+Muricauluta = Muricauda lutaonensis CC-HSB-11
+
+Muricautaean = Muricauda taeanensis JCM 17757
+
+Myroidguan = Myroides guanonis DSM 26542
+
+Myroidodor = Myroides odoratus DSM 2801
+
+Myroidphaeus = Myroides phaeus DSM 23313
+
+Robiginbiform = Robiginitalea biformata HTCC2501
+
+Robiginmyxoli = Robiginitalea myxolifaciens DSM 21019
+
+Robiginsedi = Robiginitalea sediminis O458
+
+Sinomicrooceani = Sinomicrobium oceani CGMCC 1.12145
+
+Sinomicropectin = Sinomicrobium pectinilyticum 5DNS001
+
+Winogradalgi = Winogradskyella algicola IMCC33238
+
+Winogradepiphy = Winogradskyella epiphytica CECT 7945
+
+Winogradwando = Winogradskyella wandonensis CECT 8445
+
+Acidipilding = Acidipila dinghuensis DHOF10
+
+Acidipilrosea = Acidipila rosea DSM 103428
+
+Acidisarpoly = Acidisarcina polymorpha SBC82
+
+Acidobacaila = Acidobacterium ailaaui PMMR2
+
+Bryobacaggre = Bryobacter aggregatus DSM 18758
+
+Bryocelelong = Bryocella elongata DSM 22489
+
+Chloracidotherm = Chloracidobacterium thermophilum OC1
+
+Edapholichen = Edaphobacter lichenicola M8UP30
+
+Granuliarcti = Granulicella arctica X4EP2
+
+Granulipectin = Granulicella pectinivorans DSM 21001
+
+Granulisibir = Granulicella sibirica AF10
+
+Granulitundri = Granulicella tundricola MP5ACTX9
+
+Luteitpraten = Luteitalea pratensis DSM 100886
+
+Silvibacbohem = Silvibacterium bohemicum DSM 103733
+
+Terriglobrose = Terriglobus roseus KBS 63
+
+Bradymonsedimi1 = Bradymonas sediminis DSM 28820
+
+Chondroapicu = Chondromyces apiculatus DSM 436
+
+Chondrocroca = Chondromyces crocatus Cm c5
+
+Corallocarmar = Corallococcus carmarthensis CA043D
+
+Corallocoral = Corallococcus coralloides DSM 2259
+
+Corallollans = Corallococcus llansteffanensis CA051B
+
+Corallotermin = Corallococcus terminator CA054A
+
+Enhygrosalina = Enhygromyxa salina SWB007
+
+Geobacbremen = Geobacter bremensis R1
+
+Geobacpelo = Geobacter pelophilus Dfr2
+
+Geomonedaph = Geomonas edaphica Red53
+
+Geomonterr = Geomonas terrae Red111
+
+Hyalanminut = Hyalangium minutum DSM 14724
+
+Labilithlute = Labilithrix luteola DSM 27648
+
+Lujinlitor = Lujinxingia litoralis B210
+
+Lujinsedimin = Lujinxingia sediminis SEH01
+
+Melittanbole = Melittangium boletus DSM 14713
+
+Myxofulvus = Myxococcus fulvus DSM 16525
+
+Myxohansup = Myxococcus hansupus DSM 436
+
+Myxostipit = Myxococcus stipitatus DSM 14675
+
+Myxoviresc = Myxococcus virescens DSM 2260
+
+Pajaroaborti = Pajaroellobacter abortibovis
+
+Sandaramylo = Sandaracinus amylolyticus DSM 53668
+
+Sorancellu = Sorangium cellulosum So ce 56
+
+Stigmaauran = Stigmatella aurantiaca DSM 17044
+
+Stigmaerect = Stigmatella erecta DSM 16858
+
+Vulgatiincom = Vulgatibacter incomptus DSM 27710
+
+Azospirbras1 = Azospirillum brasilense sp7
+
+Azospiroryz = Azospirillum oryzae A2P
+
+Bradyrhizjapon = Bradyrhizobium japonicum UBMA197
+
+Bradyrhizmanau = Bradyrhizobium manausense BR3351
+
+Bradyrhizopachy1 = Bradyrhizobium pachyrhizi PAC 48
+
+Licheniminor = Lichenibacterium minor RmlP026
+
+Mesorhizooppor = Mesorhizobium opportunistum WSM2075
+
+Mesorhizopluri = Mesorhizobium plurifarium ORS3365
+
+Methylobacteribrach = Methylobacterium brachiatum TX0642
+
+Methylobactericurr = Methylobacterium currus PR1016A
+
+Methylobacteriphyllo = Methylobacterium phyllostachyos BL47
+
+Microviraero = Microvirga aerophila DSM 21344
+
+Microvirbrass = Microvirga brassicacearum CDVBN77
+
+Microvirmakka = Microvirga makkahensis KCTC 23863
+
+Mycoplandimor = Mycoplana dimorpha DSM 7138
+
+Nitrospiramaz1 = Nitrospirillum amazonense CBAmc
+
+Novosphinbarch = Novosphingobium barchaimii NS277
+
+Pacificiflava = Pacificimonas flava DSM 107612
+
+Paracocjeot = Paracoccus jeotgali CBA4604
+
+Rhizobiumlusi = Rhizobium lusitanum 1158
+
+Rhizobiumoryz = Rhizobium oryzae B4P
+
+Rhodoligoappen = Rhodoligotrophos appendicifer DSM 23582
+
+Sphingochan = Sphingomonas changbaiensis NBRC 104936
+
+Cupriapauc = Cupriavidus pauculus UM1
+
+Massiliaputid = Massilia putida 6NM-7T
+
+Noviherbaauto = Noviherbaspirillum autotrophicum TSA66
+
+Noviherbamassi = Noviherbaspirillum massiliense JC206
+
+Paraburkrhyn = Paraburkholderia rhynchosiae WSM 3937
+
+Paucilemoi = Paucimonas lemoignei DSM 7445
+
+Xylorhodo = Xylophilus rhododendri KACC 21265
+
+Alcanimobil = Alcanivorax mobilis MT13131
+
+Dyellajiang1 = Dyella jiangningensis FCAV SCS01
+
+Dyellamonti = Dyella monticola 4G-K06
+
+Frateuterr = Frateuria terrea DSM 26515
+
+Glacieamylo = Glaciecola amylolytica THG-3.7
+
+Halomonanti = Halomonas anticariensis FP35
+
+Halomoncerin = Halomonas cerina CECT 7282
+
+Halomonmural = Halomonas muralis DSM 14789
+
+Luteibacjian = Luteibacter jiangsuensis CGMCC 1.10133
+
+Marinobacfonti = Marinobacter fonticola CS412 
+
+Marinobacnanha = Marinobacter nanhaiticus D15-8W
+
+Microbulrhizo = Microbulbifer rhizosphaerae CECT 8799
+
+Pistriauran = Pistricoccus aurantiacus CBA4606
+
+Pseudomonbale = Pseudomonas balearica DSM 6083
+
+Pseudomonpoae = Pseudomonas poae CAP-2018
+
+Pseudomonxantho = Pseudomonas xanthomarina DSM 18231
+
+Rhodanofulvus = Rhodanobacter fulvus Jip2
+
+Acidibrevifodin = Acidibrevibacterium fodinaquatile G45-3
+
+Azospirmelin = Azospirillum melinis TMCY 0552
+
+Azospirrama = Azospirillum ramasamyi M2T2B2
+
+Labrysokina = Labrys okinawensis RP1T
+
+Mangrovicelendo = Mangrovicella endophytica 5T4P-12-1
+
+Mesorhizoprun = Mesorhizobium prunaredense STM4891
+
+Methylobacteribrach = Methylobacterium brachythecii DSM 24105
+
+Methylobacterigossi = Methylobacterium gossipiicola Gh-105
+
+Methylobacterihaplo = Methylobacterium haplocladii NBRC 107714
+
+Methylobacterinodu = Methylobacterium nodulans ORS 2060
+
+Methylobrepamuk = Methylobrevis pamukkalensis PK2
+
+Methylocapaurea = Methylocapsa aurea KYG T
+
+Methylocappalsa = Methylocapsa palsarum NE2
+
+Methylocysparvus = Methylocystis parvus OBBP 
+
+Methylocysrosea = Methylocystis rosea SV97T
+
+Methylorubchlor = Methylorubrum chloromethanicum CM4
+
+Methylorubpopuli = Methylorubrum populi BJ001
+
+Methylorubrhod = Methylorubrum rhodinum DSM 2163
+
+Methylorubsalsu = Methylorubrum salsuginis CGMCC 1.6474
+
+Methylosinspor = Methylosinus sporium DSM 17706
+
+Microvirmassi = Microvirga massiliensis JC119
+
+Phyllobacsalin = Phyllobacterium salinisoli LLAN61
+
+Pseudaminoarsen = Pseudaminobacter arsenicus CB3
+
+Pseudaminomangan = Pseudaminobacter manganicus JH-7
+
+Aquabacolei = Aquabacterium olei NBRC 110486
+
+Aquabactepid = Aquabacterium tepidiphilum YIM 730274
+
+Aquintertia = Aquincola tertiaricarbonis MIMtkpLc11
+
+Cabalglathei1 = Caballeronia glathei DSM 50014
+
+Cabalmineral = Caballeronia mineralivorans PML1(12)
+
+Cabaltemer = Caballeronia temeraria LMG 29319
+
+Methylobacilflag = Methylobacillus flagellatus L1B
+
+Methylobacilglyco = Methylobacillus glycogenes JCM 2850
+
+Methylobacilrhizo = Methylobacillus rhizosphaerae Ca-68
+
+Methylophilmedar = Methylophilus medardicus MMS-M-51
+
+Methylophilmethyl = Methylophilus methylotrophus ATCC 53528
+
+Methylotenversa = Methylotenera versatilis 301
+
+Methyloverdisci = Methyloversatilis discipulorum FAM1
+
+Methylovorgluco = Methylovorus glucosotrophus DSM 6874
+
+Paraburkhiiak = Paraburkholderia hiiakae I2
+
+Paraburkoxyph = Paraburkholderia oxyphila NBRC 105797
+
+Paraburkunam = Paraburkholderia unamae SCZa-39
+
+Pseudomethyloaqua = Pseudomethylobacillus aquaticus H-5
+
+Sulfurifeplumb = Sulfuriferula plumbiphila Gro7
+
+Trinicaryo = Trinickia caryophylli Ballard 720
+
+Trinisymbio = Trinickia symbiotica JPY-345
+
+Variopara2 = Variovorax paradoxus B4
+
+Methylobactundri = Methylobacter tundripaludum SV96
+
+Methylocaldmari = Methylocaldum marinum S8
+
+Methylomarivadi = Methylomarinum vadi IT-4
+
+Methylomonmethan1 = Methylomonas methanica MC09
+
+Methylophagfrap = Methylophaga frappieri JAM7
+
+Methyloprofsedi = Methyloprofundus sedimenti WF1
+
+Methylotetraoryz = Methylotetracoccus oryzae C50C1
+
+Methylovulmiya = Methylovulum miyakonense HT12 
+

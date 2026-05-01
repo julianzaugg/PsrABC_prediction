@@ -137,12 +137,22 @@ def load_soea_hits(hmss2_dir):
     return hits
 
 
-def parse_treefile_clades(treefile, reference_labels):
+def parse_treefile_clades(treefile, reference_metadata):
     """
-    Assign query sequences to nearest reference clade using ete3.
-    Handles IQ-TREE support strings like '95.6/100:0.04' by using format=1
-    (internal node labels) with quoted_node_names fallback.
-    Returns dict: {seq_id: nearest_reference_label}
+    Assign query sequences to the clade/family of their nearest reference leaf.
+
+    reference_metadata is the dict loaded from reference_metadata.tsv, keyed by
+    the reference FASTA label. Built-in references use labels such as:
+        PsrA_Wolinella_succinogenes
+    and FASTA leaves such as:
+        PsrA_Wolinella_succinogenes__sp|P31075|PSRA_WOLSU
+
+    Custom references should use the same family-first style:
+        PsrA_My_reference__accession
+        PsrAPhsASrrA_Wells_01__GCA_...
+        bSreASoeA_Wells_01__GCA_...
+
+    Returns dict: {query_seq_id: nearest_reference_clade}
     """
     if not treefile or not os.path.exists(treefile):
         return {}
@@ -155,8 +165,6 @@ def parse_treefile_clades(treefile, reference_labels):
         return {}
 
     tree = None
-    # IQ-TREE with -bb and -alrt produces support strings like '95.6/100'
-    # as internal node names. ete3 format=1 reads these as node names.
     for fmt in [1, 0, 2, 3]:
         try:
             tree = Tree(treefile, format=fmt)
@@ -168,12 +176,17 @@ def parse_treefile_clades(treefile, reference_labels):
         print(f"  [WARN] Could not parse tree {treefile} — skipping clade assignment")
         return {}
 
-    # Map reference leaf names to clade labels
+    # Longest labels first avoids accidental partial matches when labels share
+    # prefixes, e.g. PsrA_* and PsrAPhsASrrA_*.
+    reference_labels = sorted(reference_metadata.keys(), key=len, reverse=True)
+
     ref_nodes = {}
     for leaf in tree.get_leaves():
         for ref_label in reference_labels:
-            if ref_label in leaf.name:
-                ref_nodes[leaf.name] = ref_label
+            if leaf.name == ref_label or leaf.name.startswith(ref_label + "__") or ref_label in leaf.name:
+                meta = reference_metadata.get(ref_label, {})
+                ref_clade = meta.get("clade") or meta.get("protein") or ref_label
+                ref_nodes[leaf.name] = ref_clade
                 break
 
     if not ref_nodes:
@@ -182,19 +195,19 @@ def parse_treefile_clades(treefile, reference_labels):
 
     clade_assignments = {}
     for leaf in tree.get_leaves():
-        if any(ref in leaf.name for ref in reference_labels):
+        if leaf.name in ref_nodes:
             continue
-        min_dist    = float("inf")
-        nearest_ref = "unassigned"
-        for ref_name, ref_label in ref_nodes.items():
+        min_dist = float("inf")
+        nearest_clade = "unassigned"
+        for ref_name, ref_clade in ref_nodes.items():
             try:
                 dist = tree.get_distance(leaf.name, ref_name)
                 if dist < min_dist:
-                    min_dist    = dist
-                    nearest_ref = ref_label
+                    min_dist = dist
+                    nearest_clade = ref_clade
             except Exception:
                 continue
-        clade_assignments[leaf.name] = nearest_ref
+        clade_assignments[leaf.name] = nearest_clade
 
     return clade_assignments
 
@@ -339,10 +352,17 @@ def score_classification(row, soea_hits):
     else:
         evidence.append("PsrB(not_found)")
 
-    # --- SoeA.hmm hit (HMSS2 — scored, negative) ---
-    # Applied before phylogeny so it can shift borderline cases to SoeA
+    # SoeA.hmm penalty — only applied when operon evidence is absent or weak
     if has_soea:
-        evidence.append("SoeA.hmm(+)"); score -= 3
+        if tm_canonical == "PsrC" or has_pf14589:
+            # Strong positive PsrC topology evidence — suppress penalty
+            evidence.append("SoeA.hmm(+,suppressed_by_PsrC)")
+        elif has_nrfd and has_tat:
+            # Moderate operon evidence — reduced penalty
+            evidence.append("SoeA.hmm(+)"); score -= 1
+        else:
+            # No contradicting operon evidence — full penalty
+            evidence.append("SoeA.hmm(+)"); score -= 3
 
     # --- Phylogeny (capped at +2, only when Mo confirmed) ---
     if tree_clade and tree_clade not in ("unassigned", "inspect_tree_manually") and has_mo:
@@ -355,6 +375,8 @@ def score_classification(row, soea_hits):
             score -= 1
         elif "Ttr" in tree_clade:
             score -= 1
+        elif "Arr" in tree_clade or "Arx" in tree_clade:
+            score -= 2
 
     # --- Final classification ---
     if score >= 8:
@@ -534,11 +556,10 @@ def main():
         print("  [INFO] protein_index not found — bin_name column will be empty")
 
     # Parse tree clade assignments
-    ref_labels  = list(ref_meta.keys())
     tree_clades = {}
     if args.treefile and os.path.exists(args.treefile):
         print("[*] Parsing tree for clade assignments...")
-        tree_clades = parse_treefile_clades(args.treefile, ref_labels)
+        tree_clades = parse_treefile_clades(args.treefile, ref_meta)
 
     final_rows = []
     for prot_id in query_ids:
