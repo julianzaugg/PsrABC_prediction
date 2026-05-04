@@ -6,14 +6,17 @@ A bioinformatics pipeline for identifying and classifying **PsrABC (polysulfide 
 
 ## Overview
 
-Mo-bisPGD enzymes are a large and phylogenetically diverse family. PsrA cannot be reliably identified from sequence similarity or a single HMM — confident classification requires integrating multiple independent evidence types:
+Mo-bisPGD enzymes are a large and phylogenetically diverse family. PsrA cannot be reliably identified from sequence similarity or a single HMM — confident classification requires integrating multiple independent evidence types and constraining interpretation by phylogenetic placement.
 
-| Evidence | Tool | PsrA | SoeA | TtrA | PhsA |
-|----------|------|------|------|------|------|
-| Mo-bisPGD domain | PF00384 (HMMER) | ✓ | ✓ | ✓ | ✓ |
-| TAT signal peptide | SignalP 6 | ✓ | **✗** | ✓ | ✓ |
-| NrfD/PsrC neighbour | PF03916/PF14589 | ✓ 8TM | – | ✓ 9TM | ✓ 5TM+haem |
-| Phylogenetic clade | IQ-TREE | ✓ | – | – | – |
+The pipeline now uses a **tree-gated classification framework**: candidate A subunits are placed in a reference phylogeny containing curated enzymes plus expanded Wells et al. DMSOR/MopB representatives, and only candidates placed in the PsrA/PhsA/SrrA tree group can be classified as `TRUE_PsrA`, `LIKELY_PsrA`, or `PsrA_or_PhsA`.
+
+| Evidence | Tool | Interpretation |
+|----------|------|----------------|
+| Mo-bisPGD domain | PF00384 (HMMER) | Confirms candidate belongs to the broad Mo-bisPGD enzyme family |
+| TAT signal peptide | SignalP 6 | Supports periplasmic Psr/Phs/Ttr-like enzymes; `TATLIPO` categorical calls are TAT-positive |
+| NrfD/PsrC neighbour | PF03916/PF14589 + DeepTMHMM | Supports A+B+C operon architecture; 8TM/PF14589 strengthens PsrC-like context |
+| PsrB-like neighbour | PF12800/PF13247/HMSS2 | Supports Fe-S electron-transfer subunit context |
+| Phylogenetic clade | MAFFT/TrimAl/IQ-TREE/ete3 | Defines the broad functional group used for classification |
 
 The pipeline handles fragmented metagenomic assemblies where annotation is incomplete and divergent sequences are common.
 
@@ -45,7 +48,7 @@ Runs two independent HMM gates across all proteins and takes their union:
 1. **PF00384** — broad Mo-bisPGD domain profile
 2. **PsrAPhsASreA.hmm** (HMSS2) — clade-specific profile with higher sensitivity for divergent PsrA
 
-Each candidate is tagged with its `discovery_source` (both | PF00384_only | HMSS2_only). `HMSS2_only` candidates are highlighted in orange in the HTML output for manual review.
+Each candidate is tagged with its `discovery_source`, normalised in the final table as `PF00384_gate`, `HMSS2_gate`, or `both_gates`.
 
 ### Adding custom tree reference sequences
 ```bash
@@ -71,75 +74,87 @@ Step 3b   HMSS2 annotation searches        (optional, requires --hmss2)
 Step 4    DeepTMHMM TM topology            (manual if not installed)
 Step 5    SignalP 6 TAT prediction         (manual if not installed)
 Step 6    Download reference sequences + build tree_references_all.faa
-Step 7    MAFFT + TrimAl alignment
+Step 7    MAFFT --anysymbol --auto + TrimAl -gt 0.8 -st 0.001 -cons 60
 Step 8    IQ-TREE phylogeny
-Step 9    Classification summary
+Step 9    Tree-gated classification summary
 ```
 
 ---
 
-## Classification Scoring
+## Tree-gated Classification Framework
 
-Each candidate is scored by summing evidence weights:
+Classification is not purely score-threshold based. The candidate's placement in the reference tree defines the broad enzyme-family group, and local operon evidence refines confidence within compatible groups.
 
-| Evidence | Score |
-|----------|-------|
-| Mo-bisPGD present (PF00384) | +2 |
-| Mo-bisPGD absent | −2 |
-| TAT signal peptide | +2 |
-| PsrC topology (8TM) | +3 |
-| NrfD PF14589 hit (no topology) | +2 |
-| NrfD PF03916 hit only (no topology) | +1 |
-| TtrC or SoeC topology | −1 |
-| PsrB in neighbourhood | +1 |
-| Tree: PsrA / PsrAPhsASrrA clade | +2 (capped) |
-| Tree: PhsA clade | +1 |
-| Tree: bSreASoeA / SoeA / TtrASrdA / TtrA clade | −1 |
-| Tree: ArrAArxA / ArrA / ArxA clade | −2 |
-| SoeA.hmm hit, PsrC/PF14589 present | 0 (suppressed) |
-| SoeA.hmm hit, NrfD + TAT present | −1 (reduced) |
-| SoeA.hmm hit, no operon evidence | −3 (full penalty) |
+### Tree groups
 
-Classification thresholds:
+| Tree group | Clades | Classification effect |
+|------------|--------|-----------------------|
+| `psr_phs_srr` | `PsrAPhsASrrA`, `PsrA`, `PhsA`, `SrrA` | Required for `TRUE_PsrA`, `LIKELY_PsrA`, and `PsrA_or_PhsA` |
+| `arr_arx` | `ArrAArxA`, `ArrA`, `ArxA` | `LIKELY_ArrA` |
+| `ttr_srd` | `TtrASrdA`, `TtrA`, `SrdA` | `LIKELY_TtrA_or_SrdA` |
+| `soe_sre` | `bSreASoeA`, `aSreA`, `SoeA`, `SreA` | `LIKELY_SoeA_or_divergent` |
+| `known_nonpsr_mopb` | `ActB`, `AH`, `AioAIdrA`, `AspDMSOR`, `BisC`, `DmsA`, `DorATorA`, `FdhG`, `FdhsFsdA`, `FhcB`, `FwdBFmdB`, `NapA`, `NarG`, `NasCNarB`, `Nqo3`, `RhLPgtL`, etc. | `LIKELY_nonPsr_MopB` or `LIKELY_nonPsr_MopB_operon_like` |
 
-| Label | Condition |
-|-------|-----------|
-| `TRUE_PsrA` | Score ≥ 8 |
-| `LIKELY_PsrA` | Score ≥ 5 |
-| `PsrA_or_PhsA` | Score ≥ 2, TAT present, Mo confirmed |
-| `LIKELY_SoeA_or_divergent` | No TAT, no NrfD, no PsrC topology |
-| `NOT_MoBisPGD_enzyme` | No Mo-bisPGD domain |
-| `AMBIGUOUS` | All other cases |
+### Final labels
 
-Tree evidence is capped at +2 to prevent phylogeny overriding biochemical evidence. SoeA classification requires all three negative conditions simultaneously to avoid false calls from incomplete genomes. PsrB absence never penalises classification.
+| Label | Meaning |
+|-------|---------|
+| `TRUE_PsrA` | Psr/Phs/Srr-compatible tree placement plus strongest PsrABC evidence |
+| `LIKELY_PsrA` | Psr/Phs/Srr-compatible tree placement plus moderate/strong PsrABC evidence |
+| `PsrA_or_PhsA` | Psr/Phs/Srr-compatible tree placement but insufficient evidence to resolve PsrA vs PhsA/SrrA |
+| `LIKELY_ArrA` | ArrA/ArxA tree placement |
+| `LIKELY_TtrA_or_SrdA` | TtrA/SrdA tree placement |
+| `LIKELY_SoeA_or_divergent` | bSreA/SoeA/aSreA tree placement or Soe-like/divergent evidence |
+| `LIKELY_nonPsr_MopB` | Known non-Psr DMSOR/MopB tree placement |
+| `LIKELY_nonPsr_MopB_operon_like` | Known non-Psr tree placement plus A+B+C-like operon architecture |
+| `NOT_MoBisPGD_enzyme` | No PF00384 Mo-bisPGD confirmation |
+| `AMBIGUOUS` | Conflicting or insufficient evidence |
+
+### Diagnostic columns
+
+`classification_table.tsv` includes nearest/second-nearest reference diagnostics:
+
+- `tree_group`
+- `tree_distance`
+- `tree_second_clade`
+- `tree_second_distance`
+- `tree_distance_margin`
+- `tree_distance_ratio`
+- `tree_assignment_confidence`
+
+It also reports conflict/operon-context flags:
+
+- `PsrABC_like_operon`
+- `tree_incompatible_with_Psr`
+- `ABC_like_nonPsr_operon`
+- `PsrC_like_context`
+
+The tree-distance diagnostics are currently for interpretation and manual review; they do not alter classifications.
 
 ---
 
 ## Custom Tree References: Naming Convention
 
-Headers must follow: `>CladeName_Descriptive_organism__accession_or_id`
+Headers must follow:
 
-The **first underscore-delimited field** becomes the clade name in the reference metadata, which is then used for tree scoring keyword matching. Examples using Wells et al. 2023 clades:
-
-```
->PsrAPhsASrrA_Desulfovibrio_vulgaris__WP_010940123
->bSreASoeA_Aquifex_aeolicus__O67847
->ArrAArxA_Geobacter_sulfurreducens__Q74BP2
->TtrASrdA_Salmonella_enterica__Q9Z4S8
+```text
+>CladeName_Descriptive_label__accession_or_original_id
 ```
 
-Scoring keyword matching (substring, elif chain — first match wins):
+The **first underscore-delimited field** becomes the clade name in the reference metadata and is used for tree grouping. Examples using Wells et al. DMSOR/MopB clades:
 
-| Clade name contains | Tree score |
-|--------------------|------------|
-| `PsrA` | +2 |
-| `PhsA` | +1 |
-| `Soe` | −1 |
-| `Ttr` | −1 |
-| `Arr` or `Arx` | −2 |
-| none of the above | 0 |
+```text
+>PsrAPhsASrrA_Wells_001__GCA_000724175.1_42_1_3082_4
+>bSreASoeA_Wells_001__GCA_000981645.1_4_16765_19966_4
+>ArrAArxA_Wells_001__GCA_...
+>TtrASrdA_Wells_001__GCA_...
+>NapA_Wells_001__GCA_...
+>FdhG_Wells_001__GCA_...
+```
 
-Outgroup labels (FdhH_outgroup, NapA, NarG, TorA, etc.) match no keyword and receive 0 score, which is correct — they anchor the tree without biasing classification.
+Avoid generic labels such as `custom_reference_001`, because they cannot act as clade anchors.
+
+The Wells helper script can be used to select approximately 25 representatives per major DMSOR/MopB family and write headers in this format. These references are supplied to the pipeline with `--custom-tree-refs`.
 
 ---
 
@@ -194,12 +209,12 @@ bash 00_pipeline.sh [same args] --redo-from 0
 
 | File | Description |
 |------|-------------|
-| `09_summary/classification_table.html` | Colour-coded HTML; HMSS2_only rows orange; annotation columns grey |
-| `09_summary/classification_table.tsv` | Full table; includes `discovery_source` and `tree_clade` columns |
+| `09_summary/classification_table.html` | Colour-coded HTML summary |
+| `09_summary/classification_table.tsv` | Full tree-gated classification table; includes discovery gate, tree group, tree diagnostics, and operon-context flags |
 | `00_scan/discovery_source.tsv` | Per-candidate gate origin |
 | `06_references/tree_references_all.faa` | Exact reference FASTA used in alignment (standard + custom) |
-| `06_references/reference_metadata_with_custom.tsv` | Metadata for all references including auto-generated Wells entries |
-| `03_hmmer/operon_completeness.tsv` | PsrABC subunit counts per candidate |
+| `06_references/reference_metadata_with_custom.tsv` | Metadata for all references including auto-generated custom/Wells entries |
+| `03_hmmer/operon_completeness.tsv` | PsrABC-like subunit counts per candidate |
 | `03_hmmer/nrfd_hits.tsv` | NrfD/PsrC hits with PF14589 specificity flag |
 | `03_hmmer/hmss2/hmss2_operon.tsv` | HMSS2 annotation per candidate |
 | `08_tree/psr_phylogeny.treefile` | IQ-TREE maximum-likelihood tree |
