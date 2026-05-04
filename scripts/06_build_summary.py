@@ -13,20 +13,26 @@ Evidence sources (in descending reliability order):
   6. Phylogenetic clade (IQ-TREE)    — heuristic, lower weight than biochemical
 
 SCORING DESIGN:
-  - Tree score capped at +2 to prevent phylogeny overriding biochemistry
+  - Expanded reference-tree placement gates high-level family labels
   - Tree score only applied when Mo-bisPGD is confirmed (not standalone)
   - SoeA classification requires BOTH: no TAT AND no PsrC in neighbourhood
   - NrfD selection: best hit chosen by PF14589 presence first, then confidence
   - Topology fix: use re.match to avoid substring bugs in class detection
-  - SoeA.hmm hit (from HMSS2 Step 3b) applies −3 score penalty; this is the
-    only HMSS2 result that feeds into scoring. All other HMSS2 columns are
-    annotation only.
+  - SoeA.hmm hit (from HMSS2 Step 3b) applies conditional −3/−1/0 penalty;
+    this is the only HMSS2 result that feeds into scoring. All other HMSS2
+    columns are annotation only.
+  - ArrA/ArxA tree placement with operon evidence (TAT + NrfD or PsrB) triggers
+    a hard LIKELY_ArrA override, bypassing score-based classification. The ArrA
+    operon architecture (ArrABC) is analogous to PsrABC — TAT + NrfD/PsrB does
+    NOT discriminate between the two. Without operon evidence, ArrA placement
+    applies only the −2 score penalty and falls through normal scoring.
 
 DISCOVERY SOURCE:
   Candidates may originate from PF00384, PsrAPhsASreA.hmm (HMSS2), or both.
   The discovery_source column is loaded from 00_scan/discovery_source.tsv and
-  carried through to the output tables. HMSS2_only candidates are highlighted
-  in a distinct colour in the HTML output for easy manual review.
+  normalised to clearer gate labels (PF00384_gate, HMSS2_gate, both_gates).
+  This avoids misleading combinations such as HMSS2_gate + has_PF00384=YES,
+  where the candidate entered through HMSS2 but was later confirmed by PF00384.
 """
 
 import argparse
@@ -96,7 +102,7 @@ def load_protein_index(index_path):
 def load_discovery_source(source_path):
     """
     Load discovery_source.tsv → {protein_id: source_string}
-    Source values: 'both', 'PF00384_only', 'HMSS2_only', 'supplied', 'unknown'
+    Source values: 'both', 'PF00384_gate', 'HMSS2_gate', 'supplied', 'unknown'
     """
     if not source_path or not os.path.exists(source_path):
         return {}
@@ -109,6 +115,88 @@ def load_discovery_source(source_path):
                 mapping[parts[0]] = parts[1]
     return mapping
 
+
+
+
+def normalise_discovery_source(src):
+    """Return clearer discovery-gate labels for output tables.
+
+    The original pipeline labels describe how a protein entered the candidate
+    set. A row can therefore be HMSS2_gate but still later have PF00384=YES,
+    which is technically correct but visually confusing. These labels make the
+    column explicitly about the entry gate.
+    """
+    s = str(src or "unknown").strip()
+    mapping = {
+        "PF00384_only": "PF00384_gate",
+        "PF00384_gate": "PF00384_gate",
+        "PF00384": "PF00384_gate",
+        "HMSS2_only": "HMSS2_gate",
+        "HMSS2_gate": "HMSS2_gate",
+        "HMSS2": "HMSS2_gate",
+        "both": "both_gates",
+        "PF00384_and_HMSS2": "both_gates",
+        "PF00384+HMSS2": "both_gates",
+        "supplied": "supplied",
+        "unknown": "unknown",
+        "": "unknown",
+    }
+    return mapping.get(s, s)
+
+
+def clean_tat_probability(has_tat, probability, prediction):
+    """Mask misleading zero probabilities for categorical TATLIPO calls.
+
+    SignalP can report TATLIPO as a categorical prediction even when the parsed
+    TAT probability field is 0.0 or missing/not comparable. For heatmaps and
+    Excel summaries, treating those as true zero-probability TAT calls is
+    misleading. Keep has_TAT_signal=YES but report TAT_probability as NA.
+    """
+    pred = str(prediction or "").upper()
+    prob = str(probability or "NA")
+    if str(has_tat).upper() == "YES" and pred == "TATLIPO":
+        try:
+            if float(prob) == 0.0:
+                return "NA"
+        except Exception:
+            return "NA"
+    return probability
+
+
+def derive_context_flags(row):
+    """Derive simple interpretability flags from final evidence fields."""
+    has_mo      = row.get("has_PF00384", "NO") == "YES"
+    has_tat     = row.get("has_TAT_signal", "NO") == "YES"
+    has_nrfd    = row.get("NrfD_in_neighbourhood", "NO") == "YES"
+    has_pf14589 = row.get("NrfD_has_PF14589", "NO") == "YES"
+    has_psrB    = row.get("PsrB_in_neighbourhood", "NO") == "YES"
+    tm_class    = row.get("membrane_subunit_class", "")
+    tree_group  = tree_group_from_clade(row.get("tree_clade", "unassigned"))
+    _, tm_canonical = classify_topology(tm_class)
+
+    # Strict PsrABC-like flag: canonical Psr-like operon evidence including TAT.
+    # This is used for the existing Psr/conflict annotation.
+    psrABC_like = (
+        has_mo and has_tat and has_psrB and
+        (tm_canonical == "PsrC" or has_pf14589 or has_nrfd)
+    )
+
+    # Broader A+B+C-like local context, independent of TAT. This captures
+    # biologically interesting non-Psr MopB/DMSOR placements that nevertheless
+    # retain an adjacent B-like Fe-S subunit and C-like/NrfD membrane subunit.
+    abc_like_nonpsr = has_mo and has_psrB and has_nrfd
+    psrC_like_context = tm_canonical == "PsrC" or has_pf14589
+
+    tree_incompat = psrABC_like and tree_group in {
+        "arr_arx", "soe_sre", "ttr_srd", "known_nonpsr_mopb"
+    }
+    return {
+        "tree_group": tree_group,
+        "PsrABC_like_operon": "YES" if psrABC_like else "NO",
+        "ABC_like_nonPsr_operon": "YES" if (abc_like_nonpsr and tree_group == "known_nonpsr_mopb") else "NO",
+        "PsrC_like_context": "YES" if psrC_like_context else "NO",
+        "tree_incompatible_with_Psr": "YES" if tree_incompat else "NO",
+    }
 
 def load_soea_hits(hmss2_dir):
     """
@@ -137,6 +225,34 @@ def load_soea_hits(hmss2_dir):
     return hits
 
 
+def classify_tree_assignment_confidence(nearest_dist, second_dist):
+    """Classify nearest-reference assignment confidence from tree distances.
+
+    This is diagnostic only. It does not alter scoring/classification.
+    Distances are tree branch-length distances from a candidate to the nearest
+    labelled reference family and the second-nearest labelled reference family.
+    """
+    try:
+        nearest = float(nearest_dist)
+        second = float(second_dist)
+    except Exception:
+        return "NA"
+
+    if second <= 0 or nearest < 0:
+        return "NA"
+
+    margin = second - nearest
+    ratio = nearest / second
+
+    # Conservative, intentionally heuristic thresholds. These should be used to
+    # flag rows for manual inspection, not as hard taxonomic boundaries.
+    if margin >= 0.20 or ratio <= 0.75:
+        return "HIGH"
+    if margin >= 0.05 or ratio <= 0.90:
+        return "MEDIUM"
+    return "LOW"
+
+
 def parse_treefile_clades(treefile, reference_metadata):
     """
     Assign query sequences to the clade/family of their nearest reference leaf.
@@ -152,17 +268,25 @@ def parse_treefile_clades(treefile, reference_metadata):
         PsrAPhsASrrA_Wells_01__GCA_...
         bSreASoeA_Wells_01__GCA_...
 
-    Returns dict: {query_seq_id: nearest_reference_clade}
+    Returns dict keyed by query sequence ID. Each value contains nearest and
+    second-nearest reference-family diagnostics:
+        tree_clade, tree_distance, tree_second_clade, tree_second_distance,
+        tree_distance_margin, tree_distance_ratio, tree_assignment_confidence
+
+    IMPORTANT: this is still a nearest-reference heuristic, not proof of robust
+    monophyletic clade membership. The second-nearest diagnostics help identify
+    cases where a candidate is close to two labelled families.
     """
+    empty = {}
     if not treefile or not os.path.exists(treefile):
-        return {}
+        return empty
 
     try:
         from ete3 import Tree
     except ImportError:
         print("  [INFO] ete3 not installed — skipping clade assignment")
         print("         conda install -c etetoolkit ete3")
-        return {}
+        return empty
 
     tree = None
     for fmt in [1, 0, 2, 3]:
@@ -174,7 +298,7 @@ def parse_treefile_clades(treefile, reference_metadata):
 
     if tree is None:
         print(f"  [WARN] Could not parse tree {treefile} — skipping clade assignment")
-        return {}
+        return empty
 
     # Longest labels first avoids accidental partial matches when labels share
     # prefixes, e.g. PsrA_* and PsrAPhsASrrA_*.
@@ -191,25 +315,66 @@ def parse_treefile_clades(treefile, reference_metadata):
 
     if not ref_nodes:
         print("  [WARN] No reference sequences found in tree leaves — check label matching")
-        return {}
+        return empty
 
-    clade_assignments = {}
+    diagnostics = {}
     for leaf in tree.get_leaves():
         if leaf.name in ref_nodes:
             continue
-        min_dist = float("inf")
-        nearest_clade = "unassigned"
+
+        # For each reference family/clade, retain only the closest labelled
+        # reference leaf. Then compare the closest and second-closest families.
+        best_by_clade = {}
         for ref_name, ref_clade in ref_nodes.items():
             try:
-                dist = tree.get_distance(leaf.name, ref_name)
-                if dist < min_dist:
-                    min_dist = dist
-                    nearest_clade = ref_clade
+                dist = float(tree.get_distance(leaf.name, ref_name))
             except Exception:
                 continue
-        clade_assignments[leaf.name] = nearest_clade
+            if ref_clade not in best_by_clade or dist < best_by_clade[ref_clade]:
+                best_by_clade[ref_clade] = dist
 
-    return clade_assignments
+        if not best_by_clade:
+            diagnostics[leaf.name] = {
+                "tree_clade": "unassigned",
+                "tree_distance": "NA",
+                "tree_second_clade": "NA",
+                "tree_second_distance": "NA",
+                "tree_distance_margin": "NA",
+                "tree_distance_ratio": "NA",
+                "tree_assignment_confidence": "NA",
+            }
+            continue
+
+        ordered = sorted(best_by_clade.items(), key=lambda kv: kv[1])
+        nearest_clade, nearest_dist = ordered[0]
+        if len(ordered) > 1:
+            second_clade, second_dist = ordered[1]
+            margin = second_dist - nearest_dist
+            ratio = nearest_dist / second_dist if second_dist > 0 else float("nan")
+            conf = classify_tree_assignment_confidence(nearest_dist, second_dist)
+        else:
+            second_clade, second_dist = "NA", "NA"
+            margin, ratio, conf = "NA", "NA", "NA"
+
+        def fmt(x):
+            if isinstance(x, str):
+                return x
+            try:
+                return f"{float(x):.6g}"
+            except Exception:
+                return "NA"
+
+        diagnostics[leaf.name] = {
+            "tree_clade": nearest_clade,
+            "tree_distance": fmt(nearest_dist),
+            "tree_second_clade": second_clade,
+            "tree_second_distance": fmt(second_dist),
+            "tree_distance_margin": fmt(margin),
+            "tree_distance_ratio": fmt(ratio),
+            "tree_assignment_confidence": conf,
+        }
+
+    return diagnostics
 
 
 def select_best_nrfd(nrfd_ids_str, topology, all_nrfd_info):
@@ -286,21 +451,74 @@ def classify_topology(tm_class):
     return tm_class, "OTHER"
 
 
+def tree_group_from_clade(tree_clade):
+    """
+    Collapse tree_clade labels into broad groups used by the classifier.
+
+    There is still only one tree. This helper asks whether the candidate's
+    nearest labelled reference clade is compatible with a Psr/Phs/Srr,
+    Arr/Arx, Soe/Sre, Ttr/Srd, or known non-Psr MopB interpretation.
+    """
+    c = str(tree_clade or "").strip()
+    if c.lower() in {"", "na", "nan", "none", "unassigned", "inspect_tree_manually"}:
+        return "unresolved"
+
+    # Exact labels from the expanded Wells-derived reference set and built-ins.
+    psr_like = {"PsrAPhsASrrA", "PsrA", "PhsA", "SrrA"}
+    arr_like = {"ArrAArxA", "ArrA", "ArxA"}
+    soe_like = {"bSreASoeA", "aSreA", "SoeA", "SreA", "Sre"}
+    ttr_like = {"TtrASrdA", "TtrA", "SrdA"}
+    known_nonpsr = {
+        "ActB", "AH", "AioA", "AioAIdrA", "IdrA", "AspDMSOR",
+        "BisC", "DmsA", "DorATorA", "DorA", "TorA", "FdhG",
+        "FdhsFsdA", "Fdhs", "FsdA", "FhcB", "FwdBFmdB", "FwdB", "FmdB",
+        "NapA", "NarG", "NasCNarB", "NasC", "NarB", "Nqo3", "RhLPgtL",
+        "PcrA",
+    }
+
+    if c in psr_like:
+        return "psr_phs_srr"
+    if c in arr_like:
+        return "arr_arx"
+    if c in soe_like:
+        return "soe_sre"
+    if c in ttr_like:
+        return "ttr_srd"
+    if c in known_nonpsr:
+        return "known_nonpsr_mopb"
+
+    # Conservative pattern fallbacks for user-provided custom labels.
+    if re.search(r"(^|[_/|-])(PsrA|PhsA|SrrA)([_/|-]|$)", c):
+        return "psr_phs_srr"
+    if re.search(r"(^|[_/|-])(ArrA|ArxA)([_/|-]|$)", c):
+        return "arr_arx"
+    if re.search(r"(^|[_/|-])(SoeA|SreA|bSreA|aSreA)([_/|-]|$)", c):
+        return "soe_sre"
+    if re.search(r"(^|[_/|-])(TtrA|SrdA)([_/|-]|$)", c):
+        return "ttr_srd"
+    if re.search(r"(^|[_/|-])(ActB|AioA|IdrA|BisC|DmsA|DorA|TorA|FdhG|FdhH|FsdA|FhcB|FwdB|FmdB|NapA|NarG|NasC|NarB|Nqo3|PcrA)([_/|-]|$)", c):
+        return "known_nonpsr_mopb"
+
+    return "other"
+
+
 def score_classification(row, soea_hits):
     """
-    Evidence-based scoring.
+    Tree-gated evidence classifier.
 
-    Scoring design:
-      1. Topology bug fixed: tm_canonical from classify_topology() is used
-      2. Tree weight capped at +2 to prevent phylogeny overriding biochemistry
-      3. Tree score only applied when Mo-bisPGD present
-      4. SoeA classification requires BOTH no-TAT AND no PsrC in neighbourhood
-         (avoids misclassifying incomplete-genome PsrA as SoeA)
-      5. PF14589 NrfD hit gets +1 over plain PF03916
-      6. SoeA.hmm hit (HMSS2 Step 3b) applies −3 penalty — the only HMSS2
-         result that enters scoring. Converts ambiguous low-evidence candidates
-         to LIKELY_SoeA_or_divergent where biochemical evidence is otherwise
-         insufficient. All other HMSS2 results are annotation only.
+    The local operon/domain score is still calculated and reported through the
+    evidence string, but high-level PsrA/PhsA/SrrA calls are constrained by the
+    candidate's placement in the expanded reference tree.
+
+    In practice, a candidate with Mo-bisPGD + TAT + nearby B/C-like proteins can
+    look operon-compatible with PsrABC, ArrABC, or other DMSOR/MopB systems.
+    Therefore, tree placement is used as a gate:
+      * Psr/Phs/Srr tree placement permits TRUE_PsrA / LIKELY_PsrA.
+      * Arr/Arx tree placement yields LIKELY_ArrA when operon evidence exists.
+      * Soe/Sre tree placement yields LIKELY_SoeA_or_divergent.
+      * Ttr/Srd tree placement yields LIKELY_TtrA_or_SrdA.
+      * Known non-Psr MopB placements yield LIKELY_nonPsr_MopB.
+      * Unresolved/other placements are capped at PsrA_or_PhsA or AMBIGUOUS.
     """
     prot_id     = row.get("prot_id", "")
     has_mo      = row.get("has_PF00384", "NO") == "YES"
@@ -310,6 +528,7 @@ def score_classification(row, soea_hits):
     tm_class    = row.get("membrane_subunit_class", "")
     has_tat     = row.get("has_TAT_signal", "NO") == "YES"
     tree_clade  = row.get("tree_clade", "unassigned")
+    tree_group  = tree_group_from_clade(tree_clade)
     has_soea    = prot_id in soea_hits
 
     _, tm_canonical = classify_topology(tm_class)
@@ -317,7 +536,7 @@ def score_classification(row, soea_hits):
     evidence = []
     score    = 0
 
-    # --- Mo-bisPGD (required) ---
+    # --- Mo-bisPGD domain ---
     if has_mo:
         evidence.append("Mo-bisPGD(+)"); score += 2
     else:
@@ -329,73 +548,127 @@ def score_classification(row, soea_hits):
     else:
         evidence.append("TAT(-)")
 
-    # --- Membrane subunit topology ---
+    # --- Membrane subunit topology / NrfD-family neighbour ---
     if tm_canonical == "PsrC":
         evidence.append("PsrC_8TM(+)"); score += 3
     elif tm_canonical == "TtrC":
         evidence.append("TtrC_9TM"); score -= 1
     elif tm_canonical == "PhsC":
-        evidence.append("PhsC_5TM_haem")
+        evidence.append("PhsC_5TM_haem"); score += 1
     elif tm_canonical == "SoeC":
         evidence.append("SoeC"); score -= 1
     elif has_nrfd:
         if has_pf14589:
-            base = "NrfD_PF14589(+)"
+            evidence.append("NrfD_PF14589(+)"); score += 2
         else:
-            base = "NrfD_PF03916(topology_ND)"
-        evidence.append(base)
-        score += (2 if has_pf14589 else 1)
+            evidence.append("NrfD_PF03916(topology_ND)"); score += 1
 
-    # --- PsrB (supporting only, never penalised for absence) ---
+    # --- PsrB-like/electron-transfer neighbour ---
     if has_psrB:
         evidence.append("PsrB(+)"); score += 1
     else:
         evidence.append("PsrB(not_found)")
 
-    # SoeA.hmm penalty — only applied when operon evidence is absent or weak
+    # --- HMSS2 SoeA evidence. Keep as a score modifier, but do not allow it
+    #     to override the tree gate. ---
     if has_soea:
         if tm_canonical == "PsrC" or has_pf14589:
-            # Strong positive PsrC topology evidence — suppress penalty
             evidence.append("SoeA.hmm(+,suppressed_by_PsrC)")
         elif has_nrfd and has_tat:
-            # Moderate operon evidence — reduced penalty
             evidence.append("SoeA.hmm(+)"); score -= 1
         else:
-            # No contradicting operon evidence — full penalty
             evidence.append("SoeA.hmm(+)"); score -= 3
 
-    # --- Phylogeny (capped at +2, only when Mo confirmed) ---
-    if tree_clade and tree_clade not in ("unassigned", "inspect_tree_manually") and has_mo:
+    # --- Tree placement. This is recorded as evidence and used below as a gate. ---
+    if tree_clade and tree_clade not in ("unassigned", "inspect_tree_manually"):
         evidence.append(f"Tree:{tree_clade}")
-        if "PsrA" in tree_clade:
-            score += 2
-        elif "PhsA" in tree_clade:
-            score += 1
-        elif "Soe" in tree_clade:
-            score -= 1
-        elif "Ttr" in tree_clade:
-            score -= 1
-        elif "Arr" in tree_clade or "Arx" in tree_clade:
-            score -= 2
+        evidence.append(f"Tree_gate:{tree_group}")
+        if has_mo:
+            if tree_group == "psr_phs_srr":
+                score += 2
+            elif tree_group in {"arr_arx", "ttr_srd", "soe_sre", "known_nonpsr_mopb"}:
+                # Penalise incompatible placements in the Psr-operon score, but
+                # final class is handled by the tree gate below.
+                score -= 2
+    else:
+        evidence.append("Tree:unresolved")
+        evidence.append("Tree_gate:unresolved")
 
-    # --- Final classification ---
-    if score >= 8:
-        classification, confidence = "TRUE_PsrA", "HIGH"
-    elif score >= 5:
-        classification, confidence = "LIKELY_PsrA", "MEDIUM"
-    elif score >= 2 and has_tat and has_mo:
-        classification, confidence = "PsrA_or_PhsA", "MEDIUM"
-    elif not has_tat and has_mo and not has_nrfd and tm_canonical not in ("PsrC",):
-        # SoeA-like: no TAT AND no NrfD neighbour AND no PsrC topology
-        # SoeA.hmm hit pushes ambiguous cases here via the score penalty above
-        classification, confidence = "LIKELY_SoeA_or_divergent", "MEDIUM"
-    elif not has_mo:
+    has_operon_evidence = has_tat and (has_nrfd or has_psrB)
+    strong_psr_operon   = has_tat and has_mo and (tm_canonical == "PsrC" or has_pf14589 or has_nrfd) and has_psrB
+    moderate_psr_operon = has_tat and has_mo and (has_nrfd or has_psrB or tm_canonical in {"PsrC", "PhsC"})
+
+    # Explicit conflict/context flags.
+    # PsrABC_like_operon is strict and includes TAT, preserving the previous
+    # Psr-oriented interpretation flag. ABC_like_nonPsr_operon is broader and
+    # captures A+B+C-like operon context among candidates whose A subunit places
+    # with known non-Psr MopB/DMSOR families.
+    psrABC_like_operon = strong_psr_operon
+    abc_like_nonpsr_operon = has_mo and has_nrfd and has_psrB and tree_group == "known_nonpsr_mopb"
+    psrC_like_context = tm_canonical == "PsrC" or has_pf14589
+    tree_incompatible_with_psr = psrABC_like_operon and tree_group in {
+        "arr_arx", "soe_sre", "ttr_srd", "known_nonpsr_mopb"
+    }
+    if psrABC_like_operon:
+        evidence.append("PsrABC_like_operon(+)")
+    if abc_like_nonpsr_operon:
+        evidence.append("ABC_like_nonPsr_operon(+)")
+    if psrC_like_context:
+        evidence.append("PsrC_like_context(+)")
+    if tree_incompatible_with_psr:
+        evidence.append("Tree_incompatible_with_Psr(+)")
+
+    # --- Final tree-gated classification ---
+    if not has_mo:
         classification, confidence = "NOT_MoBisPGD_enzyme", "HIGH"
+
+    elif tree_group == "psr_phs_srr":
+        if score >= 8 and strong_psr_operon:
+            classification, confidence = "TRUE_PsrA", "HIGH"
+        elif score >= 5 and moderate_psr_operon:
+            classification, confidence = "LIKELY_PsrA", "MEDIUM"
+        elif moderate_psr_operon:
+            classification, confidence = "PsrA_or_PhsA", "MEDIUM"
+        else:
+            classification, confidence = "AMBIGUOUS", "LOW"
+
+    elif tree_group == "arr_arx":
+        if has_operon_evidence:
+            classification, confidence = "LIKELY_ArrA", "LOW"
+        else:
+            classification, confidence = "AMBIGUOUS", "LOW"
+
+    elif tree_group == "soe_sre":
+        classification, confidence = "LIKELY_SoeA_or_divergent", "MEDIUM"
+
+    elif tree_group == "ttr_srd":
+        classification, confidence = "LIKELY_TtrA_or_SrdA", "MEDIUM"
+
+    elif tree_group == "known_nonpsr_mopb":
+        # Tree places this as a non-Psr MopB/DMSOR family. Preserve local
+        # operon evidence, but block Psr labels. Split A+B+C-like contexts into
+        # a separate manual-review class because these are biologically distinct
+        # from isolated catalytic subunit hits.
+        if abc_like_nonpsr_operon:
+            classification, confidence = "LIKELY_nonPsr_MopB_operon_like", "MEDIUM"
+        else:
+            classification, confidence = "LIKELY_nonPsr_MopB", "MEDIUM"
+
+    elif tree_group in {"unresolved", "other"}:
+        # Conservative fallback when the tree is absent or not represented by a
+        # known reference family. Do not allow TRUE/LIKELY_PsrA without a
+        # Psr/Phs/Srr-compatible tree placement.
+        if score >= 5 and moderate_psr_operon:
+            classification, confidence = "PsrA_or_PhsA", "LOW"
+        elif not has_tat and not has_nrfd and tm_canonical not in ("PsrC",):
+            classification, confidence = "LIKELY_SoeA_or_divergent", "LOW"
+        else:
+            classification, confidence = "AMBIGUOUS", "LOW"
+
     else:
         classification, confidence = "AMBIGUOUS", "LOW"
 
     return classification, confidence, "|".join(evidence)
-
 
 def make_html_table(rows, out_path, hmss2_cols=None):
     hmss2_cols = hmss2_cols or []
@@ -406,15 +679,19 @@ def make_html_table(rows, out_path, hmss2_cols=None):
         "LIKELY_PsrA":              "#c8e6c9",
         "PsrA_or_PhsA":             "#fff9c4",
         "LIKELY_SoeA_or_divergent": "#fff3e0",
+        "LIKELY_ArrA":              "#e8d5f5",   # purple — ArrA tree + operon evidence
+        "LIKELY_TtrA_or_SrdA":      "#d1c4e9",   # lavender — Ttr/Srd tree placement
+        "LIKELY_nonPsr_MopB_operon_like": "#bdbdbd",   # darker grey — non-Psr tree with A+B+C operon context
+        "LIKELY_nonPsr_MopB":             "#e0e0e0",   # grey — non-Psr MopB/DMSOR tree placement
         "NOT_MoBisPGD_enzyme":      "#ffcdd2",
         "AMBIGUOUS":                "#e3f2fd",
     }
 
     # Discovery source left-border accent colours
     src_border = {
-        "HMSS2_only":  "4px solid #e65100",   # orange — needs manual review
-        "both":        "4px solid #1565c0",   # blue — highest confidence
-        "PF00384_only": "",                    # no accent
+        "HMSS2_gate":  "4px solid #e65100",   # orange — needs manual review
+        "both_gates":  "4px solid #1565c0",   # blue — highest confidence
+        "PF00384_gate": "",                    # no accent
         "supplied":    "",
         "unknown":     "",
     }
@@ -436,24 +713,33 @@ def make_html_table(rows, out_path, hmss2_cols=None):
         "<h2>PsrABC Classification Summary</h2>",
         "<p style='font-size:10px;color:#333'>",
         "<b>Discovery source badges:</b> ",
-        "<span class='src-badge src-hmss2'>HMSS2_only</span> — found by "
+        "<span class='src-badge src-hmss2'>HMSS2_gate</span> — found by "
         "PsrAPhsASreA.hmm only; not in PF00384 scan — review carefully. &nbsp;",
-        "<span class='src-badge src-both'>both</span> — found by both PF00384 "
+        "<span class='src-badge src-both'>both_gates</span> — found by both PF00384 "
         "and PsrAPhsASreA.hmm (highest initial confidence). &nbsp;",
-        "<span class='src-badge src-pf'>PF00384_only</span> — standard discovery.",
+        "<span class='src-badge src-pf'>PF00384_gate</span> — standard discovery.",
         "</p>",
     ]
     if hmss2_cols:
         html.append("<p style='color:#555;font-size:10px'>"
                     "Columns shaded grey (HMSS2_*) are annotation only — "
                     "not used in scoring, except SoeA.hmm which contributes "
-                    "a −3 score penalty.</p>")
+                    "a conditional score penalty. "
+                    "<b style='color:#6a0dad'>LIKELY_ArrA</b> (purple): "
+                    "ArrA/ArxA tree placement combined with TAT + NrfD/PsrB operon "
+                    "evidence — the ArrABC operon is architecturally identical to "
+                    "PsrABC; these require manual review and ecological context "
+                    "before interpretation.</p>")
     html += [
         "<table><tr>",
         "<th>Protein ID</th><th>Bin</th><th>Source</th>",
         "<th>Mo-bisPGD</th><th>TAT</th>",
         "<th>Membrane subunit</th><th>NrfD(PF14589?)</th><th>PsrB</th>",
-        "<th>Tree clade</th><th>Classification</th><th>Confidence</th>",
+        "<th>Tree clade</th><th>Tree dist.</th><th>Second clade</th><th>Second dist.</th>",
+        "<th>Tree margin</th><th>Tree ratio</th><th>Tree assignment confidence</th>",
+        "<th>Tree group</th><th>PsrABC-like operon</th>",
+        "<th>ABC-like non-Psr operon</th><th>PsrC-like context</th>",
+        "<th>Tree incompatible with Psr</th><th>Classification</th><th>Confidence</th>",
         "<th>Evidence</th>",
     ]
     for col in hmss2_cols:
@@ -463,7 +749,10 @@ def make_html_table(rows, out_path, hmss2_cols=None):
     primary_cols = ["prot_id", "bin_name", "discovery_source",
                     "has_PF00384", "has_TAT_signal",
                     "membrane_subunit_class", "NrfD_in_neighbourhood",
-                    "PsrB_in_neighbourhood", "tree_clade",
+                    "PsrB_in_neighbourhood", "tree_clade", "tree_distance",
+                    "tree_second_clade", "tree_second_distance", "tree_distance_margin",
+                    "tree_distance_ratio", "tree_assignment_confidence", "tree_group",
+                    "PsrABC_like_operon", "tree_incompatible_with_Psr",
                     "classification", "confidence", "evidence"]
 
     for row in rows:
@@ -481,9 +770,9 @@ def make_html_table(rows, out_path, hmss2_cols=None):
             # Render discovery_source as a coloured badge
             if col == "discovery_source":
                 badge_cls = {
-                    "HMSS2_only":   "src-hmss2",
-                    "both":         "src-both",
-                    "PF00384_only": "src-pf",
+                    "HMSS2_gate":   "src-hmss2",
+                    "both_gates":   "src-both",
+                    "PF00384_gate": "src-pf",
                 }.get(val, "")
                 if badge_cls:
                     val = f"<span class='src-badge {badge_cls}'>{val}</span>"
@@ -514,7 +803,7 @@ def main():
     ref_meta  = load_tsv(args.references)
     nrfd_info = load_nrfd_info(os.path.join(hmmer_dir, "nrfd_hits.tsv"))
 
-    # Load discovery source (PF00384_only / HMSS2_only / both / supplied)
+    # Load discovery source (PF00384_gate / HMSS2_gate / both / supplied)
     disc_src = load_discovery_source(args.discovery_source)
     if not disc_src:
         print("  [INFO] --discovery_source not supplied or file missing — "
@@ -555,18 +844,18 @@ def main():
     if not bin_map:
         print("  [INFO] protein_index not found — bin_name column will be empty")
 
-    # Parse tree clade assignments
-    tree_clades = {}
+    # Parse tree clade assignments and nearest/second-nearest diagnostics
+    tree_diagnostics = {}
     if args.treefile and os.path.exists(args.treefile):
-        print("[*] Parsing tree for clade assignments...")
-        tree_clades = parse_treefile_clades(args.treefile, ref_meta)
+        print("[*] Parsing tree for clade assignments and distance diagnostics...")
+        tree_diagnostics = parse_treefile_clades(args.treefile, ref_meta)
 
     final_rows = []
     for prot_id in query_ids:
         row = {"prot_id": prot_id}
 
         # Discovery source
-        row["discovery_source"] = disc_src.get(prot_id, "unknown")
+        row["discovery_source"] = normalise_discovery_source(disc_src.get(prot_id, "unknown"))
 
         # Bin name
         row["bin_name"] = bin_map.get(prot_id, "NA")
@@ -597,11 +886,27 @@ def main():
         # TAT signal
         tat_info              = tat.get(prot_id, {})
         row["has_TAT_signal"] = tat_info.get("has_TAT", "NOT_RUN")
-        row["TAT_probability"]    = tat_info.get("TAT_probability", "NA")
         row["signalp_prediction"] = tat_info.get("signalp_prediction", "NOT_RUN")
+        row["TAT_probability"] = clean_tat_probability(
+            row["has_TAT_signal"],
+            tat_info.get("TAT_probability", "NA"),
+            row["signalp_prediction"],
+        )
 
-        # Tree clade
-        row["tree_clade"] = tree_clades.get(prot_id, "inspect_tree_manually")
+        # Tree clade and nearest/second-nearest diagnostics
+        tree_diag = tree_diagnostics.get(prot_id, {})
+        row["tree_clade"] = tree_diag.get("tree_clade", "inspect_tree_manually")
+        row["tree_distance"] = tree_diag.get("tree_distance", "NA")
+        row["tree_second_clade"] = tree_diag.get("tree_second_clade", "NA")
+        row["tree_second_distance"] = tree_diag.get("tree_second_distance", "NA")
+        row["tree_distance_margin"] = tree_diag.get("tree_distance_margin", "NA")
+        row["tree_distance_ratio"] = tree_diag.get("tree_distance_ratio", "NA")
+        row["tree_assignment_confidence"] = tree_diag.get("tree_assignment_confidence", "NA")
+
+        # Context flags used for interpretability. These are also recomputed
+        # inside score_classification when constructing the evidence string,
+        # but storing them as columns makes downstream review/filtering easier.
+        row.update(derive_context_flags(row))
 
         # Score and classify (soea_hits passed for SoeA.hmm penalty)
         classification, confidence, evidence = score_classification(row, soea_hits)
@@ -626,7 +931,12 @@ def main():
             "NrfD_in_neighbourhood", "n_NrfD_neighbours", "NrfD_ids",
             "NrfD_has_PF14589", "best_NrfD_id", "membrane_subunit_class",
             "PsrB_in_neighbourhood", "n_PsrB_neighbours", "PsrB_ids",
-            "tree_clade", "classification", "confidence", "evidence"] + hmss2_cols
+            "tree_clade", "tree_distance", "tree_second_clade",
+            "tree_second_distance", "tree_distance_margin", "tree_distance_ratio",
+            "tree_assignment_confidence", "tree_group", "PsrABC_like_operon",
+            "ABC_like_nonPsr_operon", "PsrC_like_context",
+            "tree_incompatible_with_Psr",
+            "classification", "confidence", "evidence"] + hmss2_cols
 
     with open(tsv_path, "w") as fh:
         fh.write("\t".join(cols) + "\n")
@@ -649,19 +959,25 @@ def main():
     print(f"{'='*65}")
     print(f"\n  DISCOVERY SOURCE BREAKDOWN:")
     for src, n in sorted(src_counts.items()):
-        flag = "  ← review in HTML" if src == "HMSS2_only" else ""
+        flag = "  ← review in HTML" if src == "HMSS2_gate" else ""
         print(f"  {src:<20} : {n}{flag}")
     print(f"\n  TSV  : {tsv_path}")
     print(f"  HTML : {html_path}")
     print(f"\n  GUIDE:")
-    print(f"    TRUE_PsrA     : Mo-bisPGD + TAT + PsrC(8TM)")
-    print(f"    LIKELY_PsrA   : Most evidence supports PsrA")
-    print(f"    PsrA_or_PhsA  : Mo-bisPGD + TAT, subunit C ambiguous")
-    print(f"    LIKELY_SoeA   : Mo-bisPGD, no TAT, no NrfD neighbour")
-    print(f"    AMBIGUOUS     : Conflicting/incomplete evidence")
+    print(f"    TRUE_PsrA          : Psr/Phs/Srr tree placement + strong PsrABC evidence")
+    print(f"    LIKELY_PsrA        : Psr/Phs/Srr tree placement + moderate/strong operon evidence")
+    print(f"    PsrA_or_PhsA       : Psr-compatible or unresolved tree, but lower-confidence subunit assignment")
+    print(f"    LIKELY_ArrA        : ArrA/ArxA tree placement + compatible operon evidence")
+    print(f"    LIKELY_TtrA_or_SrdA: Ttr/Srd tree placement")
+    print(f"    LIKELY_nonPsr_MopB_operon_like : Known non-Psr tree placement with A+B+C-like local operon context")
+    print(f"    LIKELY_nonPsr_MopB : Known non-Psr MopB/DMSOR tree placement, e.g. FdhG/NapA/ActB")
+    print(f"    LIKELY_SoeA        : Soe/Sre tree placement or no-TAT/no-NrfD divergent case")
+    print(f"    AMBIGUOUS          : Conflicting/incomplete evidence")
     print(f"    NrfD_PF03916(topology_ND) : NrfD neighbour confirmed by broad "
           f"HMM only; run DeepTMHMM to resolve to PsrC/TtrC/PhsC")
-    print(f"\n  NOTE: HMSS2_only candidates (orange border in HTML) were not")
+    print(f"    tree_assignment_confidence : Diagnostic only. LOW means nearest and")
+    print(f"        second-nearest labelled reference families are close in tree distance.")
+    print(f"\n  NOTE: HMSS2_gate candidates (orange border in HTML) were not")
     print(f"        detected by PF00384. Check tree placement and neighbourhood")
     print(f"        evidence carefully before accepting these as PsrA.")
 

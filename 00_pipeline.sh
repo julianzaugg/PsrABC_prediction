@@ -694,13 +694,12 @@ else
     log "  $N_SEQS sequences to align"
     [[ "$N_SEQS" -eq 0 ]] && err "combined_for_alignment.faa is empty"
 
-    if [[ "$N_SEQS" -lt 200 ]]; then
-        MAFFT_FLAGS=(--anysymbol --localpair --maxiterate 1000)
-        log "  MAFFT: L-INS-i"
-    else
-        MAFFT_FLAGS=(--anysymbol --auto)
-        log "  MAFFT: --auto"
-    fi
+    # Use MAFFT --auto for all dataset sizes so the alignment strategy is
+    # consistent between small exploratory runs and larger Wells-expanded
+    # reference sets. This avoids switching algorithms at an arbitrary sequence
+    # count threshold.
+    MAFFT_FLAGS=(--anysymbol --auto)
+    log "  MAFFT: --auto"
 
     mafft "${MAFFT_FLAGS[@]}" --thread "$THREADS" --reorder "$COMBINED" \
         > "$ALIGNED" 2> "$OUTDIR/logs/mafft.log"
@@ -711,7 +710,11 @@ else
     fi
     log "  Aligned: $N_ALIGNED sequences"
 
-    trimal -in "$ALIGNED" -out "$TRIMMED" -automated1 \
+    # Trim using explicit Wells-style thresholds rather than -automated1:
+    #   -gt 0.8   retain columns present in at least 20% of sequences
+    #   -st 0.001 retain columns with similarity score >= 0.001
+    #   -cons 60  conserve at least 60% of original columns where possible
+    trimal -in "$ALIGNED" -out "$TRIMMED" -gt 0.8 -st 0.001 -cons 60 \
         -htmlout "$OUTDIR/07_alignment/trimal_report.html" \
         2> "$OUTDIR/logs/trimal.log"
     log "  TrimAl: $(grep -c "^>" "$TRIMMED" || true) sequences retained"
