@@ -633,7 +633,9 @@ def score_classification(row, soea_hits):
             classification, confidence = "AMBIGUOUS", "LOW"
 
     elif tree_group == "arr_arx":
-        if has_operon_evidence:
+        if strong_psr_operon:    # Full ABC architecture
+            classification, confidence = "LIKELY_ArrA", "MEDIUM"
+        elif has_operon_evidence:
             classification, confidence = "LIKELY_ArrA", "LOW"
         else:
             classification, confidence = "AMBIGUOUS", "LOW"

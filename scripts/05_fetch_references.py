@@ -20,7 +20,7 @@ PsrA    Thermus thermophilus HB8          PsrA     Q72LA4          UniProt
 PhsA    Salmonella enterica Typhimurium   PhsA     P37600          UniProt
 TtrA    Salmonella enterica Typhimurium   TtrA     Q9Z4S6          UniProt
 TtrA    Shewanella sp. ANA-3              TtrA     WP_011715816.1  NCBI
-SreA    Acidianus ambivalens              SreA     Q9HGX4          UniProt
+SreA    Acidianus ambivalens              SreA     Q8NKK1          UniProt
 SoeA    Allochromatium vinosum DSM180     SoeA     D3RNN8          UniProt
 ArrA    Shewanella sp. ANA-3              ArrA     Q7WTU0          UniProt
 ArrA    Chrysiogenes arsenatis            ArrA     AAD05290.1      NCBI
