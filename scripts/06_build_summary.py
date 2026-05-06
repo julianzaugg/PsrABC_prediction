@@ -760,7 +760,8 @@ def make_html_table(rows, out_path, hmss2_cols=None):
                     "PsrB_in_neighbourhood", "tree_clade", "tree_distance",
                     "tree_second_clade", "tree_second_distance", "tree_distance_margin",
                     "tree_distance_ratio", "tree_assignment_confidence", "tree_group",
-                    "PsrABC_like_operon", "tree_incompatible_with_Psr",
+                    "PsrABC_like_operon", "ABC_like_nonPsr_operon", "PsrC_like_context",
+                    "tree_incompatible_with_Psr",
                     "classification", "confidence", "evidence"]
 
     for row in rows:
