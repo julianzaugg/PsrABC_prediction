@@ -7,7 +7,7 @@ Integrates all evidence to produce the final classification table.
 Evidence sources (in descending reliability order):
   1. Mo-bisPGD domain (PF00384)      — required for any classification
   2. TAT signal peptide (SignalP 6)  — periplasmic export: PsrA/TtrA/PhsA yes, SoeA no
-  3. PsrC topology (DeepTMHMM)       — 8TM=PsrC, 9TM=TtrC, 5TM+haem=PhsC
+  3. PsrC topology (DeepTMHMM)       — 8TM=PsrC, 9TM=TtrC, 5TM=PhsC (b-type haem, not motif-detectable)
   4. NrfD in neighbourhood           — PF14589 (specific) > PF03916 (broad)
   5. PsrB in neighbourhood           — supporting only, absence is weak evidence
   6. Phylogenetic clade (IQ-TREE)    — heuristic, lower weight than biochemical
@@ -435,7 +435,13 @@ def classify_topology(tm_class):
     """
     Classify membrane subunit type from topology string.
     Uses explicit regex word-boundary matching to avoid substring
-    false-positives (e.g. 'PsrC_or_ambiguous' must still map to PsrC).
+    false-positives (e.g. 'PsrC' must not match a hypothetical 'PsrC_other').
+
+    Note: haem-motif-based classification has been removed from 03_parse_topology.py.
+    PsrC and PhsC both coordinate b-type haems via conserved transmembrane
+    histidines; b-type haem binding produces no detectable sequence motif.
+    Classification is based solely on TM helix count from DeepTMHMM.
+    PhsC vs SoeC ambiguity at 5TM is resolved by the tree gate below.
     """
     if not tm_class or tm_class in ("no_NrfD_found", "topology_not_run", "NOT_RUN"):
         return tm_class, "UNKNOWN"
@@ -445,7 +451,7 @@ def classify_topology(tm_class):
     if re.search(r"\bTtrC\b", tm_class):
         return "TtrC_9TM", "TtrC"
     if re.search(r"\bPhsC\b", tm_class):
-        return "PhsC_5TM_haem", "PhsC"
+        return "PhsC_5TM", "PhsC"
     if re.search(r"\bSoeC\b", tm_class):
         return "SoeC", "SoeC"
     return tm_class, "OTHER"
@@ -554,7 +560,7 @@ def score_classification(row, soea_hits):
     elif tm_canonical == "TtrC":
         evidence.append("TtrC_9TM"); score -= 1
     elif tm_canonical == "PhsC":
-        evidence.append("PhsC_5TM_haem"); score += 1
+        evidence.append("PhsC_5TM"); score += 1
     elif tm_canonical == "SoeC":
         evidence.append("SoeC"); score -= 1
     elif has_nrfd:
