@@ -5,12 +5,17 @@
 Parses DeepTMHMM output (3-line format or TSV summary) and classifies
 NrfD-like proteins by TM helix count into:
 
-  PsrC  : 8 TM helices, no haem (NrfD subtype — polysulfide reductase anchor)
-  TtrC  : 9 TM helices           (tetrathionate reductase anchor)
-  PhsC  : 5 TM helices + haem    (thiosulfate reductase anchor — note: haem
-                                   prediction requires separate check)
+  PsrC  : 8 TM helices  (NrfD subtype — polysulfide reductase anchor)
+  TtrC  : 9 TM helices  (tetrathionate reductase anchor)
+  PhsC  : 5 TM helices  (thiosulfate reductase anchor)
   SoeC  : variable, typically 4-6 TM helices (sulfite dehydrogenase anchor)
   Other : unexpected TM count
+
+NOTE on haem: PsrC and PhsC coordinate b-type haems via conserved transmembrane
+histidine residues. b-type haem binding cannot be detected by sequence motif
+search (no covalent CXXCH-type attachment). Classification is therefore based
+solely on TM helix count. PhsC vs SoeC ambiguity at 5TM is resolved by the
+phylogenetic tree gate in 06_build_summary.py.
 
 DeepTMHMM 3-line output format:
   >PROTEIN_ID  topology_type  [topology_string]
@@ -19,9 +24,6 @@ DeepTMHMM 3-line output format:
 
 DeepTMHMM TSV summary (if downloaded from web):
   protein_id  \t  topology_type  \t  n_TM  \t  topology_string
-
-We also check for CXXCH haem-binding motifs in the sequence to help
-distinguish PhsC from PsrC (PhsC has 2 b-type haems).
 
 USAGE:
   python3 03_parse_topology.py \
@@ -49,22 +51,24 @@ def parse_args():
     return p.parse_args()
 
 
-def classify_by_tm_count(n_tm, has_haem_motif):
+def classify_by_tm_count(n_tm):
     """
     Rule-based classification based on published subunit topologies.
     Ref: Jormakka et al. 2008 (PsrC=8TM), Rothery et al. 2008 (TtrC=9TM),
-         Stoffels et al. 2012 (PhsC=5TM+haem)
+         Stoffels et al. 2012 (PhsC=5TM).
+
+    Haem-motif searching has been removed. PsrC and PhsC both coordinate
+    b-type haems via conserved transmembrane histidines; b-type haem binding
+    produces no detectable sequence motif (no covalent CXXCH attachment).
+    PhsC vs SoeC ambiguity at 5TM is resolved downstream by the phylogenetic
+    tree gate in 06_build_summary.py.
     """
-    if n_tm == 8 and not has_haem_motif:
+    if n_tm == 8:
         return "PsrC", "HIGH"
-    elif n_tm == 8 and has_haem_motif:
-        return "PsrC_or_ambiguous", "MEDIUM"
     elif n_tm == 9:
         return "TtrC", "HIGH"
-    elif n_tm == 5 and has_haem_motif:
-        return "PhsC", "HIGH"
-    elif n_tm == 5 and not has_haem_motif:
-        return "PhsC_or_SoeC", "MEDIUM"
+    elif n_tm == 5:
+        return "PhsC", "MEDIUM"   # PhsC vs SoeC resolved by tree gate in step 6
     elif n_tm in (4, 6):
         return "SoeC_like", "LOW"
     elif n_tm <= 3:
@@ -78,32 +82,6 @@ def count_tm_helices(topology_string):
     # Each continuous run of 'M' characters is one TM helix
     helices = re.findall(r"M+", topology_string.upper())
     return len(helices)
-
-
-def has_haem_binding_motif(sequence):
-    """Check for CXXCH (c-type haem) or CXXCHxxM (b-type haem) motifs."""
-    # c-type haem: CXXCH
-    c_type = bool(re.search(r"C.{2}CH", sequence.upper()))
-    return c_type
-
-
-def load_faa(faa_path):
-    seqs = {}
-    current_id = None
-    current_seq = []
-    with open(faa_path) as fh:
-        for line in fh:
-            line = line.rstrip()
-            if line.startswith(">"):
-                if current_id:
-                    seqs[current_id] = "".join(current_seq)
-                current_id = line[1:].split()[0]
-                current_seq = []
-            else:
-                current_seq.append(line)
-    if current_id:
-        seqs[current_id] = "".join(current_seq)
-    return seqs
 
 
 def parse_deeptmhmm_3line(filepath):
@@ -213,24 +191,15 @@ def main():
         print(f"       Manual step required — see pipeline instructions")
         print(f"       Creating placeholder topology summary...")
 
-    # Load NrfD candidate sequences for haem motif checking
-    nrfd_faa_path = os.path.join(os.path.dirname(args.nrfd_hits), "nrfd_candidates.faa")
-    nrfd_seqs = {}
-    if os.path.exists(nrfd_faa_path):
-        nrfd_seqs = load_faa(nrfd_faa_path)
-
     # Classify each NrfD candidate
     rows = []
     for prot_id, info in tm_results.items():
-        seq = nrfd_seqs.get(prot_id, info.get("sequence", ""))
-        haem = has_haem_binding_motif(seq) if seq else False
         n_tm = info["n_tm"]
-        subunit_class, confidence = classify_by_tm_count(n_tm, haem)
+        subunit_class, confidence = classify_by_tm_count(n_tm)
         rows.append({
             "protein_id":    prot_id,
             "n_tm":          n_tm,
             "topology_type": info.get("topology_type", "NA"),
-            "haem_motif":    "YES" if haem else "NO",
             "subunit_class": subunit_class,
             "confidence":    confidence,
         })
@@ -241,13 +210,10 @@ def main():
             if line.startswith("#"): continue
             nrfd_id = line.split()[0]
             if nrfd_id not in {r["protein_id"] for r in rows}:
-                seq = nrfd_seqs.get(nrfd_id, "")
-                haem = has_haem_binding_motif(seq) if seq else False
                 rows.append({
                     "protein_id":    nrfd_id,
                     "n_tm":          "ND",
                     "topology_type": "NOT_RUN",
-                    "haem_motif":    "YES" if haem else "NO",
                     "subunit_class": "UNCLASSIFIED_run_DeepTMHMM",
                     "confidence":    "NONE",
                 })
@@ -255,18 +221,19 @@ def main():
     # Write topology summary table
     out_path = os.path.join(args.outdir, "topology_summary.tsv")
     with open(out_path, "w") as fh:
-        fh.write("protein_id\tn_TM_helices\ttopology_type\thaem_CXXCH_motif\t"
+        fh.write("protein_id\tn_TM_helices\ttopology_type\t"
                  "subunit_classification\tconfidence\n")
         for row in rows:
             fh.write(f"{row['protein_id']}\t{row['n_tm']}\t{row['topology_type']}\t"
-                     f"{row['haem_motif']}\t{row['subunit_class']}\t{row['confidence']}\n")
+                     f"{row['subunit_class']}\t{row['confidence']}\n")
 
     print(f"\n[DONE] Topology classification: {len(rows)} NrfD-like proteins classified")
-    print(f"       Classification rules:")
-    print(f"         8 TM, no haem → PsrC   (polysulfide reductase)")
-    print(f"         9 TM          → TtrC   (tetrathionate reductase)")
-    print(f"         5 TM + haem   → PhsC   (thiosulfate reductase)")
-    print(f"         5 TM, no haem → PhsC or SoeC (ambiguous)")
+    print(f"       Classification rules (TM helix count only; b-type haem not detectable by motif):")
+    print(f"         8 TM → PsrC   (polysulfide reductase anchor)         [HIGH]")
+    print(f"         9 TM → TtrC   (tetrathionate reductase anchor)       [HIGH]")
+    print(f"         5 TM → PhsC   (thiosulfate reductase anchor)         [MEDIUM]")
+    print(f"                note: PhsC vs SoeC resolved by tree gate in step 6")
+    print(f"         4,6 TM → SoeC_like                                   [LOW]")
     print(f"       Summary table → {out_path}")
 
 
