@@ -23,7 +23,7 @@ TtrA    Shewanella sp. ANA-3              TtrA     WP_011715816.1  NCBI
 SreA    Acidianus ambivalens              SreA     Q8NKK1          UniProt
 SoeA    Allochromatium vinosum DSM180     SoeA     D3RNN8          UniProt
 ArrA    Shewanella sp. ANA-3              ArrA     Q7WTU0          UniProt
-ArrA    Chrysiogenes arsenatis            ArrA     AAD05290.1      NCBI
+ArrA    Chrysiogenes arsenatis            ArrA     Q5Y818          UniProt
 AioA    Alcaligenes faecalis              AioA     Q7SIF4          UniProt
 NapA    Shewanella oneidensis MR-1        NapA     Q8EIJ1          UniProt
 TorA    Escherichia coli                  TorA     P33225          UniProt
