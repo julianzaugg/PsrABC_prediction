@@ -7,7 +7,9 @@ Integrates all evidence to produce the final classification table.
 Evidence sources (in descending reliability order):
   1. Mo-bisPGD domain (PF00384)      — required for any classification
   2. TAT signal peptide (SignalP 6)  — periplasmic export: PsrA/TtrA/PhsA yes, SoeA no
-  3. PsrC topology (DeepTMHMM)       — 8TM=PsrC, 9TM=TtrC, 5TM=PhsC (b-type haem, not motif-detectable)
+  3. PsrC topology (DeepTMHMM)       — 8TM=PsrC (Jormakka et al. 2008), 9TM=TtrC (Rothery et al. 2008),
+                                        5TM=PhsC (Berks et al. 1995; Rothery et al. 2008; inferred, not
+                                        experimentally determined; b-type haem not motif-detectable)
   4. NrfD in neighbourhood           — PF14589 (specific) > PF03916 (broad)
   5. PsrB in neighbourhood           — supporting only, absence is weak evidence
   6. Phylogenetic clade (IQ-TREE)    — heuristic, lower weight than biochemical

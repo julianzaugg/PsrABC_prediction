@@ -46,11 +46,11 @@ If you use this pipeline, please cite the following tools and reference datasets
 - **Degré et al. (2026)** — Degré, A.G. et al. Genomic and metabolic diversity of Shewanella tetrathionate reductase operons. *Environmental Microbiology* (2026). https://doi.org/10.1111/1462-2920.70258
   *(TtrA Shewanella ANA-3 reference; WP_011715816.1)*
 - **Jormakka et al. (2008)** — Jormakka, M. et al. Molecular mechanism of energy conservation in polysulfide respiration. *Nature Structural & Molecular Biology* 15, 730–737 (2008). https://doi.org/10.1038/nsmb.1434
-  *(PDB 2VPZ; PsrC = 8 TM helices; PsrA TAT signal)*
+  *(PDB 2VPZ; PsrC = 8 TM helices, experimentally determined crystal structure; PsrA TAT signal)*
 - **Rothery et al. (2008)** — Rothery, R.A., Workun, G.J. & Weiner, J.H. The prokaryotic complex iron–sulfur molybdoenzyme family. *Biochimica et Biophysica Acta — Biomembranes* 1778, 1897–1929 (2008). https://doi.org/10.1016/j.bbamem.2007.09.002
-  *(CISM/MopB family overview; PsrB iron–sulfur subunit divergence; TtrC = 9 TM helices)*
-- **Stoffels et al. (2012)** — Stoffels, L. et al. Metagenomic and functional analysis of thiosulfate reductase during anaerobic growth of *Salmonella* Typhimurium. *PLOS Genetics* 8, e1002682 (2012). https://doi.org/10.1371/journal.pgen.1002682
-  *(PhsC = 5 TM helices)*
+  *(CISM/MopB family overview; PsrB iron–sulfur subunit divergence; TtrC = 9 TM helices and PhsC = 5 TM helices reported in Table 2 as bioinformatic predictions)*
+- **Berks et al. (1995)** — Berks, B.C. et al. Sequence analysis of subunits of the membrane-bound nitrate reductase from a denitrifying bacterium: the integral membrane subunit provides a prototype for the dihaem electron-carrying arm of a redox loop. *Molecular Microbiology* 15, 319–331 (1995). https://doi.org/10.1111/j.1365-2958.1995.tb02246.x
+  *(Structural framework for the NrfD/FdnI dihaem membrane subunit family, including sequence similarity to S. typhimurium PhsC; underpins the 5TM prediction for PhsC)*
 
 ### Expanded DMSOR/MopB reference tree
 
@@ -156,7 +156,7 @@ When multiple NrfD-family proteins are found in a candidate's neighbourhood, the
 
 ### Transmembrane topology and haem binding
 
-Membrane subunit class is assigned solely from DeepTMHMM TM helix count (Jormakka et al. 2008; Rothery et al. 2008; Stoffels et al. 2012):
+Membrane subunit class is assigned solely from DeepTMHMM TM helix count. PsrC = 8 TM helices is experimentally determined from the crystal structure (Jormakka et al. 2008). TtrC = 9 TM helices and PhsC = 5 TM helices are bioinformatic predictions reported in Rothery et al. (2008, Table 2), with the PhsC assignment additionally supported by sequence similarity to the NrfD/FdnI dihaem membrane subunit family (Berks et al. 1995) and by DeepTMHMM prediction of the *S. typhimurium* PhsC reference sequence (UniProt P37602):
 
 | TM helices | Classification |
 |------------|----------------|

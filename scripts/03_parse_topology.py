@@ -54,14 +54,23 @@ def parse_args():
 def classify_by_tm_count(n_tm):
     """
     Rule-based classification based on published subunit topologies.
-    Ref: Jormakka et al. 2008 (PsrC=8TM), Rothery et al. 2008 (TtrC=9TM),
-         Stoffels et al. 2012 (PhsC=5TM).
+
+    PsrC = 8 TM helices: crystal structure of W. succinogenes PsrABC
+      (Jormakka et al. 2008, Nat Struct Mol Biol 15:730-737).
+    TtrC = 9 TM helices: bioinformatic prediction reported in the CISM
+      family review (Rothery et al. 2008, BBA-Biomembranes 1778:1897-1929,
+      Table 2).
+    PhsC = 5 TM helices: bioinformatic prediction based on sequence
+      similarity to the NrfD/FdnI family (Berks et al. 1995, Mol Microbiol
+      15:319-331; Rothery et al. 2008 Table 2), consistent with DeepTMHMM
+      prediction of the S. typhimurium PhsC reference sequence (UniProt
+      P37602). This assignment is inferred, not experimentally determined.
+      PhsC vs SoeC ambiguity at 5TM is resolved downstream by the
+      phylogenetic tree gate in 06_build_summary.py.
 
     Haem-motif searching has been removed. PsrC and PhsC both coordinate
     b-type haems via conserved transmembrane histidines; b-type haem binding
     produces no detectable sequence motif (no covalent CXXCH attachment).
-    PhsC vs SoeC ambiguity at 5TM is resolved downstream by the phylogenetic
-    tree gate in 06_build_summary.py.
     """
     if n_tm == 8:
         return "PsrC", "HIGH"
